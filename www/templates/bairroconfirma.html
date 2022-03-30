@@ -1,0 +1,61 @@
+<ion-view  id="bairroconfirma" title="Validação"  style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class = "bar-positive">
+
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header">
+    <style type="text/css">
+      span.termos { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:14px;text-align: center; }
+    </style>
+
+        <style>
+      /* Style the buttons */
+      .btnnovahomelogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btnnovahomelogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Confira seus dados</h2>
+
+ 
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 35px;font-style: italic;margin-left: 20vw;"> {{user.cidade}}</p>
+
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;font-style: italic;margin-left: 20vw;"> {{user.bairro}}</p>
+      
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;font-style: italic;margin-left: 20vw;"> {{user.endereco}}, {{user.numeroendereco}}</p>
+      
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;font-style: italic;margin-left: 20vw;"> {{user.complemento}}</p>
+       
+
+
+      <div class="spacer" style="width: 300px; height: 35px;"></div>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 16px;margin-top: 12px;font-style: italic;">Uma vez confirmadas, essas informações só poderão ser alteradas mediante solicitação ao nosso time de suporte</p>
+       
+   
+      <button id="perfil-button181" class="btnnovahomelogin" ng-click="Confirmar()" style="font-family:Kollektif; margin-bottom: 15px;
+          margin-top: 15px;font-size: 16px;">Confirmar</button>
+
+
+      <button  ng-click="mudaendereco()" style="font-family:Kollektif;color:#ff4444;font-size:14px;text-align: center;align-items: center;background-color: #212121;border: 0px;width: 100%;text-decoration: underline;margin-top: 35px;"> <span class="infos">Não reconheço esse endereço</span ></button>
+ 
+  </ion-content>
+</ion-view>

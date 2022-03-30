@@ -1,0 +1,150 @@
+<ion-view title="Capacidade" id="contacomercionumeropessoas" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+     <style>
+          /* Style the buttons */
+          .btnsexn {
+            background:#212121;
+         
+              cursor: pointer;
+              font-size: 30px;
+              width: 100%;
+              height: 50px;
+              color: #474747;
+          }
+          .actn, .btnsexn:hover {
+              background: black;
+              color: #e27c00;
+          }
+          </style>
+
+             <div class="spacer" style="width: 300px; height: 55px;"></div>
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Qual a capacidade mínima de pessoas em um evento?</h2>
+
+      <div class = "row">
+            
+      <div class = "col" style="border-radius:14px 14px 14px 14px;">
+        <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "menos()">-</button>
+      </div>
+         <div class = "col">
+              <p style="margin-top:20px;color:#ff4444;font-family:Kollektif;font-size:22px;text-align: center;">{{comercio.pmin}}</p>
+            </div>
+            <div class = "col" >
+               <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "mais()">+</button>
+            </div>
+          </div>
+
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >E a capacidade máxima de pessoas em um evento?</h2>
+
+       <div class = "row">
+            
+      <div class = "col" style="border-radius:14px 14px 14px 14px;">
+        <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "menosmax()">-</button>
+      </div>
+         <div class = "col">
+              <p style="margin-top:20px;color:#ff4444;font-family:Kollektif;font-size:22px;text-align: center;">{{comercio.pmax}}</p>
+            </div>
+            <div class = "col" >
+               <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "maismax()">+</button>
+            </div>
+          </div>
+
+     <p style="color:#FCFCFC;text-align: left;font-size: 10px;font-family:Kollektif;font-weight:italic;">*Estes campos são obrigatórios</p>
+
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Qual a média de pessoas? </h2>
+      <p style="color:#FCFCFC;text-align: left;font-size: 10px;font-family:Kollektif;font-weight:italic;">(Não é obrigatório)</p>
+
+      
+
+      <input type="number" ng-model="comercio.pmedio" placeholder="Mais ou menos" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+
+     
+  </ion-content>
+     <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+<!-- 
+           <a id="Confirmar-button12" style="border-color: red;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:red ;align-items: center;
+  justify-content: center; float:left;"  class="button button-balanced button-outline" ng-click="Cancela()">Cancela</a> -->
+
+ <button  class="botaocancela" ng-click="Cancela()" style="font-family:Kollektif;font-size: 22px;float:left;">Cancela</button>
+    <button  class="botaoproximo" ng-click="Proximo()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Próximo</button>
+
+</ion-view>

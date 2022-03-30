@@ -1,0 +1,111 @@
+<ion-view title="Eventos que nao são meus" id="page41" style="background:#212121;color:#ff4444;">
+
+  
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+
+  <ion-content padding="true" class="has-header">
+
+    <style type="text/css">
+    span.high { color:#fff;font-weight:bold;}
+    </style>
+    <img src={{evento.eventopic}} style="
+             width: 100%; height: 50vw;object-fit: cover;">
+    <ion-list id="evento_do_eventoAbertos-list18">
+      <ion-item class="item" id="evento_do_eventoAbertos-list-item56"  style= "border-radius:14px 14px 14px 14px;">
+        <h2 style="text-align: center;overflow: hidden;text-overflow: none !important; white-space: initial !important;">{{evento.nomeevento}}</h2>
+        <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Organizado por {{evento.admapelido}}</p>
+        <p style="text-align: center;margin-top:0px;color:#1eb9aa;width: 100%;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;" > {{tag}} </p>
+        <!-- <p style="margin-top:0px;color:#ececec;width: 100%;" > Início: {{dia}} </p>
+        <p style="margin-top:0px;color:#F08080;width: 100%;" > Término previsto: {{diafim}} </p>
+        <p style="margin-top:0px;color:#F08080;width: 100%;" > Data limite de confirmação: {{dialimiteconfirmacao}} </p> -->
+         <div class = "row">
+         <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-right: 10px">
+           <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >Confirmar até</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" >{{limiteconfirmacao.dia}}</p>
+             <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >{{limiteconfirmacao.hora}}</p>
+        </div>
+         <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-left: 10px">
+          <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Quando?</p>
+          <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" > {{dia.dia}} </p>
+          <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > {{dia.hora}} </p>
+         </div>
+        <!--  <div class = "col" style="background:#41f4e5;border-radius:14px 14px 14px 14px;border: 2px solid white;">
+           <img src="img/durar.png" width="35px" style="align-items: center;" > 
+           <p style="margin-top:0px;color:#000;width: 100%;text-align: center;" > {{duracao}} </p>
+         </div> -->
+      </div>
+      </ion-item>
+     <p id="eventoAberto-heading4" style="color:#989898;font-size:15px;text-align: center;margin-top:10px;">Mais detalhes sobre o evento</p>
+   
+    <div class="item item-body" style= "border-radius:14px 14px 14px 14px;" >
+  <!--     <p style="margin-top:0px;color:#fff;">{{evento.cidade}}</p> -->
+          <p style="margin-top:0px;color:#fff;width: 100%;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;" >Descrição : {{evento.descricao}} </p>
+          <p style="margin-top:0px;color:#fff;width: 100%;" >Preço : <span class="high" ng-show="porpessoa || porpessoa"> R$</span>  {{evento.preco}} <span class="high" ng-show="porpessoa">por pessoa, pagar no local.</span> <span class="high" ng-show="porlocal">o local! Pagar no local.</span></p>
+           <p style="margin-top:0px;color:#fff;" >Dificuldade : {{evento.dificuldade}} </p>
+           <p style="margin-top:0px;color:#fff;width: 100%;text-align: center;" ng-show = "masc">Evento exclusivo para sexo masculino </p>
+      <p style="margin-top:0px;color:#fff;width: 100%;text-align: center;" ng-show = "fem" >Evento exclusivo para sexo feminino </p>
+      </div>
+      <p id="eventoAberto-heading4" style="color:#989898;text-align: center;margin-top:10px;">Local do evento</p>
+
+      <div class="item item-avatar" id="home-list-item-container5" style= "border-radius:14px 14px 14px 14px;" >
+      <img src="img/markericon.png" width="100%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;">
+      <p style="color:#fff; overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important; ">{{evento.endereco}}</p>
+    </div>
+
+
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+     <h4 id="evento_do_eventoAbertos-heading7" style="color:#FCFCFC;text-align: center;">Parceiros</h4>
+
+
+     <ion-list >
+      <ion-item class="item" ng-repeat="item in items track by $index" ">
+     
+           <div class="row">
+          <div class="col-30" style="position: relative;
+  display: inline;">
+            <!-- <div class="container"> -->
+              <img src={{item.profilepic}} style="height: 20vw; 
+     width: 20vw; 
+    border: 2px solid #ff4444;;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;">
+              <img  src="img/starbronze.png" width="18px" height="auto" ng-show="item.bb" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -12px;" >
+            <img  src="img/starsilver.png" width="18px" height="auto" ng-show="item.bs" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -12px;" >
+            <img  src="img/stargold.png" width="18px" height="auto" ng-show="item.bg" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -12px;" >
+              <!-- <div class="overlay">rqwr ng-show="item.borda" </div> -->
+          <!--   </div> -->
+          </div>
+        <div class="col" style="margin-left:10px;">
+          <h2>{{item.apelido}}</h2>
+          <p style="color:#ededed;">{{item.username}}</p>
+          <p style="color:#ededed;"> Estado : {{item.confirmacao}}</p>
+        </div>
+      </div>
+
+        
+      </ion-item>
+    </ion-list > 
+
+  </ion-content>
+</ion-view>

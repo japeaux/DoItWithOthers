@@ -1,0 +1,64 @@
+<ion-view  id="bairrocadastra" title="Cadastro para Bairro" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class = "bar-positive">
+ <!--    <ion-nav-title >
+        <img  height="90%"   src="img/titulo.png" >    
+        </ion-nav-title>  -->
+<ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header">
+      <style type="text/css">
+      span.infos { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:15px; }
+    </style>
+
+
+        <style>
+      /* Style the buttons */
+      .btnnovahomelogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btnnovahomelogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+       
+      
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Endereço</h2>
+
+       <input id="searchTextField" class="controls" ng-focus="disableTap()" type="text" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;"
+        placeholder="Digite aqui seu endereço" ng-model="user.endereco">
+
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Número da sua residência</h2>
+
+      <input type="text" ng-model="user.numeroendereco" placeholder="Digite aqui" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Complemento</h2>
+
+      <input type="text" ng-model="user.complemento" placeholder="Digite aqui se houver" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+
+
+
+
+
+   
+  <button id="perfil-button181" class="btnnovahomelogin" ng-click="ValidarEndereco()" style="font-family:Kollektif; margin-bottom: 15px;
+          margin-top: 15px;font-size: 16px;">Validar endereço</button>
+
+          <button  ng-click="enderecopq()" style="font-family:Kollektif;color:#ff4444;font-size:14px;text-align: center;align-items: center;background-color: #212121;border: 0px;width: 100%;text-decoration: underline;margin-top: 35px;"> <span class="infos">Por que precisamos desses dados?</span ></button>
+       
+  </ion-content>
+</ion-view>

@@ -1,0 +1,394 @@
+<ion-view title="Tela Comercio" id="telacomercio" style="background:#212121;color:#ff4444;" class="hide-tabs"  >
+    
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+
+
+  <ion-content padding="true" class="has-header">
+
+      <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 1px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #212121; 
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #212121; 
+      }
+
+      /* Handle on hover */
+      /*::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }*/
+      </style>
+
+          <style>
+      /* Style the buttons */
+      .btncomerciotab {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actcomerciotab, .btncomerciotab:hover {
+          background: #111;
+          color: #ff4444;
+      }
+
+      .horariobtn {
+        margin-left:10px;
+        margin-left:4px;
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+        width: 20%;
+        height:25px;
+        border-width: 1px;
+        background:#212121;
+        border-color: #ff4444;
+        color:  #e0e0e0;
+
+        font-family:Kollektif;
+      }
+      .botaocalendario {
+        background:#212121;
+        
+        cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+        font-family:Kollektif;
+        background:#212121;
+        border-radius:14px 14px 14px 14px;
+        border: 3px solid #ff4444;
+        box-shadow: 0 4px 8px 0 rgba(55,201,255, 0.3);
+        margin-right: 10px;
+        margin-left: auto;
+        font-size: 20px;
+        color:#ececec;
+        text-align: center;
+        width: 14vh;
+        
+      }
+       .botaocalendario:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          box-shadow: 0 4px 8px 0 rgba(55,201,255, 0.3);
+      }
+       .btndiv {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: auto;
+          color: #e0e0e0;
+          border-radius:64px 64px 64px 64px;
+       
+          font-family:Kollektif;
+      }
+      .btndiv:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+      <style type="text/css">
+    span.high { color:#ddd;font-weight:bold;}
+    </style>
+
+  <img src={{comercio.fotocomercio}} style="width: 100vw; height: 70vw;object-fit: cover;margin:-10px;" >
+
+ <p style="color:white;text-align: center;font-family:Kollektif;font-size: 25px;margin-top: 15px">{{comercio.nomecomercio}}</p>
+
+    <div id="barcomerciotab" class="button-bar" style="margin-bottom: 10px">
+      <button class="btncomerciotab" id="loadEventos" ng-click="loadEventos()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;font-family:Kollektif;">Eventos</button>
+      <button class="btncomerciotab" id="loadHorarios" ng-click="loadHorarios()" ng-show = "!naotemhorario" style="font-family:Kollektif;">Horários</button>
+      <button  class="btncomerciotab" id="loadInfos" ng-click="loadInfos()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;font-family:Kollektif;">Informações</button>
+    </div>
+
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">Quem somos</p>
+      <pre style="margin-top:7px;color:#fff;font-family:Kollektif;font-size: 15px" ng-show="infos">{{comercio.qmehcomercio}}</pre>
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">O que faremos</p>
+      <p style="margin-top:7px;color:#fff;font-family:Kollektif;white-space: pre-line;font-size: 15px" ng-show="infos">{{comercio.infocomercio}}</p>
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">O que esta incluso</p>
+      <p style="margin-top:7px;color:#fff;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-show="infos">{{comercio.incluso}}</p>
+
+
+       <div class = "row" style="margin-top: 5px;margin-right: auto;margin-left: auto;" ng-show="infos">
+           <div class = "col"   style="margin:auto;height: 30vw;">
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/Duracao.png"  ng-show="infos">
+      <!-- <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">Duração</p> -->
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;text-align: center;" ng-show="infos">{{comercio.duracao}}</p>
+            </div>
+           
+             <div class = "col" style="margin:auto;height: 30vw;">
+              
+      <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/ValorMedio.png"  ng-show="infos">
+      <!-- <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">Quanto custa</p> -->
+      <p style="margin-top:0px;color:#eee;width: 100%;font-family:Kollektif;font-size: 15px;text-align: center;"  > <span class="high" ng-show="porpessoa || porlocal"> R$</span>  {{comercio.preco}} <span class="high" ng-show="porpessoa"> por pessoa!</span> <span class="high" ng-show="porlocal">o local!</span> </p>
+    <p style="margin-top:0px;color:#eee;width: 100%;font-family:Kollektif;font-size: 15px;text-align: center;"  ><span class="high" ng-show="porpessoa || porlocal"> Pagar no local.</span></p>
+            </div>
+             <div class = "col"   style="margin:auto;height: 30vw;">
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/Contato.png"  ng-show="infos">
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;text-align: center;" ng-show="infos">{{comercio.telefone}}</p>
+            </div>
+        </div>
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px"  ng-show="infos">Ofertas</p>
+      <p style="margin-top:7px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;"  ng-show="infos">{{comercio.descontopacote}}</p>
+
+     
+
+      
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">O que tem</p>
+       <div class = "row" ng-show="infos">
+            <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado0.png"  ng-show = "auxsemanabutton1">
+
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado1.png" ng-show = "auxsemanabutton1aux">
+            </div>
+             <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante0.png" ng-show = "auxsemanabutton2">
+               <img style="width : 14vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante1.png"  ng-show = "auxsemanabutton2aux">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento0.png" ng-show = "auxsemanabutton3">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento1.png" ng-show = "auxsemanabutton3aux">
+            </div>
+            
+        </div>
+
+        <div class = "row" style="margin-top: 5px;" ng-show="infos">
+           <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly0.png" ng-show = "auxsemanabutton4">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly1.png" ng-show = "auxsemanabutton4aux">
+            </div>
+           
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE0.png"  ng-show = "auxsemanabutton5">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE1.png"ng-show = "auxsemanabutton5aux">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi0.png" ng-show = "auxsemanabutton6">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi1.png"  ng-show = "auxsemanabutton6aux">
+            </div>
+        </div>
+
+
+
+     
+
+
+
+     <button class="btndiv"   ng-click = "Vermapa()" ng-show='infos'>
+     <!--   <div class = "row">
+         <div class = "col-20"   >
+          <img src="img/markericon.png" width="70%" height="auto" style="align-items: center;display: block;margin: auto;">
+        </div>
+         <div class = "col" >
+         <p id="eventoAberto-heading4" style="color:#989898;text-align: center;font-family:Kollektif;">Ver local do comércio</p>
+          
+        </div> -->
+      <img src="img/markericon.png" width="8%" height="auto" style="align-items: center;display: block;margin: auto;float: left;">
+        <p style="color:white; overflow: hidden;
+              text-overflow: none !important; 
+            white-space: initial !important;font-family:Kollektif; font-size: 15px;padding-top: 5px;padding-bottom: 5px">{{comercio.endereco}}</p>
+         
+    </button>
+
+
+        <img  src="img/3.png" width="20%" height="auto" ng-show="vazio" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;" > 
+    <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" ng-show="vazio">Não há eventos criados por outras pessoas</h2>
+
+    <ion-list  class="list" ng-repeat="item in items track by $index"  style="border-color:#ff4444;" ng-show="eventoscomercio"  ng-click = "enterEvento({{item}})"  >
+      <ion-item   can-swipe="true;"  style="top: 10px;border-width: 0px">
+     <!--      <ion-option-button class="button-assertive"
+                             ng-click="cancelar(item)"
+                             ng-show = "CoisasPendentes">
+            Cancelar
+          </ion-option-button>
+          <ion-option-button class="button-balanced"
+                             ng-click="agendar(item)"
+                             ng-show = "CoisasPendentes">
+            Reservar
+          </ion-option-button> -->
+         
+        <div class = "row" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: auto;margin-bottom: 25px">
+          <div class="col-30" style="position: relative;display: inline;">
+            <img src={{item.eventopic}} style="height: 20vw; 
+               width: 25vw; 
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              object-fit: cover;">
+          </div>
+          <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;margin-left: 10px;margin-top: auto;margin-bottom: auto;">
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-family:Kollektif;" > {{item.semana}} </p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;font-family:Kollektif;" > {{item.dia}} </p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-family:Kollektif;" > {{item.hora}} </p>
+
+           
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+            <h2 style="color: white;font-style: bold;text-align: center;font-family:Kollektif;">{{item.nomeevento}}</h2>
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+            <img src="img/pessoasn/pmin.png" width="25px" height="auto" style=" display: block;margin-left: auto;margin-right: auto;margin-bottom: 10px"> 
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;font-family:Kollektif;" > {{item.patual}}</p>
+            <!-- <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Nº pessoas minimo {{item.pmin}} </p> -->
+          </div>
+        </div>
+
+
+      </ion-item>
+    </ion-list>
+
+ <!--    <ion-list  class="list" ng-repeat="item in items track by $index"  style="border-color:#ff4444;" ng-show="eventoshorario"  ng-click = "enterHorario({{item}})"  >
+      <ion-item   can-swipe="true;"  style="top: 10px;border-width: 0px">
+        <div class = "row" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: auto;margin-bottom: 25px">
+     
+        <div id="barrr" class="button-bar" >
+            <a class="horariobtn" ng-click="tiratag1()">{{evento.horario1}} </a>
+            <a class="horariobtn" ng-click="tiratag2()">{{evento.horario2}} </a>
+            <a class="horariobtn" ng-click="tiratag3()">{{evento.horario3}} </a>
+            
+          </div>
+            <div id="barrr2" class="button-bar" style="margin-top: 5px;" >
+              <a class="horariobtn" ng-click="tiratag4()" >{{evento.horario4}} </a>
+            <a class="horariobtn" ng-click="tiratag5()">{{evento.horario5}} </a>
+            <a class="horariobtn" ng-click="tiratag6()" >{{evento.horario6}} </a>
+
+          </div>
+        </div>
+
+
+      </ion-item>
+    </ion-list> -->
+
+   <!--  <ion-scroll direction="x" class="wide-as-needed" ng-show="eventoshorario" style="white-space: nowrap;padding: 10px;
+  line-height: 40px;">
+
+      <div ng-repeat="item in dia" style="display: inline-block;white-space: nowrap;">
+       <div style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-right: 10px;margin-left: auto;font-size: 20px;color:#ececec;text-align: center;" ng-click="escolhedata(item)"> {{ item }} </div>
+      </div>
+    </ion-scroll> -->
+
+
+
+     <ion-scroll direction="x" class="wide-as-needed" ng-show="eventoshorario" style="white-space: nowrap;padding: 10px;
+  line-height: 40px;">
+
+      <div ng-repeat="data in datas  track by $index" style="display: inline-block;white-space: nowrap;">
+       <div class="botaocalendario" style="" ng-click="escolhedata({{data}})"> 
+          
+          <p style="margin:auto ;color:#ececec;width: 100%;text-align: center;font-size: 22px;font-family:Kollektif;" > {{data.dia}}/{{data.mesescrito}} </p>
+          <p style="margin:auto ;color:#ececec;width: 100%;text-align: center;font-size: 16px;font-family:Kollektif;" > {{data.semana}} </p>
+
+       </div>
+      </div>
+    </ion-scroll>
+
+
+    <!--  <ion-scroll direction="x" class="wide-as-needed">
+      <div ng-repeat="s in dia" style="display: inline-block;white-space: nowrap; "  >
+        <div> {{s}} </div>
+      </div>
+    </ion-scroll> -->
+
+   <p style="margin-top:20px;color:#ececec;width: 100%;font-size: 20px;font-family:Kollektif;" ng-show="escolhahorario"> Horários disponíveis para dia {{diaescolhido.dia}}/{{diaescolhido.mesescrito}}</p>
+
+
+    <div class = "row" ng-show="eventosdata"  style="margin-top: 20px">
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;"ng-click="tiratag1()" ng-show="horario1">{{evento.horario1}} </div>
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag2()" ng-show="horario2">{{evento.horario2}} </div>
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag3()" ng-show="horario3">{{evento.horario3}} </div>
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag4()" ng-show="horario4">{{evento.horario4}} </div>
+        </div>
+
+      <div class = "row" ng-show="eventosdata" >
+                         
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag5()" ng-show="horario5">{{evento.horario5}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag6()" ng-show="horario6">{{evento.horario6}} </div>
+             <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag7()" ng-show="horario7">{{evento.horario7}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag8()" ng-show="horario8">{{evento.horario8}} </div>
+        </div>
+
+         <div class = "row" ng-show="eventosdata" >
+                         
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag9()" ng-show="horario9">{{evento.horario9}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag10()" ng-show="horario10">{{evento.horario10}} </div>
+             <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag11()" ng-show="horario11">{{evento.horario11}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag12()" ng-show="horario12">{{evento.horario12}} </div>
+        </div>
+
+         <div class = "row" ng-show="eventosdata"  style="margin-top: 20px">
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;"ng-click="tiratag13()" ng-show="horario13">{{evento.horario13}} </div>
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag14()" ng-show="horario14">{{evento.horario14}} </div>
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag15()" ng-show="horario15">{{evento.horario15}} </div>
+            <div class="col" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag16()" ng-show="horario16">{{evento.horario16}} </div>
+        </div>
+
+      <div class = "row" ng-show="eventosdata" >
+                         
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag17()" ng-show="horario17">{{evento.horario17}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag18()" ng-show="horario18">{{evento.horario18}} </div>
+             <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag19()" ng-show="horario19">{{evento.horario19}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag20()" ng-show="horario20">{{evento.horario20}} </div>
+        </div>
+
+         <div class = "row" ng-show="eventosdata" >
+                         
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag21()" ng-show="horario21">{{evento.horario21}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag22()" ng-show="horario22">{{evento.horario22}} </div>
+             <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag23()" ng-show="horario23">{{evento.horario23}} </div>
+            <div class="col"style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: 5px;margin-bottom: 25px;text-align: center;font-size: 16px;" ng-click="tiratag24()" ng-show="horario24">{{evento.horario24}} </div>
+        </div>
+  
+    
+
+  
+  </ion-content>
+</ion-view>

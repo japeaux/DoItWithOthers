@@ -1,0 +1,55 @@
+<ion-view id="onboardingcomercio" style="background:#212121;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-title >
+        <img  height="90%"   src="img/tituloB.png" >    
+        </ion-nav-title> 
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+
+  <ion-content padding="true" class="has-header">
+    <style type="text/css">
+      span.infosobre { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:15px; }
+    </style>
+    <style type="text/css">
+      span.infos { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:15px; }
+    </style>
+    <style>
+      /* Style the buttons */
+      .btn {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btn:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 22px;margin-top: 12px;"> Seja bem vindo à criação de conta de parceiros!</p>
+       <div class="spacer" style="width: 300px; height: 35px;"></div>
+      
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 16px;margin-top: 12px;"> Antes de tudo, como você quer criar sua conta?</p>
+       <div class="spacer" style="width: 300px; height: 35px;"></div>
+      
+  <button class="btn" ng-click="pessoa()"   style="font-family:Kollektif;font-size: 16px;">Como uma pessoa</button>
+  <div class="spacer" style="width: 300px; height: 15px;"></div>
+  <button class="btn" ng-click="negocio()"   style="font-family:Kollektif;font-size: 16px;">Como um negócio</button>
+     <!--  <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top: 12px;">Nossos <span class="infosobre">amigos</span> são o que fazem pequenos momentos virarem <span class="infosobre">histórias</span> inesquecíveis. É por isso que criamos o Diwo.</p> -->
+     <div class="spacer" style="width: 300px; height: 35px;"></div>
+          <button  ng-click="Vercomofunciona()" style="font-family:Kollektif;color:#ff4444;font-weight:bold;font-size:14px;text-align: center;align-items: center;background-color: #212121;border: 0px;width: 100%;text-decoration: underline;"> <span class="infos">Qual a diferença? </span ></button>
+
+
+
+  </ion-content>
+</ion-view>

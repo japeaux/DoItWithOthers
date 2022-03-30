@@ -1,0 +1,58 @@
+<ion-view  id="PagSeguroConfirmaCompra" title="Confirmação de comprador" style="background:#212121;color:#ff4444;" class="hide-tabs" >
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header" on-scroll="getScrollPosition()">
+
+    <style>
+      /* Style the buttons */
+      .btnnovahomelogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btnnovahomelogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;font-weight: bold;" >Confira os dados e efetue a compra</h2>
+      
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;margin-left: 7px;font-weight: bold;"> Nome do evento: {{evento.nomeevento}}</p>
+
+      <p style="margin-top:0px;color:#ececec;width: 100%;text-align: left;font-family:Kollektif;margin-left: 7px;" >Data do evento:</p>
+      <p style="margin-top:0px;color:#ececec;text-align: left;font-family:Kollektif;margin-left: 17px;" > {{evento.semana}} </p>
+      <p style="margin-top:0px;color:#ececec;text-align: left;font-size: 20px;font-family:Kollektif;margin-left: 17px;" > {{evento.diadia}} </p>
+      <p style="margin-top:0px;color:#ececec;text-align: left;font-family:Kollektif;margin-left: 17px;" > {{evento.diahora}} </p>
+
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;margin-left: 7px;font-weight: bold;"> Valor da compra R$:{{reserva.itemAmount1}}</p>
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;margin-left: 7px;font-weight: bold;"> {{reserva.reference}}</p>
+
+   
+
+
+
+
+        <button id="perfil-button181" class="btnnovahomelogin" ng-click="Comprar()" style="font-family:Kollektif; margin-bottom: 15px;font-size: 16px;">Confirmar</button>
+
+
+
+
+  </ion-content>
+</ion-view>

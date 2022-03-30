@@ -1,0 +1,67 @@
+<ion-view title="Indice de confirmação" id="indice" style="background:#212121;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+
+    <style type="text/css">
+      span.name { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:20;}
+      span.numero2 { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:20;float: right;}
+      span.num1 { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:27;float: right; }
+    </style>
+
+    <h1 id="comentRiosEvent" style="color:#ff4444;text-align: center;font-family:Kollektif;">O que é o indice de confirmação?</h1>
+    
+    <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">O índice de confirmação (IC) é o sistema que desenvolvemos para facilitar a vida dos Organizadores de eventos. Este índice mostra, na medida do possível, a <span class="name">média de presença de um usuário nos eventos</span> do app. Ele varia de 0 à 100%, e é uma relação básica de quantos eventos um usuário confirmou sua presença, por quantos eventos ele realmente foi. Ahh!! Se este usuário cancela sua vaga muito em cima da hora de um evento, ele receberá <span class="name">Cartões</span> , que podem ser <span class="name">Amarelos, Vermelhos ou Pretos.</span></p>
+
+
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Eventos que fui <span class="numero2">{{ic.neventos}}</span></h3>
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Eventos que não fui <span class="numero2">{{ic.naofuieventos}}</span></h3>
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Eventos totais <span class="numero2">{{ic.naofuieventos+ic.neventos}}</span>  </h3>
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Indice de confirmação  <span class="numero2">  {{ic.total}}% </span> </h3>
+
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Cartões amarelos  <span class="num1">/3</span><span class="numero2"> {{ic.yellow}} </span> </h3>
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Cartões vermelhos <span class="num1">/3</span> <span class="numero2">  {{ic.red}}</span> </h3>
+    <h3 style="color:#FCFCFC;font-family:Kollektif;text-decoration: underline;">Cartões pretos <span class="num1">/3</span><span class="numero2">{{ic.black}}</span> </h3>
+
+     <div class="spacer" style="width: 300px; height: 25px;"></div>
+
+     <h3 style="color:#FFFF4C;font-family:Kollektif;">Cartões Amarelos</h3>
+
+    <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">Um usuário recebe um Cartão Amarelo quando cancela sua vaga dentro do período de uma hora e meia <span class="name"> antes </span> do horário de confirmação definido pelo organizador do evento. Ex: Sendo a data de confirmação de um evento às 20h, se um usuário cancelar sua vaga em qualquer horário à partir das 18h30, ele tomará um Cartão Amarelo.
+    Penalidade: Se um usuário acumular
+    <span class="name">3 Cartões Amarelos </span> , seu Índice de Confirmação será diminuído em <span class="name">5%.</span>Para recuperar seu IC, este usuário deve <span class="name"> comparecer à três (3) eventos *válidos.</span></p>
+     <h4 style="color:#fff;font-family:Kollektif;text-decoration: underline;">Anti-cartões amarelos  <span class="num1">/3</span><span class="numero2">  {{ic.antiyellow}}</span> </h4>
+
+    <h3 style="color:#FF6666;font-family:Kollektif;">Cartões Vermelhos</h3>
+
+    <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">Um usuário recebe um Cartão Vermelho quando cancela sua vaga <span class="name"> após </span>  horário de confirmação definido pelo organizador do evento.
+Penalidade: Se um usuário acumular
+    <span class="name">3 Cartões Vermelhos </span> , seu Índice de Confirmação será diminuído em <span class="name">10%.</span>Para recuperar seu IC, este usuário deve <span class="name"> criar um (1) evento *válido.</span></p>
+
+    <h3 style="color:#fff;font-family:Kollektif;">Cartões Pretos</h3>
+
+     <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">Um usuário recebe um Cartão Preto quando <span class="name"> não comparece </span>
+à um evento que estava confirmado.
+Penalidade: Se um usuário acumular 
+
+    <span class="name">3 Cartões Pretos </span> , seu Índice de Confirmação será diminuído em <span class="name">20%.</span>Para recuperar seu IC, este usuário deve <span class="name"> criar um (1) e comparecer à três(3) eventos *válidos.</span></p>
+    <h4 style="color:#fff;font-family:Kollektif;text-decoration: underline;">Eventos criados  <span class="num1">/1</span> <span class="numero2">  {{ic.antired}}</span></h4>
+    <h4 style="color:#fff;font-family:Kollektif;text-decoration: underline;">Anti-cartões pretos  <span class="num1">/3</span> <span class="numero2"> {{ic.antiblack}}</span></h4>
+
+     <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">*eventos válidos: eventos cujo nosso algoritmo considera ocorrido após 48h.</p>
+
+  <!--   <h2 style="color:#ff4444;text-align: center;margin-top: 20px;font-family:Kollektif;">Como tiro as penalidades?</h2>
+
+
+    <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">*eventos válidos: eventos cujo nosso algoritmo considera ocorrido após 48h.</p>
+   
+
+    <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">Tirar a penalidade dos <span class="name">3 cartões vermelhos</span>? É facil, é só fazer um evento.</p>
+    
+    <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size:16px;">Agora para tirar essa mancha preta tens que fazer as duas coisas, comparecer a <span class="name">3 eventos e fazer 1 evento</span>. O que você esperava? Afinal de contas falar que vai mas não vai é feio eim...</p>
+    
+    <h3 style="color:#fff;font-family:Kollektif;text-decoration: underline;">Anti-cartões pretos  <span class="num1">/3</span> <span class="numero2"> {{ic.antiblack}}</span></h3>
+ -->
+  </ion-content>
+</ion-view>

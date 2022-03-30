@@ -1,0 +1,143 @@
+<ion-view title="Perfil" id="perfilPost" style="background:#212121;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view></ion-nav-view>
+  <ion-content padding="true" class="has-header">
+    <style>
+      /* Style the buttons */
+      .btnperfilotro {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actpo, .btnperfilotro:hover {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+    <p style="text-align: center;color: #999;font-family:'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;font-size: 12px;">{{frase}}</p>
+
+
+ <div class = "row" >
+      <div class = "col" >
+               <img  src="img/badges/champion.png" style="height: 14vw; 
+             width: 14vw; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;"  ng-click="entrabadges()">
+      </div>
+       <div class = "col" >
+             <img id ="imageidperfilPost" style="height: 40vw; 
+     width: 40vw; 
+    border: 3px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;">
+    <img  src="img/starbronze.png" width="23px" height="auto" ng-show="estrelabb" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -15px;" >
+            <img  src="img/starsilver.png" width="23px" height="auto" ng-show="estrelabs" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -15px;" >
+            <img  src="img/stargold.png" width="23px" height="auto" ng-show="estrelabg" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -15px;" >
+       </div>
+       <div class = "col" >
+           <img id ="badgeimg_po" style="height: 14vw; 
+             width: 14vw; 
+            display: block;
+            margin-left: auto;
+            margin-right: auto;" ng-show="temcodigo">
+       </div>
+    </div>    
+
+
+
+
+            
+    <p style="text-align: center;color: #FCFCFC;font-family:'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;font-weight: bold;font-size: 26px; margin-top: 5px;">{{infosstalkeada.apelido}}{{infosstalkeada.idade}}</p>
+    <p style="text-align: center;color: #999;font-family:'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;font-size: 16px;">{{infosstalkeada.username}}</p>
+    <p style="text-align: center;color: #FCFCFC;font-family:'Century Gothic' sans-serif;font-size: 20px;" ng-show = "user.cidade">{{infosstalkeada.cidade}}</p>
+   
+
+
+     <div class = "row" >
+      <div class = "col" >
+        <canvas id="pie" class="chart chart-pie" chart-data="data2"  chart-labels="labels2" chart-colors="colores2" ng-click="indice()" chart-options = "options2" width="80px" height="80px"></canvas> 
+      </div>
+       <div class = "col" >
+         <button id="but" class="button button-balanced " style="background:#ff4444;font-size:15px;border-radius: 50%;display: block;margin-left: auto;margin-right: auto;height:  70px;width: 70px;color: #666;" ng-click="ranking()">{{p}}</button>
+          <p style="text-align: center;color: #666;font-family:'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;font-weight: bold;font-size: 12px;">Pontos </p>
+       </div>
+       <div class = "col" >
+         <canvas id="doughnut" class="chart chart-doughnut" chart-data="data1" chart-options = "options1" chart-labels="labels1" chart-colors="colores1" ng-click="comentario()" width="80px" height="80px"></canvas>
+       </div>
+    </div> 
+    <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+     <p style="text-align: justify;color: #FCFCFC;font-family:'Gill Sans', sans-serif;font-size: 20px;" >{{infosstalkeada.descricao}} </p>
+     <div class="spacer" style="width: 300px; height: 25px;"></div>
+
+
+     <div class="spacer" style="width: 300px; height: 12px;"></div>
+     <button id="home-button31" style="font-size:18px;border-radius:64px 64px 64px 64px;" class="button button-assertive icon ion-alert-circled" ng-click="reportar()"></button>
+
+      <a ng-click = "seguir()" id="follow-button11" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;margin-bottom: :10px;width: 100%;background:#212121;" class="button button-positive button-outline" ng-show="followbutton" >Seguir</a>
+    <a ng-click = "desseguir()" id="desseguirbutton-button11" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;margin-bottom: :10px;width: 100%;background:#212121;" class="button button-positive button-outline" ng-show="desseguirbutton">"Des-seguir"</a>
+    <div class="spacer" style="width: 300px; height: 12px;"></div>
+
+
+    <div id="barperfiloutroev" class="button-bar" >
+      <button id="perfilcriados"  class="btnperfilotro actpo" ng-click="loadCriados()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;">Criados</button>
+      <button id="perfil-button17"class="btnperfilotro" ng-click="loadAbertos()" >Q vou</button>
+      <button id="perfil-button18" class="btnperfilotro" ng-click="loadFechados()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;">Finalizados</button>
+    </div>
+    
+
+    
+      <div class="list" ng-repeat="item in items track by $index" ng-show="CoisasCriado" style="border-color: #ff4444;border-radius:14px 14px 14px 14px;">
+      <ion-item class="item item-thumbnail-left" id="home-list-item17"   style="border-color:#ff4444;border-radius:14px 14px 14px 14px;top: 10px;">
+        <img src="{{item.eventopic}}" width="auto" height="70px" style="object-fit: cover;">
+        <h2>{{item.nomeevento}}</h2>
+        <p style="margin-top:0px;color:#ededed;">Estado : {{item.confirmacao}}</p>
+        <p style="margin-top:0px;color:#ededed;"> {{item.datainicio}}</p>
+      </ion-item>
+
+    </div>
+ 
+      </div>
+    
+    <div class="list" ng-repeat="item in items track by $index"  style="border-color:#ff4444;" ng-show="CoisasFinalizado" >
+       <ion-item class="item item-thumbnail-left" id="home-list-item17"    style="border-color:#ff4444;border-radius:14px 14px 14px 14px;top: 10px;">
+        <img src="{{item.eventopic}}" width="auto" height="70px" style="object-fit: cover;">
+        <div class = "row" >
+          <div class = "col col-75">
+            <h2>{{item.nomeevento}}</h2>
+            <p style="margin-top:0px;color:#ededed;"> Criador : {{item.admusername}}</p>
+            <p style="margin-top:0px;color:#ededed;"> {{item.datainicio}}</p>
+          </div>
+          <div class = "col">
+            <img src="img/star.png" width="40%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;margin-top: 10px;" ng-show = "item.nota">
+            <p style="text-align: center;color:#ff4444;"> {{item.nota}}</p>
+           </div>
+        </div>
+      </ion-item>
+    </div>
+
+  </ion-content>
+</ion-view>

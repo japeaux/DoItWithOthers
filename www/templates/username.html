@@ -1,0 +1,43 @@
+<ion-view  id="nomeuser" style="background:#212121;font-family:Kollektif;">
+  <ion-nav-bar class = "bar-positive">
+     <ion-nav-title >
+        <img  height="90%"   src="img/titulo.png" >    
+        </ion-nav-title> 
+
+          <ion-nav-buttons side="secondary">
+      <button class="button button-clear button-icon icon ion-close-circled" ui-sref="tabsControllersemlogin.homesemlogin">
+  
+      </button>
+    </ion-nav-buttons>
+
+  </ion-nav-bar>
+
+  <ion-content padding="true" class="has-header" >
+
+     <ion-list >
+      <ion-item class="item-avatar" ng-repeat="item in items track by $index">
+
+         <h2>{{item.colocacao}}º  {{item.apelido}}</h2>
+         <p style="margin-top:0px;color:#ededed;"> Com {{item.pontos}} Pontos</p>
+      </ion-item>
+    </ion-list >
+
+<!--        <div style="background:#212121">
+        <p style="color:#FCFCFC;text-align: center">  Escolha um nome de usuário possível para sua conta ficar pronta!</p>
+        <label class="item item-input" id="login-input1" style="background:#212121;">
+          <span class="input-label" style="color:#ff4444;">Nome de usuário</span>
+          <input type="text" placeholder="diwo_usuario" style="color: white;background-color: #212121;" ng-model="user.username">
+          
+        </label>
+    </div>
+    <a  id="login-s"  style="text-align: center;margin-top:10px;width: 100%;color:#ff4444;background:#212121;;" class="button button-stable " ng-click="verifica()">Verifica nome</a>
+    <p style="color:#ff4c4c;text-align: center" ng-show = "userexiste">  Nome de usuário já existe.</p>
+    <p style="color:#FCFCFC;text-align: center" ng-show = "usernexite">  Nome de usuário válido.</p>
+      <div class="spacer" style="height: 40px;"></div>
+       
+      <a  id="login-button1"  style="text-align: center;margin-top:10px;width: 100%;color:#ff4444;background:#212121;;" class="button button-stable " ng-click="pronto()">Entrar</a>
+
+      <p style="color:#FCFCFC;text-align: center" ng-show = "verifique">  Verifique se seu nome de usuário é valido.</p> -->
+
+  </ion-content>
+</ion-view>

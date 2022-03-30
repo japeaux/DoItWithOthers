@@ -1,0 +1,151 @@
+<ion-view title="Qual periodo?" id="escolheperiodo" style="background:#212121;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:hover {
+          background: #666;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:hover {
+          background: #666;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoteste {
+        border-color: #ff4444;
+          border: solid 4 ;
+        height: 28vh; 
+        width: 28vh; 
+        border-radius: 100% ;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;
+           color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+       
+        
+    
+      }
+       .botaoteste:active {
+         background-color: #212121;
+     
+        -moz-opacity:.50;
+        filter:alpha(opacity=50);
+        opacity:.50;
+        z-index: 10000000;
+   
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+    <!-- <div style="width: 100%;align-items: center;margin-left: auto;
+    margin-right: auto;" >  
+      <button class="botaoteste" style="margin-left:  28vw;align-items: center;
+        justify-content: center;"> -->
+<!--         <button class="button" style="margin-left:  28vw;align-items: center;
+        justify-content: center;" ng-click = "teste()"></button> -->
+        <img src='img/manha.png' ng-click = "manha()"   style="height: 28vh; 
+     width: 28vh; 
+    border: 2px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;"  > 
+  <!--   </div>
+    <div style="width: 100%" >
+ -->
+    <!--   <button class="botaoteste" style="margin-left:  28vw;align-items: center;
+        justify-content: center;">
+               <img src='img/tarde.png' style="height: 28vh; 
+     width: 28vh; 
+    border: 2px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px"   ng-click = "tarde()"> </button> -->
+              <img src='img/tarde.png' ng-click = "tarde()" style="height: 28vh; 
+     width: 28vh; 
+    border: 2px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;" > 
+   <!--  </div>
+    <div style="width: 100%;margin-left: auto;
+    margin-right: auto;" >
+      <button class="botaoteste" style="margin-left:  28vw;align-items: center;
+        justify-content: center;"> -->
+              <img src='img/noite.png' ng-click = "noite()" style="height: 28vh; 
+     width: 28vh; 
+    border: 2px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;" ><!--   </button>
+    </div>
+    <div style="width: 100%" > -->
+  </ion-content>
+</ion-view>

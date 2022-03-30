@@ -1,0 +1,118 @@
+<ion-view  id="PagSeguroMetodo" title="Método de pagamento" style="background:#212121;color:#ff4444;" class="hide-tabs" >
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header" on-scroll="getScrollPosition()">
+
+    <style>
+      /* Style the buttons */
+      .btnnovahomelogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btnnovahomelogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+
+<!--       <img id ="imgBandeira1" ng-click = "CartaoCredito()"   style="height: auto; 
+     width: auto; ]
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;"  > 
+              <img id ="imgBandeira2" ng-click = "CartaoDebito()" style="height: auto; 
+     width: auto; ]
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;" > 
+              <img id ="imgBandeira3" ng-click = "Boleto()" style="height: auto; 
+     width: auto; ]
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;" >
+       -->
+
+
+  <ion-list  class="list" ng-repeat="item in items track by $index"  style="border-color:#ff4444;"  >
+      <ion-item   style="top: 10px;border-width: 0px"  ng-click = "enterItem({{item}})" >
+        <div class = "row" style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: auto;margin-bottom: 5px">
+          <div class="col-30" style="position: relative;display: inline;">
+              <img src={{item.bandeira}} style="height: auto; 
+              width: auto; 
+              border: 1px solid #ff4444;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;">
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+              <h2 style="color:#ddd;font-weight: bold;font-family:Kollektif;letter-spacing: 3px;text-align: right;line-height: auto">{{item.numero}}</h2>
+          </div>
+        </div>
+
+
+      </ion-item>
+    </ion-list>
+
+     <div class="spacer" style="width: 300px; height: 17px;"></div>
+
+
+    <button id="perfil-button181" class="btnnovahomelogin" ng-click="AdicionarCartaoCredito()" style="font-family:Kollektif; margin-bottom: 15px;font-size: 16px;">Adicionar Cartão</button>
+
+    <div style="width: 100%;margin-left: auto;margin-right: auto;" ng-show="escolhepagarCartaoCredito">
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;font-weight: bold;" >Dados do cartão</h2>
+      
+      <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 35px;margin-left: 7px;font-weight: bold;"> Número do Cartão</p>
+            <img id ="imgBandeiraEscolhida" ng-show= "Bandeiraescolhida"  style="height: auto; 
+     width: auto; ]
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;margin-bottom: 10px;"  > 
+      <input type="text" id = "inputNumberCC" ng-model="reserva.NumCartao" placeholder="Digite aqui o número do cartão" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: left;width: 100%;font-size: 22px;font-family:Kollektif;padding: auto;margin-left: 7px;letter-spacing: 2px;" maxlength="16">
+
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      
+      
+
+       <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;margin-left: 7px;font-weight: bold;">Mês de expiração</p>
+      <input type="text" ng-model="reserva.expirationMonth" placeholder="Digite aqui o número do cartão" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: left;width: 100%;font-size: 22px;font-family:Kollektif;padding: auto;margin-left: 7px;letter-spacing: 2px;" maxlength="2">
+      
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+
+       <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;margin-left: 7px;font-weight: bold;"> Ano de expiração</p>
+      <input type="text" ng-model="reserva.expirationYear" placeholder="Digite aqui o número do cartão" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: left;width: 100%;font-size: 22px;font-family:Kollektif;padding: auto;margin-left: 7px;letter-spacing: 2px;" maxlength="4">
+
+       <p style="color:#FCFCFC;text-align: left;font-family:Kollektif;font-size: 16px;margin-top: 12px;margin-left: 7px;font-weight: bold;"> Número do CVV</p>
+      <input type="text" ng-model="reserva.NumCVV" id = "inputNumberCVV" placeholder="Digite aqui o número do CVV cartão" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: left;width: 100%;font-size: 22px;font-family:Kollektif;padding: auto;margin-left: 7px;letter-spacing: 2px;" maxlength="3">
+
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      <button id="perfil-button181" class="btnnovahomelogin" ng-click="Comprar()" ng-show = "proximatela"  style="font-family:Kollektif; margin-bottom: 15px;font-size: 16px;">Próximo</button>
+
+    </div>
+
+   
+
+
+
+
+  </ion-content>
+</ion-view>

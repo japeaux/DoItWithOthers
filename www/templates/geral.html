@@ -1,0 +1,80 @@
+<ion-view title="Geral" id="geral" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar><!-- 
+  <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="tabsController.home">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+      <p id="geral-heading19" style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" ng-show = "mandeicomentario">Nos ajude a melhorar:</p>
+       <textarea ng-show = "mandeicomentario" name="comment" id="comment-textarear" ng-model="comentario" placeholder="  Escreva aqui sua opinião, crítica, dúvida ou simplesmente um elogio, estaremos contentes com o Feedback para melhorarmos." style="
+      width: 96%;
+      height:15vw;
+      color: #FCFCFC;
+      line-height: 100%;
+      background:#212121;
+      font-family:Kollektif;">
+
+      </textarea>
+      <button id="geral-button34"  style="text-align: center;color:#ff4444;align-self: right;float: right;font-family:Kollektif;" class="button button-clear" ng-click = "enviar(comentario)" ng-show = "mandeicomentario">Enviar</button>
+    <div class="spacer" style="width: 300px; height: 45px;"></div>
+    
+    <div style="background:#212121;border: 1px solid #ff4444;border-radius:24px 24px 24px 24px;">
+      <h4 id="filtro-heading2" style="color:#FCFCFC;text-align:center;font-family:Kollektif;">Raio de feed {{raiodist}}Km</h4>
+
+      <form id="filtro-form5" class="list" >
+        <ion-item class="range range-positive" id="filtro-range1" style="border-width: 0px;width: 90%;justify-content: center;display: flex; margin-left: auto;
+    margin-right: auto;;background:#212121;color:#FCFCFC;font-family:Kollektif;">
+          <input ng-model="raiodistkm" type="range"  min="30" max="100" step="5" ng-change = "mudaraio(raiodistkm)">
+        </ion-item>
+      </form>
+   </div>
+
+    <button id="geral-button34"  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;font-family:Kollektif;" class="button outline" ng-click = "resetar()">Recarregar Feed (5 pontos)</button>
+
+
+    <button id="geral-button34"  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;font-family:Kollektif;" class="button outline" ui-sref="tabsController.sobre">Sobre</button>
+
+
+    <button style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;font-family:Kollektif;" class="button outline" ng-click = "silenciarnotificacao()">Silenciar notificações</button>
+
+          <div class="spacer" style="width: 100%; height: 10px;" ng-show="SilenciarNoti"></div>
+                    <ion-checkbox ng-model="criados.checked"
+                      ng-change="SilenciarCriados()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Eventos que criei</ion-checkbox>
+                    <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Solicitações para participar e cancelamentos de eventos</p>
+
+                      <ion-checkbox ng-model="chat.checked"
+                      ng-change="SilenciarChat()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Chat</ion-checkbox>
+                      <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Avisos de novas mensagens em eventos que você participa</p>
+
+                      <ion-checkbox ng-model="participando.checked"
+                      ng-change="SilenciarParticipando()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Eventos que estou/irei participar</ion-checkbox>
+                      <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Aceitações, edições e cancelamentos de eventos que você faz parte</p>
+
+                      <ion-checkbox ng-model="post.checked"
+                      ng-change="SilenciarPosts()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Posts</ion-checkbox>
+                      <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Upvotes e comentários</p>
+
+                      <ion-checkbox ng-model="pertovc.checked"
+                      ng-change="SilenciarPertodevc()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Eventos criados perto de você</ion-checkbox>
+                      <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Seja notificado quando eventos forem criados perto de você</p>
+
+     
+                      <ion-checkbox ng-model="pessoasqsigo.checked"
+                      ng-change="SilenciarPessoasqsigo()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Pessoas que sigo</ion-checkbox>
+                      <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Notificações de pessoas que você segue ou que te seguem</p>
+
+                      <ion-checkbox ng-model="avaliacoes.checked"
+                      ng-change="SilenciarAvaliacao()" ng-show="SilenciarNoti" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-width: 0px;">Avaliações</ion-checkbox>
+                      <p ng-show="SilenciarNoti"  style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 12px;margin-top: auto;margin-left: 10vw;margin-bottom: 20px;">Notificações de pessoas que te avaliou</p>
+
+
+
+    <button id="geral-button41"  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: red;color: red;font-family:Kollektif;" class="button outline" ng-click = "logout()">Logout</button>
+
+     <button id="geral-button41"  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: red;color: red;font-family:Kollektif;" class="button outline" ng-click = "deletar()">Deletar minha conta</button>
+  </ion-content>
+</ion-view>

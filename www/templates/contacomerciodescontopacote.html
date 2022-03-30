@@ -1,0 +1,211 @@
+<ion-view title="Ofertas" id="contacomerciodescontopacote" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       ::-webkit-input-placeholder {
+         font-style: italic;
+      }
+      :-moz-placeholder {
+         font-style: italic;  
+      }
+      ::-moz-placeholder {
+         font-style: italic;  
+      }
+      :-ms-input-placeholder {  
+         font-style: italic; 
+      }
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+     <style>
+      /* Style the buttons */
+      .btncomercio {
+        background:#212121;
+        
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        color: #e0e0e0;
+        font-family:Kollektif;
+        border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;border-width: 1px;
+      }
+      .actcomercio, .btncomercio:hover {
+          background: #111;
+          color: #ff4444;
+      }
+
+      </style>
+
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >O que você pode oferecer para nossos usuários? </h2>
+
+      
+
+       <div class = "row" style="margin-top: 15px">
+         <div class = "col-20" style="margin: auto;" >
+          <button style="border-radius:64px 64px 64px 64px;text-align: center;width: 100%;background:#212121;color:#ff4444;border-color: #FCFCFC;font-size: 16px;font-family:Kollektif" class="button button-clear" ng-click = "removeDesconto()">-</button>
+        </div> 
+        <div class = "col" style="margin: auto;" >
+          <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Pacotes de desconto! </h2>
+        </div>
+        <div class = "col-20" style="margin: auto;" >
+          <button style="border-radius:64px 64px 64px 64px;text-align: center;width: 100%;background:#212121;color:#ff4444;border-color: #FCFCFC;font-size: 16px;font-family:Kollektif" class="button button-clear" ng-click = "addDesconto()">+</button>
+        </div>
+       
+      </div>
+
+       <div class = "row" style="margin-top: 15px;">
+        <div class = "col-10" style="margin: auto;" >
+           <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px; "> Para </span>
+        </div>
+        <div class = "col-25" style="margin: auto;" >
+             <input type="text" placeholder="x pessoas" ng-model="comercio.pmin" style="color: white;font-family:Kollektif;font-size:16px;margin:auto;background:#212121;width: 100%"> 
+        </div>
+         <div class = "col-20" style="margin: auto;" >
+          <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px; "> Consigo fazer </span>
+        </div>
+        <div class = "col-30" style="margin: auto;" >
+           <input type="text" placeholder="Digite uma oferta" ng-model="comercio.descontomin" style="color: white;font-family:Kollektif;font-size:16px;background:#212121;width: 100%">
+        </div>
+       
+      </div>
+
+      
+      <div class = "row" ng-show="desc1" style="margin-top: 15px;border-color: #ff4444;border-width: 2px solid;background-color: #212121;margin:auto">
+        <div class = "col-10" style="margin: auto;" >
+           <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px;"> Para </span>
+        </div>
+        <div class = "col-25" style="margin: auto;" >
+             <input type="text" placeholder="y pessoas" ng-model="comercio.paux1" style="color: white;font-family:Kollektif;font-size:16px;margin:auto;background:#212121;width: 100%"> 
+        </div>
+         <div class = "col-20" style="margin: auto;" >
+          <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px; "> Consigo fazer </span>
+        </div>
+        <div class = "col-30" style="margin: auto;" >
+           <input type="text" placeholder="Ex: 20% de desconto" ng-model="comercio.descontoaux1" style="color: white;font-family:Kollektif;font-size:16px;background:#212121;width: 100%">
+        </div>
+       
+      </div>
+
+      <div class = "row" ng-show="desc2" style="margin-top: 15px;border-color: #ff4444;border-width: 2px solid;background-color: #212121;margin:auto">
+        <div class = "col-10" style="margin: auto;" >
+           <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px;"> Para </span>
+        </div>
+        <div class = "col-25" style="margin: auto;" >
+             <input type="text" placeholder="ø pessoas" ng-model="comercio.paux2" style="color: white;font-family:Kollektif;font-size:16px;margin:auto;background:#212121;width: 100%"> 
+        </div>
+         <div class = "col-20" style="margin: auto;" >
+          <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px; "> Consigo fazer </span>
+        </div>
+        <div class = "col-30" style="margin: auto;" >
+           <input type="text" placeholder="Ex: 1 porção de fritas" ng-model="comercio.descontoaux2" style="color: white;font-family:Kollektif;font-size:16px;background:#212121;width: 100%">
+        </div>
+       
+      </div>
+      
+    
+      <div class = "row" style="margin-top: 15px;border-color: #ff4444;border-width: 2px solid;background-color: #212121;margin:auto">
+        <div class = "col-10" style="margin: auto;" >
+           <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px; "> Para </span>
+        </div>
+        <div class = "col-25" style="margin: auto;" >
+             <input type="text" placeholder="z pessoas" ng-model="comercio.pmax" style="color: white;font-family:Kollektif;font-size:16px;margin:auto;background:#212121;width: 100%"> 
+        </div>
+         <div class = "col-20" style="margin: auto;" >
+          <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:16px; "> Consigo fazer </span>
+        </div>
+        <div class = "col-30" style="margin: auto;" >
+           <input type="text" placeholder="Ex: 25% de desconto" ng-model="comercio.descontomax" style="color: white;font-family:Kollektif;font-size:16px;background:#212121;width: 100%">
+        </div>
+       
+      </div>
+
+     <p style="color:#FCFCFC;text-align: left;font-size: 10px;font-family:Kollektif;font-weight:italic;">*Estes campos são obrigatórios</p>
+
+     
+  </ion-content>
+     <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+<!-- 
+           <a id="Confirmar-button12" style="border-color: red;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:red ;align-items: center;
+  justify-content: center; float:left;"  class="button button-balanced button-outline" ng-click="Cancela()">Cancela</a> -->
+
+ <button  class="botaocancela" ng-click="Cancela()" style="font-family:Kollektif;font-size: 22px;float:left;">Cancela</button>
+    <button  class="botaoproximo" ng-click="Proximo()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Próximo</button>
+
+</ion-view>

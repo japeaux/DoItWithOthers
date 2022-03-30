@@ -1,0 +1,102 @@
+<ion-view title="Criando conta nova" id="new" style="font-family:Kollektif;background:#212121">
+
+
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+  <ion-content padding="true" class="has-header">
+     <style>
+          /* Style the buttons */
+          .btnsex {
+            background:#212121;
+         
+              cursor: pointer;
+              font-size: 30px;
+              width: 100%;
+              height: 50px;
+              color: #474747;
+          }
+          .act, .btnsex:hover {
+              background: black;
+              color: #e27c00;
+          }
+          </style>
+
+
+
+
+   <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="height: 40vw; 
+     width: 40vw; 
+    border: 3px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;">
+    <img ng-show="imgURI === undefined" ng-src="img/pessoasn/perfil.png" style="height: 40vw; 
+     width: 40vw; 
+    border: 3px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;">
+<div class="spacer" style="height: 20px;"></div>
+     <div  style="align-items: center;">
+      
+      <button class="button"  style="border-radius:64px 64px 64px 64px;text-align: center;width: 49%;background:#212121;color:#ff4444;border-color: #FCFCFC;" ng-click="takePicture()">Nova foto</button>
+      <button class="button" style="border-radius:64px 64px 64px 64px;text-align: center;width: 49%;background:#212121;color:#ff4444;border-color: #FCFCFC;"ng-click="getPicture()">Escolher uma velha</button>
+    </div>
+
+
+
+       <div class="spacer" style="height: 20px;"></div>
+    <!-- <button class="button" ng-click="takePicture()">Nova foto</button>
+    <button class="button" ng-click="getPicture()">Escolher uma velha</button> -->
+
+    <ion-list id="signup-list2" >
+        <label class="item item-input" id="signup-input3" style="background:#212121;">
+          <span class="input-label"  style="color:#ff4444;">Nome de usuário</span>
+          <input type="text" placeholder="diwo_usuario" style="color: white;" ng-model="user.username">
+        </label>
+        <label class="item item-input" id="signup-input4" style="background:#212121;">
+          <span class="input-label"  style="color:#ff4444;">Email</span>
+          <input type="email" placeholder="contato@diwo.com.br" style="color: white;" ng-model="user.email">
+        </label>
+        <label class="item item-input" id="passwordInputRegister" style="background:#212121;">
+          <span class="input-label"  style="color:#ff4444;">Senha</span>
+          <input type="password" placeholder="Minímo 8 caractéres" style="color: white;" ng-model="user.password">
+        </label>
+        <label class="item item-input" id="confirmationpassword" style="background:#212121;">
+          <span class="input-label"  style="color:#ff4444;">Confirmar senha</span>
+          <input type="password" placeholder="Letras maiusculas/minu e números" style="color: white;" ng-model="user.password2">
+        </label>
+        <label class="item item-input" id="signup-input5" style="background:#212121;">
+          <span class="input-label"  style="color:#ff4444;">Idade</span>
+          <input type="text" placeholder="18" style="color: white;" ng-model="user.idade">
+        </label>
+      </ion-list>
+
+      <div id="barsexo" class="button-bar" >
+       <button id="butn18" class="btnsex act icon icon-center ion-male" style="color: #ff4444;" ng-click = "macho()" ></button>
+      
+       <button id="ton16"  class="btnsex icon icon-center ion-female"  style="color: #ff4444;" ng-click = "femea()" ></button>
+    </div>
+
+
+      <a  id="signup-button3" style="text-align: center;margin-top:10px;width: 100%;color:#ff4444;"   class="button button-stable button-outline" ng-click="signup()">Criar conta</a>
+
+      <div class="spacer" style="width: auto; height: 25px;"></div>
+      <p style="color:#A9A9A9;text-align: left;margin-left:10px; margin-top: 10px;" ng-show="codd">Para validar sua conta enviamos um código de validação para o email cadastrado, insira-o abaixo.</p>
+
+       <label class="item item-input" id="signup-input5" style="background:#212121;" ng-show="codd">
+          <span class="input-label"  style="color:#ff4444;">Código de confirmação</span>
+          <input type="text" placeholder="XXXXXX" style="color: white;" ng-model="codigo">
+        </label>
+        <a  id="signup-button3" style="text-align: center;margin-top:10px;width: 100%;color:#ff4444;"  ng-show="!codd" class="button button-stable button-outline" ng-click="ativa()">Validar conta com código de confirmação</a>
+        <a  id="signup-button3" style="text-align: center;margin-top:10px;width: 100%;color:#ff4444;"  ng-show="codd" class="button button-stable button-outline" ng-click="codigoconfirm(codigo)">Validar conta com código de confirmação</a>
+         <a  id="signup-button3" style="text-align: center;margin-top:10px;width: 100%;color:#ff4444;" ng-show="codd"  class="button button-stable button-outline" ng-click="Reenviar()">Reenviar código de confirmação</a>
+
+    </ion-content>
+
+</ion-view>

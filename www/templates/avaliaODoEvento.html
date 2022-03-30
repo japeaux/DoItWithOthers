@@ -1,0 +1,56 @@
+<ion-view title="Avaliação do evento" id="page25" style="background:#212121;color:#ff4444;font-family:Kollektif;">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+  <ion-content padding="true" class="has-header" style="border-color: #ff4444;border-radius:14px 14px 14px 14px;">
+     
+
+      <ion-item  style="border-radius:14px 14px 14px 14px;">
+        <h1 style="color:#fff;text-align: center;font-family:Kollektif;">{{infoevento.nomeevento}}</h1>
+        <!-- <h2 style="color:#fff;text-align: center;">Criador: {{noti.apelido_envia}}</h2> -->
+        <p style="color:#cecece;text-align: center;">Organizado por {{noti.username_envia}}, {{noti.apelido_envia}}</p>
+        <p style="color:#cecece;">Quando foi? {{infoevento.diainicio}}</p>
+        <p style="color:#cecece; overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important; ">{{infoevento.descricao}}</p>
+      </ion-item>
+    <a style="float:right; font-family:Kollektif;color:red;" ng-click="reportcoment(infoevento)" >reportar evento</a>
+    
+    <h4 id="avaliaODoEvento-heading13" style="color:#FCFCFC;text-align:center;font-family:Kollektif;">Avalie o evento</h4>
+
+      
+         <ion-toggle toggle-class="toggle-balanced"
+                    ng-model="presente"
+                    ng-change="change()" style="border-radius:14px 14px 14px 14px;color:#FCFCFC;">
+          Organizador estava presente?
+        </ion-toggle>
+      <div class="spacer" style="width: 300px;height: 30px;"></div>
+        <ionic-ratings ratingsobj='ratingsObject' style = "font-size: 70px;"></ionic-ratings>
+
+<!--     <h3 id="filtro-heading2" style="color:#FCFCFC;text-align:center;" >{{evento.nota}}</h3>
+
+      <ion-item class="range range-positive" id="filtro-range1" style="border-radius:14px 14px 14px 14px;">
+        <input ng-model="evento.nota" type="range"  min="1" max="5" step="1">
+      </ion-item> -->
+     
+
+      
+      <h3 style="color:#FCFCFC;margin-left:20px;font-family:Kollektif;">Comentário:</h3>
+      <textarea name="comment" id="Areatxt" ng-model="evento.comentario" placeholder="  Como foi essa pessoa no evento?" style=";
+    
+      width: 95%;
+      line-height: 100%;
+      height: 100px;
+      background-color: #212121;
+      margin: auto;
+      margin-top: 20px;
+      color: #FCFCFC;
+      border-radius:14px 14px 14px 14px;
+      border: solid 1px #ff4444;font-family:Kollektif;">
+
+      </textarea>
+      <p id="wordCount" style="color:#FCFCFC;margin-left: 20px;margin-top:5px;"> Caractéres ({{cars}}/300)</p>
+
+    <button id="avaliaODoEvento-button30" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;font-family:Kollektif;" class="button button-balanced button-outline" ng-click = "pronto()">Pronto</button>
+  </ion-content>
+</ion-view>

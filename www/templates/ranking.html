@@ -1,0 +1,86 @@
+<ion-view title="Pontos" id="ranking" style="background: #212121">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+    <!-- <h1 id="ranking-heading18" style="color:#FCFCFC;text-align:center;">Ranking</h1>
+
+ -->
+ <style>
+      /* Style the buttons */
+      .btnrank {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actranking, .btnrank:hover {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+      <style type="text/css">
+      span.ntendi { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:18px }
+      </style>
+
+      <div id="barrank" class="button-bar" >
+      <button id="qvo" class="btnrank actranking" ng-click="usar()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;font-family:Kollektif;">Usar</button>
+      <button id="perfil-button16"  class="btnrank" ng-click="ranking()" style="font-family:Kollektif;">Ranking</button>
+      
+      <button id="perfil-button18" class="btnrank" ng-click="entender()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;font-family:Kollektif;">Não entendi</button>
+    </div>
+
+  <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+     <ion-list ng-show = "rank">
+      <ion-item class="item-avatar" ng-repeat="item in items track by $index">
+      <img src={{item.profilepic}} width="100%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;object-fit: cover;">
+         <h2>{{item.colocacao}}º  {{item.apelido}}</h2>
+         <p style="margin-top:0px;color:#ededed;"> Com {{item.pontos}} Pontos</p>
+      </ion-item>
+    </ion-list >
+
+
+     <h2 id="criandoEventoPart1-heading8" style="color:#FCFCFC;text-align: center;font-family:Kollektif;" ng-show = "use">Use seus pontos para:</h2>
+
+     <div class = "row" ng-show = "use">
+      <div class = "col" >
+       <button id="but" class="button outline " style="background:#212121;border: 3px solid #ff4444;font-size:15px;border-radius: 50%;display: block;margin-left: auto;margin-right: auto;height:  120px;width: 120px;" ng-click="criadorestrelado()"><img src="img/estrelas.png" width="100%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;"></button>
+       <p style="margin-top:0px;color:#FCFCFC;text-align: center;font-family:Kollektif;"> Obter Estrela de criador</p>
+      </div>
+       <div class = "col" >
+          <button id="but" class="button outline " style="background:#212121;border: 3px solid #ff4444;font-size:25px;border-radius: 50%;display: block;margin-left: auto;margin-right: auto;height:  120px;width: 120px;font-family:Kollektif;color: #ececec" ng-click="alerta()">????</button>
+       </div>
+   
+    </div>  
+
+    <div id="comentRiosEvento-markdown9" class="show-list-numbers-and-dots" ng-show="nentendi">
+        <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 18px;margin-top: 12px;">Amigos com quem podemos contar são demais né? </p>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 18px;margin-top: 12px;">Por isso decidimos incentivar as pessoas a continuarem interagindo e se conhecendo.  </p>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 18px;margin-top: 12px;">Um desses incentivos é em forma de pontos. Além de permitir a diferenciação dentro do app, os pontos poderão ser usados para outras atividades no futuro, então fique atento!  </p>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 18px;margin-top: 12px;">  Existem várias maneiras de se obter esses pontos: </p>
+
+      <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 18px;margin-top: 12px;margin-left: 30px;"> <span class="ntendi"> • Organizar</span> um evento (4 pts)</p>
+
+      <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 18px;margin-top: 12px;margin-left: 30px;"> <span class="ntendi"> • Participar</span> de um evento (3 pts)</p>
+
+      <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 18px;margin-top: 12px;margin-left: 30px;"> <span class="ntendi"> • Avaliar</span>  os participantes de um evento passado (3pts)</p>
+
+      <p style="color:#FCFCFC;text-align: justify;font-family:Kollektif;font-size: 18px;margin-top: 12px;margin-left: 30px;"> <span class="ntendi"> • Criar</span>  posts locais (1 pt)</p>
+
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 18px;margin-top: 12px;">Alguns pontos serão atribuídos automaticamente 48 horas após encerrado um evento, e isso só ocorrerá se confirmado a sua presença no mesmo.</p>
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 18px;margin-top: 12px;">Talvez já seja uma boa ideia ir acumulando o máximo de pontos que conseguir então né?</p>
+     
+    </div>
+
+  </ion-content>
+</ion-view>

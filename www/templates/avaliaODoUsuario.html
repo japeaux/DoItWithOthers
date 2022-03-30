@@ -1,0 +1,120 @@
+<ion-view title="Avaliação do usuario" id="page24" style="background:#212121;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+
+    <style>
+      /* Style the buttons */
+      .btnavaliauser {
+         background:#212121;
+          cursor: pointer;
+          font-size: 16px;
+      }
+      .actauser, .btnavaliauser:hover {
+          background: #fcfcfc;
+          color: #ff4444;
+      }
+      </style>
+
+    <ion-list id="avaliaODoUsuario-list22" >
+      <ion-item class="item-avatar" id="avaliaODoUsuario-list-item61" ng-click = "enterItem()"style="border-color: #ff4444;border-radius:14px 14px 14px 14px;">
+        <img id ="imageidavaliaODoUsuario" style="height: 20vw; 
+       width: 20vw; 
+      border: 2px solid #ff4444;;
+      border-radius: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: cover;">
+        <h2>{{stalkeada.username}}</h2>
+        <p style="color:#fff;">{{stalkeada.apelido}}</p>
+      </ion-item>
+    </ion-list>
+  
+    <div class="spacer" style="width: 300px;"></div>
+    <form id="avaliaODoUsuario-form13" class="list">
+
+      <h3 style="color:#FCFCFC;margin-left: 20px;text-align: center;margin-top: 20px">Como fui?</h3>
+      <p style="color:#FCFCFC;text-align: left;font-size: 14px;">Você só pode escolher uma hein, escolhe sabiamente!</p>
+      <div class = "row">
+       <div class = "col">
+        <button id="primeiro"  class="btnavaliauser actauser" ng-show=false>das</button>
+        <button id="avaliaODoUsuari" class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #dbcb39;border-color: #fff200;border-width: 2px;" ng-click = "Extrovertido()">Extrovertido</button>
+       </div>
+       <div class = "col col-offset-5">
+        <button id="avaliaODoUsuario-button29"  class="btnavaliauser"  style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #26bfb7;border-color: #02fff2;border-width: 2px;" ng-click = "Introvertido()">Introvertido</button>
+       </div>
+    </div>
+     <div class = "row">
+       <div class = "col">
+        <button id="avaliaODoUsuari"class="btnavaliauser"  style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #e29416;border-color: #ff9d00;border-width: 2px;" ng-click = 
+        "Realista()">Realista</button>
+       </div>
+       <div class = "col col-offset-5">
+        <button id="avaliaODoUsuario-button29" class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #1867ce;border-color: #1867ce;border-width: 2px;"  ng-click = 
+        "Curioso()">Curioso</button>
+       </div>
+    </div>
+     <div class = "row">
+       <div class = "col">
+        <button id="avaliaODoUsuari"class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #ba1cb7;border-color: #e50be1;border-width: 2px;"  ng-click = 
+        "Solidario()">Solidário</button>
+       </div>
+       <div class = "col col-offset-5">
+        <button id="avaliaODoUsuario-button29" class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #0e8c28;border-color: #0e8c28;border-width: 2px;"  ng-click = 
+        "Racional()">Racional</button>
+       </div>
+    </div>
+    <div class = "row">
+       <div class = "col">
+        <button id="avaliaODoUsuari" class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #ce2904;border-color: #ef370e;border-width: 2px;"  ng-click = 
+        "Organizado()">Organizado</button>
+       </div>
+       <div class = "col col-offset-5">
+        <button id="avaliaODoUsuario-button29"  class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;text-align: center;width: 100%;height: 50px;color: #af0eef;border-color: #af0eef;border-width: 2px;"  ng-click = 
+        "Criativo()">Criativo</button>
+       </div>
+    </div>
+
+     <div class = "row" >
+       <div class = "col col-25">
+        <button style="font-size:18px;border-radius:64px 64px 64px 64px;" class="button button-assertive icon ion-alert-circled" ng-click="reportar()"></button>
+       </div>
+       <div class = "col">
+        <button id="avaliaODoUsuar" class="btnavaliauser" style = "border-radius:64px 64px 64px 64px;float: left;width: 170px;height: 50px;color: black;border-color: grey;border-width: 2px;color: grey;"  ng-click = 
+        "mal()">Mal =/</button>
+       </div>
+    </div>
+    
+     
+
+
+
+        <div class="spacer" style="width: 300px; height: 15px;"ng-show="!comentbem"></div>
+      <ion-checkbox ng-model="pushNotification.checked"
+                      ng-change="pushNotificationChange()" ng-show="!comentbem" style="background:#212121;color:#FCFCFC;width: 70%;margin:auto; display:block;">
+          Escrever como anônimo</ion-checkbox>
+
+
+      <h3 style="color:#FCFCFC;margin-left: 20px" ng-show="comentbem">Comentário:</h3>
+      <h4 style="color:#FCFCFC;margin-left: 20px" ng-show="!comentbem">Se fui mal, tu tens que me falar pq né:</h4>
+       <textarea  name="comment" id="Areatxt" ng-model="pessoa.comentario" placeholder=" Como foi essa pessoa no evento?" style=";
+  
+     width: 95%;
+     line-height: 100%;
+    height: 130px;
+    color: #FCFCFC;
+    margin: auto;
+    margin-top: 10px;
+    border-radius:14px 14px 14px 14px;
+    border: solid 1px #444;
+    background:#212121;font-family:Kollektif;">
+
+      </textarea>
+      <p id="wordCount" style="color:#FCFCFC;margin-left: 20px;margin-top:5px;"> Caractéres ({{cars}}/300)</p>
+
+    </form>
+    <button id="avaliaODoUsuario-button29" style="border-radius:64px 64px 64px 64px;text-align: center;width: 100%;background:#212121;" class="button button-balanced button-outline" ng-click = "pronto()">Pronto</button>
+  </ion-content>
+</ion-view>

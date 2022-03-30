@@ -1,0 +1,162 @@
+<ion-view  id="meubairro" title="Meus posts" style="background:#212121;color:#ff4444;" class="hide-tabs" >
+  <ion-nav-bar class="bar-positive">
+   <!--  <ion-nav-back-button></ion-nav-back-button> -->
+  </ion-nav-bar>
+
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header" on-scroll="getScrollPosition()">
+
+      <style>
+      /* Style the buttons */
+      .btnpost {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actpost, .btnpost:hover {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+<!-- 
+          <button id="perfil-button18" class="btnpost" ng-click="teste()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;font-family:Kollektif;">teste</button>
+ -->
+    <div id="barpost" class="button-bar" style="margin-bottom: 10px;background-color: #212121">
+      <button id="qvoa" class="btnpost " ng-click="loadMeuspost()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;font-family:Kollektif;">Meus posts</button>
+      <button id="perfil-button18" class="btnpost actpost" ng-click="loadPosts()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;font-family:Kollektif;">{{user.bairro}}</button>
+    </div>
+
+
+
+<!-- 
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" ng-show="LimiteFuncionamentoDiwo">Olá! Ficamos felizes por você estar aqui! Ainda não estamos disponíveis nessa região :/  Mas não se preocupe, pois se tudo der certo em breve estaremos!</h2>
+      <img  src="img/App indisponivel regiao.png" width="100%" height="auto" ng-show="LimiteFuncionamentoDiwo" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;" >
+      <button id="criandoEventofs33" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;font-family:Kollektif;" class="button button-balanced button-outline" ng-click="area()" ng-show="LimiteFuncionamentoDiwo">Ver áreas de cobertura</button>
+
+
+     <img  src="img/Onboarding pikachu meme2.png" width="100%" height="auto" ng-show="semloc" style="display: block;
+        margin-left: auto;
+            margin-right: auto;" >
+ -->
+
+
+
+
+    <ion-list id="hom-list2" ng-show="postBar && !LimiteFuncionamentoDiwo" >
+        <input type="text" placeholder="Título" style="background:#212121;color: #ddd;width: 96%;font-size: 18px;color:#FCFCFC;font-weight:bold;font-family:Kollektif;margin-left: 1%;" ng-model="novopost.postTitulo">
+        <textarea  name="comment" id="Areatxtdasrr" ng-model="novopost.postTexto" placeholder="Escreva aqui uma mensagem, aviso, ou informação sobre o que está acontecendo no seu bairro! Seu post ficará visível para membros que pertecerem a ele." style=";
+  
+              width: 96%;
+              height:23vw;
+              color: #FCFCFC;
+             /* border: solid 1px #444;*/
+              background:#212121;
+              
+              line-height: 100%;
+              font-family:Kollektif;">
+
+          </textarea>
+          <img src={{novopost.postImagem}} style="height: 25vw; 
+               width: 96%; 
+              display: block;
+              margin-top: 10px;
+              object-fit: cover;" ng-show = "tempostimage">  
+                  <button id="geral-button34"  style="font-family:Kollektif;text-align: center;color:#ff4444;font-size: 30px" class="button button-clear" ng-click = "getPicture()">+</button>
+
+                  <button class="button icon icon-center ion-camera"  style=";color:#ff4444;background:#212121;" ng-click="takePicture()"></button>
+     
+                  <button id="geral-button34"  style="font-family:Kollektif;text-align: center;color:#ff4444;align-self: right;float: right;" class="button button-clear" ng-click = "postar(novopost)">Postar</button>
+    </ion-list>
+
+
+    <div class="list" ng-repeat="post in posts track by $index"  style="top: 5px;"  ng-show="!LimiteFuncionamentoDiwo">
+      
+      <div class="post"  style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;" > 
+
+        <div class="row" justify-content-center style=";background-color: #212121;">
+          <div class="col-30" style="position: relative;display: inline;" ng-click = "enterPost({{post}})">
+            <img src={{post.profilepic}} style="height: 8vw; 
+                                                width: 8vw; 
+                                                border: 2px solid #ff4444;;
+                                                border-radius: 50%;
+                                                display: block;
+                                                object-fit: cover;
+                                                margin-left: 5px;">      
+          </div>
+          <div class="col" style="background: #212121;">
+            <div class="row" justify-content-center style=";background-color: #212121;">
+              <div class="col" style="background: #212121;" ng-click = "enterPost({{post}})">
+            <p style="margin-top:0px;color:#ddd;font-family:Kollektif;font-size:16px;">{{post.apelido}}</p>
+            </div>
+            <div class="col" style="background: #212121;">
+                <img  src="img/trash.png" width="8%" height="auto" ng-click="deletapost(post)"  style="display: block;
+            margin-left: auto;
+            margin-right: 10px;
+            object-fit: cover;float: right;" ng-show = "meusmeus">
+
+
+             <img  src="img/bell.png" width="8%" height="auto" ng-show = "post.som" ng-click="silencia(post)"  style="display: block;
+            margin-left: auto;
+            margin-right: 10px;
+            object-fit: cover;float: right;" ng-show = "meusmeus">
+
+
+             <img  src="img/belloff.png" width="8%" height="auto" ng-show = "!post.som && meusmeus" ng-click="naosilencia(post)"  style="display: block;
+            margin-left: auto;
+            margin-right: 10px;
+            object-fit: cover;float: right;" >
+
+
+                <p style="color:#666;font-family:Kollektif;float: right;margin-right: 15px">{{post.faltatempo}}</p>
+                
+            </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row" justify-content-center style=";background-color: #212121;" ng-click = "enterPost({{post}})">
+              <div class="col" style="background: #212121;">
+            <p style="color:#ddd;font-family:Kollektif;font-size:16px; margin-left: 15px;">{{post.postTitulo}}</p>
+            </div>
+            <div class="col" style="background: #212121;">
+      <!-- 
+               <p style="color:#666;font-family:Kollektif;float: right;margin-top:-5px;">a {{post.dist}}</p> -->
+            </div>
+            </div>
+        
+
+        <p ng-click = "enterPost({{post}})" style="margin-top:-10px;color:#ddd;font-family:Kollektif;font-size:13px; margin-left: 15px;">{{post.postTexto}}</p>
+
+        <img ng-click = "enterPost({{post}})" ng-show ="post.temimagem" src={{post.postImagem}} style="height: 30vw; 
+               width: 96%; 
+              display: block;
+              margin-right: 10px;
+              margin-left: 10px;
+              object-fit: cover;">   
+
+        <div class="spacer" style="width: 50px; height: 10px;"></div>
+      </div>
+
+    </div>
+
+    <img  src="img/3.png" width="20%" height="auto" ng-show="vazio && !LimiteFuncionamentoDiwo" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;" > 
+    <p style="text-align: center;font-family:Kollektif;font-size:16px;color: white;" ng-show="vazio && !LimiteFuncionamentoDiwo">Não postei nada ainda.</p>
+
+
+    <ion-infinite-scroll immediate-check="false" on-infinite="loadMorePostBairro(posts)" distance="5%" ng-if="!noMoreItemsAvailable"></ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

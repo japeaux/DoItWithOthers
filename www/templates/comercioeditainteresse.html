@@ -1,0 +1,209 @@
+<ion-view title="Categorias" id="comercioeditainteresse" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+       <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+      <style>
+      /* Style the buttons */
+
+
+      .botaointerrese {
+        margin-left:10px;
+
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+/*        width: 20%;*/
+     /*   //height:25px;*/
+        padding: 5px;
+        font-size: 22px;
+        border-width: 1px;
+        background:#666;
+        border-color: #ff4444;
+        color:  #ff4444;
+        font-family:Kollektif;
+      }
+       .botaointerrese:active {
+          background: #111;
+          color: #ff4444;
+      }
+
+       .botaointerreses {
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+/*        width: 20%;*/
+     /*   //height:25px;*/
+        padding: 5px;
+        font-size: 22px;
+        border-width: 1px;
+        background:#111;
+        border-color: #ff4444;
+        color:  #ff4444;
+        font-family:Kollektif;
+      }
+      .botaointerreses:active {
+          background: #666;
+          color: #ff4444;
+      }
+      /* .botaointerreses:hover {
+          background: #666;
+          color: #ff4444;
+      }*/
+
+      
+
+     
+      </style>
+            <div class="spacer" style="width: 300px; height: 55px;"></div>
+              
+   <h2 id="criandoEventoPart3-heading10" style="text-align: center;font-family:Kollektif;font-size:22px;color: white;">O que você quer fazer com a gente?</h2>
+
+    
+    <div id="barrr" class="button-bar">
+      <a class="botaointerrese" ng-click="tiratag1()" ng-show = "auxtagbutton1">Voluntariado </a>
+      <a class="botaointerreses" ng-click="tiratag1()" ng-show = "auxtagbutton1aux">Voluntariado </a>
+      <a class="botaointerrese" ng-click="tiratag2()" ng-show = "auxtagbutton2">Passeio </a>
+      <a class="botaointerreses" ng-click="tiratag2()" ng-show = "auxtagbutton2aux">Passeio </a>
+      <a class="botaointerrese" ng-click="tiratag3()" ng-show = "auxtagbutton3">Esportes de praia</a>
+      <a class="botaointerreses" ng-click="tiratag3()" ng-show = "auxtagbutton3aux">Esportes de praia</a>
+      
+    </div>
+      <div id="botaointerrese" class="button-bar" style="margin-top: 5px;" >
+        <a class="botaointerrese" ng-click="tiratag4()" ng-show = "auxtagbutton4">Natureza </a>
+      <a class="botaointerreses" ng-click="tiratag4()" ng-show = "auxtagbutton4aux">Natureza </a>
+      <a class="botaointerrese" ng-click="tiratag5()" ng-show = "auxtagbutton5">Ciclismo </a>
+      <a class="botaointerreses" ng-click="tiratag5()" ng-show = "auxtagbutton5aux">Ciclismo </a>
+      <a class="botaointerrese" ng-click="tiratag6()" ng-show = "auxtagbutton6">Futebol </a>
+       <a class="botaointerreses" ng-click="tiratag6()" ng-show = "auxtagbutton6aux">Futebol </a>
+
+    </div>
+
+
+      <div id="barrr3" class="button-bar" style="margin-top: 5px;" >
+        <a class="botaointerrese" ng-click="tiratag7()" ng-show = "auxtagbutton7">Corrida </a>
+        <a class="botaointerreses" ng-click="tiratag7()" ng-show = "auxtagbutton7aux">Corrida </a>
+      <a class="botaointerrese" ng-click="tiratag8()" ng-show = "auxtagbutton8">Dança </a>
+      <a class="botaointerreses" ng-click="tiratag8()" ng-show = "auxtagbutton8aux">Dança </a>
+      <a class="botaointerrese" ng-click="tiratag9()" ng-show = "auxtagbutton9">Surf </a>
+       <a class="botaointerreses" ng-click="tiratag9()" ng-show = "auxtagbutton9aux">Surf </a>
+    </div>
+
+    <div id="barrr" class="button-bar">
+      <a class="botaointerrese" ng-click="tiratag10()" ng-show = "auxtagbutton10">Música </a>
+      <a class="botaointerreses" ng-click="tiratag10()" ng-show = "auxtagbutton10aux">Música </a>
+      <a class="botaointerrese" ng-click="tiratag11()" ng-show = "auxtagbutton11">Arte e Cultura </a>
+      <a class="botaointerreses" ng-click="tiratag11()" ng-show = "auxtagbutton11aux">Arte e Cultura </a>
+      <a class="botaointerrese" ng-click="tiratag12()" ng-show = "auxtagbutton12">Conversa </a>
+      <a class="botaointerreses" ng-click="tiratag12()" ng-show = "auxtagbutton12aux">Conversa </a>
+      
+    </div>
+      <div id="botaointerrese" class="button-bar" style="margin-top: 5px;" >
+        <a class="botaointerrese" ng-click="tiratag13()" ng-show = "auxtagbutton13">Restaurante & Bares </a>
+        <a class="botaointerreses" ng-click="tiratag13()" ng-show = "auxtagbutton13aux">Restaurante & Bares </a>
+      <a class="botaointerrese" ng-click="tiratag14()" ng-show = "auxtagbutton14">Festas </a>
+      <a class="botaointerreses" ng-click="tiratag14()" ng-show = "auxtagbutton14aux">Festas </a>
+      <a class="botaointerrese" ng-click="tiratag15()" ng-show = "auxtagbutton15">
+ Jogos</a>
+        <a class="botaointerreses" ng-click="tiratag15()" ng-show = "auxtagbutton15aux">
+ Jogos</a>
+
+    </div>
+
+
+      <div id="barrr3" class="button-bar" style="margin-top: 5px;" >
+        <a class="botaointerrese" ng-click="tiratag16()" ng-show = "auxtagbutton16"> Grupos de Estudos</a>
+        <a class="botaointerreses" ng-click="tiratag16()" ng-show = "auxtagbutton16aux"> Grupos de Estudos</a>
+        <a class="botaointerrese" ng-click="tiratag17()" ng-show = "auxtagbutton17"> Pets</a>
+        <a class="botaointerreses" ng-click="tiratag17()" ng-show = "auxtagbutton17aux"> Pets</a>
+        <a class="botaointerrese" ng-click="tiratag18()" ng-show = "auxtagbutton18"> Praia</a>
+        <a class="botaointerreses" ng-click="tiratag18()" ng-show = "auxtagbutton18aux"> Praia</a>
+    </div>
+    <p style="color:#FCFCFC;text-align: left;font-size: 10px;font-family:Kollektif;font-weight:italic;">*Este campo é obrigatório</p>
+   
+   
+     
+  </ion-content>
+
+   <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+
+    <button  class="botaoproximo" ng-click="Salvar()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Salvar</button>
+<!--          <a id="Confirmar-buretton12" class="botaoproximo2"  ng-click="Cancela()">Cancela</a> -->
+           <!--    <a id="Confirmar-button12" style="border-color: #ff4444;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:#ff4444 ;align-items: center;
+  justify-content: center; float:right;"  class="button button-balanced button-outline" ng-click="Proximo()">Próximo</a>
+
+ -->
+</ion-view>

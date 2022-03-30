@@ -1,0 +1,114 @@
+<ion-view  id="logando" style="background:#212121;font-family:Kollektif;">
+  <ion-nav-bar class = "bar-positive">
+     <ion-nav-title >
+        <img  height="90%"   src="img/titulo.png" >    
+        </ion-nav-title> 
+
+<!--           <ion-nav-buttons side="secondary">
+      <button class="button button-clear button-icon icon ion-close-circled" ui-sref="tabsControllersemlogin.homesemlogin">
+  
+      </button>
+    </ion-nav-buttons> -->
+
+  </ion-nav-bar>
+
+  <ion-content padding="true" class="has-header" >
+    <style type="text/css">
+      span.infosobre { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:15px; }
+    </style>
+    <style type="text/css">
+      span.termos { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:14px;text-align: center; }
+    </style>
+    
+       <style>
+      /* Style the buttons */
+      .btnlogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: auto;
+          color: #e0e0e0;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+          font-family:Kollektif;
+      }
+      .btnlogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+
+   
+    <div class="spacer" style="width: 300px; height: 55px;"></div>
+    <!--  <ion-checkbox ng-model="concordo.checked"
+                      style="background:#212121;width: 100%;color:#ff4444;font-size: 14px;border: 0px;"> termos de uso e política de privacidade.</ion-checkbox> -->
+    <div class="spacer" style="height: 20px;"></div>
+<!--     <div style="background:#212121">
+      <label class="item item-input" id="login-input1" style="background:#212121;">
+        <span class="input-label" style="color:#ff4444;">Email</span> -->
+        <input type="email" placeholder="Email" ng-model="user.email" style="background-color: #212121;color: white;font-size: 22px;font-family:Kollektif;margin: auto;width: 100%;line-height: 100%;"  ng-show="entrarcomemail">
+<!--       </label> -->
+<!--       <label class="item item-input" id="login-input2" style="background:#212121;">
+        <span class="input-label" style="color:#ff4444;">Senha</span> -->
+        <input type="password" placeholder="Senha"  style="background-color: #212121;color: white;font-size: 22px;font-family:Kollektif;width: 100%;margin: auto;line-height: 100%;"ng-model="user.password"  ng-show="entrarcomemail">
+<!--       </label>
+    </div> -->
+  
+    <div class="spacer" style="height: 7px;"></div>
+<!-- 
+    <div class = "row" style=" background-color: #212121;" ng-show="entrarcomemail">
+        <div class = "col" style="background:#212121;">
+      
+       
+         </div>
+    
+  
+        <div class = "col" >
+            
+      </div -->
+    </div>
+    <button id="perfil-button181" class="btnlogin" ng-click="login()" ng-show="entrarcomemail" style="font-family:Kollektif;">Entrar</button>
+      <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+    <a id="perfil-button181" ng-show="entrarcomemail" ng-click="Esqueci()" style="font-family:Kollektif;color:#FCFCFC;font-weight:bold;font-size:14px;text-align: center;"><u>Esqueci minha senha</u></a>
+       
+
+      <button id="perfil-button181" class="btnlogin" ng-click="entrar()"  ng-show="!entrarcomemail" style="font-family:Kollektif;font-size: 16px;">Entrar com email</button>
+
+    <div class="spacer" style="width: 300px; height: 55px;"></div>
+      <button id="perfil-button181" class="btnlogin" ui-sref="novacontaemail" style="font-family:Kollektif;color:#ff4444;font-size: 16px; ">Criar uma conta com email</button>
+      
+      <div class="spacer" style="width: 300px; height: 15px;"></div>
+<!--       <fb:login-button scope="public_profile,email" onlogin="checkLoginState()">
+        </fb:login-button> -->
+
+        <button class="facebook-sign-in btnlogin " ng-click="facebookSignIn()" style="background-color: rgb(59, 89, 152);color: white;border-width: 0px;font-size: 16px;">Entrar com Facebook</button>
+
+        <p style="color:#FCFCFC;text-align: left;font-size: 10px;font-family:Kollektif;">*Não postamos nada no seu FB</p>
+         <div class="spacer" style="width: 300px; height: 75px;"></div>
+    <button  ng-click="parceiro()" style="font-family:Kollektif;color:#ff4444;font-weight:bold;font-size:14px;text-align: center;align-items: center;background-color: #212121;border: 0px;width: 100%;text-decoration: underline;"> <span class="infosobre">Me tornar um parceiro </span ></button>
+
+ <div class="spacer" style="width: 300px; height: 55px;"></div>
+         <span class="termos">Ao entrar estarei de acordo com a</span>
+    <a  href="#" onclick="window.open('http://diwoapp.com.br/politica-de-privacidade/', '_system', 'location=no'); return false;" style="color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:14px;text-align: center;">Política de privacidade</a> <span class="termos"> e os </span>
+    <a  href="#" style="color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:14px;text-align: center;" onclick="window.open('http://diwoapp.com.br/termos-de-uso/', '_system', 'location=no'); return false;">Termos de uso</a>
+         
+<!-- <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+<!--     <a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">Login with Facebook</a> -->
+<!-- 
+        <div class="fb-login-button" data-size="large"  style="margin: center;" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div> -->
+  </ion-content>
+
+   <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+</ion-view>

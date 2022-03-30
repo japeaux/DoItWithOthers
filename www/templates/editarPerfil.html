@@ -1,0 +1,121 @@
+<ion-view title="Editar perfil" id="page16" style="background:#212121;color:#ff4444;">
+
+
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+  <ion-content padding="true" class="has-header">
+
+
+       <style>
+      /* Style the buttons */
+      .btnnovo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          margin-top: 15px;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: auto;
+          color: #e0e0e0;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+          font-family:Kollektif;
+      }
+      .btnnovo:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+    <p style="text-align: center;color:#fff;font-size: 16px">Olá {{auxusername}} quer mudar algo no seu perfil?</p>
+
+     
+    <img id ="imageidEditar" style="height: 40vw; 
+     width: 40vw; 
+    border: 3px solid #ff4444;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;">
+       <div class="spacer" style="height: 20px;"></div>
+    <div  style="align-items: center;">
+      <button class="btnnovo"  style="border-radius:64px 64px 64px 64px;text-align: center;width: 49%;background:#212121;color:#ff4444;border-color: #FCFCFC;" ng-click="takePicture()">Nova foto</button>
+      <button class="btnnovo" style="border-radius:64px 64px 64px 64px;text-align: center;width: 49%;background:#212121;color:#ff4444;border-color: #FCFCFC;"ng-click="getPicture()">Foto velha</button>
+    </div>
+    <div class="spacer" style="height: 20px;"></div>
+
+    <label class="item item-input" id="editarPerfil-input13" style= "border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;">"Username"</span>
+        <input type="text" placeholder="" ng-model="user.username" style="color: white;">
+      </label>
+      <div class="spacer" style="height: 10px;"></div>
+    <!--   <a  id="login-s"  style="text-align: center;color:#ff4444;background:#212121;border-radius:64px 64px 64px 64px;border-color: #FCFCFC;width: auto;margin:auto; display:block;" class="button button-stable " ng-click="verifica()">Verifica username</a> -->
+
+       <button id="perfil-button1fsd81" class="btnnovo" ng-click="verifica()"   style="font-family:Kollektif;">Verifica username</button>
+
+
+    <p style="color:#ff4c4c;text-align: center" ng-show = "userexiste">  Nome de usuário já existe.</p>
+    <p style="color:#FCFCFC;text-align: center" ng-show = "usernexite">  Nome de usuário válido.</p>
+
+    <div class="spacer" style="height: 10px;"></div>
+      <label class="item item-input" id="editarPerfil-input13" style= "border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;">"Apelido"??</span>
+        <input type="text" placeholder="" ng-model="user.apelido" style="color: white;">
+      </label>
+
+
+
+ <button id="perfil-button1fsd81" class="btnnovo" ng-click="irinteresse()"   style="font-family:Kollektif;">Meus interesses</button>
+
+
+       <div class="spacer" style="height: 20px;"></div>
+      
+
+
+      <label class="item item-input" id="editarPerfil-textarea2" style=";
+  
+    height: 100px;
+
+    margin: auto;
+    margin-top: 20px;
+    background-color: #212121;
+    line-height: 100%;
+    border-radius:14px 14px 14px 14px;
+    border: solid 1px ">
+        <span class="input-label" style="color:#ff4444;">Bio</span>
+        <textarea placeholder="Escreva um pouco sobre você para que as pessoas possam te julgar e te convidar ou não" ng-model="user.descricao"  style="background:#212121;color: white;border-color: #FCFCFC; line-height: 100%;"></textarea>
+      </label>
+
+  <div class="spacer" style="height: 20px;"></div>
+        
+    <button id="editarsdPerfil-button14" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;color:#ff4444;" class="btnnovo" ng-click="mudarendereco()">Meu endereço</button>
+     
+
+
+      <!--   <label class="item item-input" id="editarPerfil-input13" style= "border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;">Cidade</span>
+         <input id="searchTextField" class="controls" ng-focus="disableTap()" type="text" style="width: 100%;border-radius:10px 10px 10px 10px;color: white;"
+        placeholder="  Cidade" ng-model="user.cidade">
+     
+      </label>
+        
+ -->        <div class="spacer" style="height: 20px;"></div>
+
+       
+        <p style="margin-top:0px;color:#FCFCFC;width: 100%;text-align: center;" > Seu número não ficará visível para as outras pessoas</p>
+      <label class="item item-input" id="editarPerfil-textarea4" style= "border-radius:14px 14px 14px 14px;">
+
+        <span class="input-label" style="color:#ff4444;">Telefone</span>
+         <input type="text" placeholder="479913312132" ng-model="user.telefone" style="color: white;">
+      </label>
+   
+        <div class="spacer" style="height: 20px;"></div>
+      <button id="editarsdPerfil-button14" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;color:#ff4444;" class="btnnovo" ng-click="mudar()">Salvar</button>
+  </ion-content>
+</ion-view>

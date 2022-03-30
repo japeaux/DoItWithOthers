@@ -1,0 +1,43 @@
+<ion-view title="Notificações" id="notificacoesComercio" style="background:#212121;color:#ff4444;">
+  <!--     <button class="button button-icon icon ion-ios7-minus-outline" 
+          ng-click="data.showDelete = !data.showDelete"></button> -->
+<ion-nav-bar class="bar-positive">
+    
+</ion-nav-bar>
+  <ion-nav-buttons side="primary">
+      <button class="button button-clear  " ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons>
+<ion-nav-buttons side="secondary">
+      <button class="button button-clear button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete">
+  
+      </button>
+    </ion-nav-buttons>
+
+
+  <ion-content padding="true" class="has-header">
+   
+     <ion-refresher  refreshing-text="Atualizando..." on-refresh="doRefresh()"></ion-refresher>
+
+    <ion-list show-delete="data.showDelete" style="background-color:#212121;">
+
+         <ion-item ng-repeat="item in items" 
+                  item="item"
+                 ng-click = "enterItem({{item}})" style="border-color: #ff4444;border-radius:14px 14px 14px 14px;outline-color:#ff4444;margin-top:10px;background-color:#212121;">
+
+        <p style="margin-top:0px;color:white;font-weight: bold;background:#212121;">De: {{item.apelido_envia}} ({{item.username_envia}})</p>
+        <h2 style="background-color:#212121;white-space: normal;">{{item.notificacao}}</h2>
+        <p style="margin-top:0px;color:#ececec;background-color:#212121;">{{item.datadeenvio}}</p>
+        <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)" style="background-color:#212121;">
+        </ion-delete-button>
+      </ion-item>
+     <!-- 
+    </div>
+      </ion-item> -->
+
+      </ion-list>
+   <!--  <ion-infinite-scroll immediate-check="false" on-infinite="loadMore()" distance="5%" ng-if="!noMoreItemsAvailable"></ion-infinite-scroll> -->
+  </ion-content>
+</ion-view>

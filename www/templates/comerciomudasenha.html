@@ -1,0 +1,106 @@
+<ion-view title="Mudar senha" id="comerciomudasenha" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+            <div class="spacer" style="width: 300px; height: 35px;"></div>
+  <!--      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Coloque um nome de usuário</h2>
+      
+
+      <input type="text" ng-model="comercio.username" placeholder="Nome de usuário bacana" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+          <div class="spacer" style="width: 300px; height: 55px;"></div> -->
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Deseja mudar de senha? </h2>
+       <div class="spacer" style="width: 300px; height: 35px;"></div>
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Qual a senha atual?</h2>
+
+      <input type="text" ng-model="user.senhaantiga" placeholder="Digite sua senha atual" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Qual a nova senha?</h2>
+      <input type="text" ng-model="user.senhanova" placeholder="Digite sua senha atual" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+
+  
+  </ion-content>
+
+   <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+                <!-- <a id="Confirmar-button12" style="border-color: red;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:red ;align-items: center;
+  justify-content: center; float:left;"  class="button button-balanced button-outline" ng-click="Cancela()">Cancela</a>
+              <a id="Confirmar-button12" style="border-color: #ff4444;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:#ff4444 ;align-items: center;
+  justify-content: center; float:right;"  class="button button-balanced button-outline" ng-click="Proximo()">Próximo</a> -->
+
+ <button  class="botaocancela" ng-click="Cancela()" style="font-family:Kollektif;font-size: 22px;float:left;">Cancela</button>
+    <button  class="botaoproximo" ng-click="Salvar()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Salvar</button>
+</ion-view>

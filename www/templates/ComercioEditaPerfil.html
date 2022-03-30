@@ -1,0 +1,169 @@
+<ion-view title="Editar perfil" id="ComercioEditaPerfil" style="background:#212121;color:#ff4444;">
+
+
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+  <ion-content padding="true" class="has-header">
+
+
+       <style>
+      /* Style the buttons */
+      .btnnovo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          margin-top: 15px;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: auto;
+          color: #e0e0e0;
+          border-radius:64px 64px 64px 64px;
+          
+          font-family:Kollektif;
+      }
+      .btnnovo:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+    <p style="text-align: center;color:#fff;font-size: 16px">Olá {{auxusername}}</p>
+
+    <p style="text-align: center;color:#fff;font-size: 16px">Para editar qualquer item do seu perfil por favor clique nele</p>
+     
+    <img id ="imageidEditarComercio" ng-click = "editafoto()" style="width: 100vw; height: 70vw;object-fit: cover;margin:-10px;">
+    <div class="spacer" style="height: 20px;"></div>
+    <!-- <div  style="align-items: center;">
+      <button class="btnnovo"  style="border-radius:64px 64px 64px 64px;text-align: center;width: 49%;background:#212121;color:#ff4444;border-color: #FCFCFC;" ng-click="takePicture()">Nova foto</button>
+      <button class="btnnovo" style="border-radius:64px 64px 64px 64px;text-align: center;width: 49%;background:#212121;color:#ff4444;border-color: #FCFCFC;"ng-click="getPicture()">Foto velha</button>
+    </div> -->
+
+<!-- 
+    <div class="spacer" style="height: 20px;"></div>
+
+    <label class="item item-input" id="editarPerfil-input13" style= "border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;">Nome de usuário</span>
+        <input type="text" placeholder="" ng-model="user.username" style="color: white;">
+      </label>
+      <div class="spacer" style="height: 10px;"></div>
+      <a  id="login-s"  style="text-align: center;color:#ff4444;background:#212121;border-radius:64px 64px 64px 64px;border-color: #FCFCFC;width: auto;margin:auto; display:block;" class="button button-stable " ng-click="verifica()">Verifica username</a>
+
+
+
+    <div class="spacer" style="height: 10px;"></div>
+      <label class="item item-input" id="editarPerfil-input13" style= "border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;">Nome do local</span>
+        <input type="text" placeholder="" ng-model="user.apelido" style="color: white;">
+      </label> -->
+
+     <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "editanome()" >Nome de usuário e nome do local</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px" ng-click = "editanome()">{{user.username}}</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px" ng-click = "editanome()">{{user.apelido}}</p>
+
+
+      <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "editatelefone()" >Contato</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px" ng-click = "editatelefone()" >{{comercio.telefone}}</p>
+
+      <button class="btnnovo"   ng-click = "editalocal()" >
+      
+          <img src="img/markericon.png" width="8%" height="auto"style="display: block;margin: auto;float: left;">
+       
+          <p style="color:white; overflow: hidden;
+              text-overflow: none !important; 
+            white-space: initial !important;font-family:Kollektif; font-size: 15px">{{comercio.endereco}}</p>
+       
+         
+    </button>
+
+
+
+   
+    <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "qmehcomercio()" >Quem sou eu como comércio</p>
+    <pre style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "qmehcomercio()">{{comercio.qmehcomercio}}</pre>
+
+     <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "infocomercio()" >Informações sobre o que será feito!</p>
+      <pre style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "infocomercio()" >{{comercio.infocomercio}}</pre>
+
+     <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "incluso()">O que esta incluso?</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "incluso()">{{comercio.incluso}}</p>
+
+      <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "atendimento()">Funcinamento</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "atendimento()">Dias: {{comercio.semanafuncionamento}}</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "atendimento()">Horários: {{comercio.horariofuncionamento}}</p>
+
+      <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "duracao()">Duração</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "duracao()">{{comercio.duracao}}</p>
+
+      <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "preco()">Quanto custa</p>
+      <p style="margin-top:0px;color:#eee;width: 100%;font-family:Kollektif;font-size: 15px"  ng-click = "preco()">{{comercio.preco}} <span class="high" ng-show="porpessoa">por pessoa, pagar no local.</span> <span class="high" ng-show="porlocal">o local! Pagar no local.</span></p>
+
+      <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "descontopacote()">Ofertas</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "descontopacote()">{{comercio.descontopacote}}</p>
+
+      <p style="margin-top:17px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "nump()">Número de pessoas por evento</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "nump()">Mínimo: {{comercio.pmin}}</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "nump()">Médio: {{comercio.pmedio}}</p>
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;" ng-click = "nump()">Máximo: {{comercio.pmax}}</p>
+
+   <!--  <button id="perfil-button1fsd81" class="btnnovo" ng-click="categoria()"   style="font-family:Kollektif;">Categoria</button>
+ -->
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-click = "oqtem()">O que tem</p>
+       <div class = "row" ng-click = "oqtem()">
+            <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado0.png"  ng-show = "auxsemanabutton1">
+
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado1.png" ng-show = "auxsemanabutton1aux">
+            </div>
+             <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante0.png" ng-show = "auxsemanabutton2">
+               <img style="width : 14vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante1.png"  ng-show = "auxsemanabutton2aux">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento0.png" ng-show = "auxsemanabutton3">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento1.png" ng-show = "auxsemanabutton3aux">
+            </div>
+            
+        </div>
+
+        <div class = "row" style="margin-top: 5px;" ng-click = "oqtem()">
+           <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly0.png" ng-show = "auxsemanabutton4">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly1.png" ng-show = "auxsemanabutton4aux">
+            </div>
+           
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE0.png"  ng-show = "auxsemanabutton5">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE1.png"ng-show = "auxsemanabutton5aux">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi0.png" ng-show = "auxsemanabutton6">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi1.png"  ng-show = "auxsemanabutton6aux">
+            </div>
+        </div>
+     <div class="spacer" style="height: 10px;"></div>
+       <div class="spacer" style="height: 20px;"></div>
+        <button  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;color: #ff4444;" class="button outline" ng-click = "mudasenha()">Mudar senha</button>
+
+   
+       <button id="adfad-button41"  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: red;color: red;" class="button outline" ng-click = "logout()">Logout</button>
+  </ion-content>
+</ion-view>

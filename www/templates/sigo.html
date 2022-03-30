@@ -1,0 +1,87 @@
+<ion-view title="Sigo, seguem e não mais" id="page26" style="background:#212121;color:#ff4444;">
+ <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+
+         <style>
+      /* Style the buttons */
+      .btneva2 {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actis, .btneva2:hover {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+
+   <!--  <h1 id="ranking-heading18" style="color:#000000;text-align:center;">Pessoas q sigo</h1> -->
+<!-- <p style="color:#A9A9A9;text-align: left;margin-left:10px;"> Ao bloquear uma pessoa que te segue, ela não conseguirá mais ver os eventos que você marcou de ir (arraste para o lado para bloquear).</p> -->
+
+<button style="border-radius: 80%;float:right; background:#212121;font-family:Kollektif;color: #ff4444;font-weight: bold;margin-top: 4px;margin-bottom: 5px"  ng-click="duvida4()">?</button>
+
+
+    <div id="barsigo" class="button-bar">
+      <button id="perfil-button16" class="btneva2 actis" ng-click="sigo()">Sigo</button>
+      <button id="perfil-button17"  class="btneva2"  ng-click="seguem()">Me seguem</button>
+      <button id="perfil-button18"  class="btneva2"  ng-click="bloqueados()">Bloqueados</button>
+    </div>
+
+
+    
+<div class="spacer" style="width: 50px; height: 10px;"></div>
+
+
+    <ion-list  style="background-color: #212121;"  >
+      <ion-item style="background: #212121;" class="item-avatar" ng-repeat="item in items track by $index" ng-click = "enterItem({{item}})" can-swipe="true">
+       <!--  <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button> -->
+          <ion-option-button class="button-assertive"
+                             ng-click="bloquear(item)"
+                             ng-show = "seguido">
+            Bloquear
+          </ion-option-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="desbloquear(item)"
+                             ng-show = "desbloque">
+            Desbloquear
+          </ion-option-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="desseguir(item)"
+                             ng-show = "dessegue">
+            Desseguir
+          </ion-option-button>
+          
+
+        <img src={{item.profilepic}} width="100%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;object-fit: cover;">
+<!--         <img id ="imageidsegue" ng-show = "seguido" width="10%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;"> -->
+
+        <h2 ng-show = "seguindo">{{item.apelidoseguindo}} </h2>
+        <p  ng-show = "seguindo" style="margin-top:0px;color:#ededed;">{{item.usernameseguindo}} </p>
+
+        
+        <h2 ng-show = "seguido">{{item.apelidoseguidor}} </h2>
+        <p  ng-show = "seguido" style="margin-top:0px;color:#ededed;">{{item.usernameseguidor}} </p>
+
+       
+        <h2 ng-show = "bloqueado">{{item.apelidoseguidor}} </h2>
+        <p  ng-show = "bloqueado" style="margin-top:0px;color:#ededed;">{{item.usernameseguidor}} </p>
+
+      </ion-item>
+    </ion-list>
+
+
+<!--    <button id="avaliaODoEvento-button34" style="border-radius:62px 62px 62px 62px;" class="button button-dark button-block" ng-click = "pronto()">atualizar</button> -->
+
+  </ion-content>
+</ion-view>

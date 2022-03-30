@@ -1,0 +1,151 @@
+<ion-view title="Evento Pinzado" id="eventoPinzado" style="background:#212121;color:#ff4444;">
+    
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+<ion-nav-buttons side="secondary">
+      <button class="button button-clear button-icon icon ion-chatbubbles" ng-show = "chathome" ui-sref="chathome">
+      </button>
+  </ion-nav-buttons>
+
+
+  <ion-content padding="true" class="has-header">
+    <style type="text/css">
+    span.high { color:#fff;font-weight:bold;}
+    </style>
+      <img src={{evento.eventopic}} style="
+             width: 100%; height: 50vw;object-fit: cover;">
+    <ion-list id="eventoAberto-list13">
+      <ion-item class="item" id="eventoAberto-list-item38"  style= "border-radius:14px 14px 14px 14px;">
+       <h2 style="text-align: center;overflow: hidden;text-overflow: none !important; white-space: initial !important;">{{evento.nomeevento}}</h2>
+       <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Organizado por {{evento.admapelido}}</p>
+        <p style="text-align: center;margin-top:0px;color:#1eb9aa;width: 100%;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;" > {{tag}} </p>
+  
+         <div class = "row">
+         <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-right: 10px">
+           <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >Confirmar até</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" >{{limiteconfirmacao.dia}}</p>
+             <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >{{limiteconfirmacao.hora}}</p>
+        </div>
+         <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-left: 10px">
+          <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Quando?</p>
+          <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" > {{dia.dia}} </p>
+          <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > {{dia.hora}} </p>
+         </div>
+        <!--  <div class = "col" style="background:#41f4e5;border-radius:14px 14px 14px 14px;border: 2px solid white;">
+           <img src="img/durar.png" width="35px" style="align-items: center;" > 
+           <p style="margin-top:0px;color:#000;width: 100%;text-align: center;" > {{duracao}} </p>
+         </div> -->
+      </div>
+
+      </ion-item>
+       
+    </ion-list>
+    <p id="eventoAberto-heading4" style="color:#989898;font-size:15px;text-align: center;margin-top:10px;">Mais detalhes sobre o evento</p>
+   
+    <div class="item item-body"  style= "border-radius:14px 14px 14px 14px;">
+      <p style="margin-top:0px;color:#3d8080;width: 100%;" > Pessoas: Mínimo {{evento.pmin}} Atualmente ({{evento.patual}}) Máximo {{evento.pmax}} </p>
+      <p style="margin-top:0px;color:#fff;width: 100%;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;" >Descrição : {{evento.descricao}} </p>
+      <p style="margin-top:0px;color:#fff;width: 100%;" > <span class="high" ng-show="porpessoa || porpessoa"> R$</span>  {{evento.preco}} <span class="high" ng-show="porpessoa">por pessoa, pagar no local.</span> <span class="high" ng-show="porlocal">o local! Pagar no local.</span></p>
+      <p style="margin-top:0px;color:#fff;" >Dificuldade : {{evento.dificuldade}} </p>
+      <p style="margin-top:0px;color:#fff;width: 100%;text-align: center;" ng-show = "masc">Evento exclusivo para sexo masculino </p>
+      <p style="margin-top:0px;color:#fff;width: 100%;text-align: center;" ng-show = "fem" >Evento exclusivo para sexo feminino </p>
+    </div>
+      <p id="eventoAberto-heading4" style="color:#989898;text-align: center;margin-top:10px;">Local do evento</p>
+     <div class="item item-avatar" id="home-list-item-container5" style= "border-radius:14px 14px 14px 14px;" ng-click = "Vermapa()">
+      <img src="img/markericon.png" width="100%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;">
+      <p style="color:#fff; overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important; ">{{evento.endereco}}</p>
+    </div>
+
+
+    <div class="spacer" style="width: 300px; height: 35px;"></div>
+<!-- 
+    <button id="home-button28" style="font-size:18px;border-radius:64px 64px 64px 64px;" class="button button-balanced icon ion-pin" ng-click="favorita()" ng-show="pinza"></button>
+     <button id="home-button28" style="font-size:18px;border-radius:64px 64px 64px 64px;" class="button button-assertive icon ion-pin" ng-click="desfavorita()" ng-show="despinza"></button> -->
+
+     <button id="home-button31" style="font-size:18px;border-radius:64px 64px 64px 64px;" class="button button-assertive icon ion-alert-circled" ng-click="reportar()"></button>
+
+    <h4 id="evento_do_eventoAbertos-heading7" style="color:#FCFCFC;text-align: center;">Parceiros</h4>
+<!-- 
+    <div class="list card" ng-repeat="item in items track by $index" >
+      <ion-item class="item-avatar" id="home-list-item17" ng-click = "enterItem({{item}})">
+        <h2>{{item.username}}</h2><p style="margin-top:0px;color:#fff;"> Estado : {{item.confirmacao}}</p>
+      </ion-item>
+    </div> -->
+
+     <ion-list >
+      <ion-item class="item" ng-repeat="item in items track by $index" ng-click = "enterItem({{item}})"can-swipe="true">
+       <!--  <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button> -->
+          <ion-option-button class="button-assertive"
+                             ng-click="onItemDelete(item)"
+                             ng-show = "deletarPessoa">
+            Excluir
+          </ion-option-button>
+          <ion-option-button class="button-balanced"
+                             ng-click="aprova(item)"
+                             ng-show = "confirmaPessoa">
+            Aprovar
+          </ion-option-button>
+          
+        
+           <div class="row">
+          <div class="col-30" style="position: relative;
+  display: inline;">
+            <!-- <div class="container"> -->
+              <img src={{item.profilepic}} style="height: 20vw; 
+     width: 20vw; 
+    border: 2px solid #ff4444;;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;">
+              <img  src="img/starbronze.png" width="18px" height="auto" ng-show="item.bb" style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -12px;" >
+            <img  src="img/starsilver.png" width="18px" height="auto" ng-show="item.bs" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -12px;" >
+            <img  src="img/stargold.png" width="18px" height="auto" ng-show="item.bg" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -12px;" >
+              <!-- <div class="overlay">rqwr ng-show="item.borda" </div> -->
+          <!--   </div> -->
+          </div>
+        <div class="col" style="margin-left:10px;">
+          <h2>{{item.apelido}}</h2>
+          <p style="color:#ededed;">{{item.username}}</p>
+          <p style="color:#ededed;"> Estado : {{item.confirmacao}}</p>
+        </div>
+      </div>
+
+      </ion-item>
+    </ion-list>
+
+
+
+
+    <p  ng-show="aviso" style="margin-top:0px;color:#fff;" >Não da mais para entrar, ta muito em cima da hora </p>
+    
+      <a id="Confirmar-button12" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" ng-show="borala" class="button button-balanced button-outline" ng-click="confirma()" >BOOORA</a>
+
+      <a id="criarEvento-button123" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" ng-show="edita" class="button button-royal button-outline" ng-click="editar()" >Editar</a>
+
+       <a id="criarEvento-button13" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" ng-show="desistir" class="button button-assertive button-outline" ng-click="deletar()" >Desistir de ir, amarelar</a>
+
+       <a id="criarEvento-button13" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" ng-show="reserva" class="button button-energized button-outline" ng-click="reservar()" >Solicitar/Reservar vaga</a>
+
+  </ion-content>
+</ion-view>

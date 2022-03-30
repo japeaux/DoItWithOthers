@@ -1,0 +1,61 @@
+<ion-view  id="PagSeguroEndereco" title="Confirmação de comprador" style="background:#212121;color:#ff4444;" class="hide-tabs" >
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header" on-scroll="getScrollPosition()">
+
+    <style>
+      /* Style the buttons */
+      .btnnovahomelogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btnnovahomelogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;font-weight: bold;" >Confirme endereço do titular da compra</h2>
+      
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;font-weight:  bold;" >Endereço</h2>
+       <input id="searchTextField" class="controls" ng-focus="disableTap()" type="text" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-family:Kollektif;"
+        placeholder="Digite aqui seu endereço" ng-model="user.endereco">
+         <p style="color:#ff4444;text-align: center;font-family:Kollektif;font-size: 16px;margin-top: 5px;font-weight: bold;">{{user.cidade}}, {{user.estadoendereco}}</p>
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;font-weight:  bold;" >Número da sua residência</h2>
+
+      <input type="text" ng-model="user.numeroendereco" placeholder="Digite aqui" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-family:Kollektif;">
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;font-weight:  bold;" >Complemento</h2>
+
+      <input type="text" ng-model="user.complemento" placeholder="Digite aqui se houver" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-family:Kollektif;">
+        <div class="spacer" style="width: 300px; height: 55px;"></div>
+
+
+
+
+
+        <button id="perfil-button181" class="btnnovahomelogin" ng-click="Confirmar()" style="font-family:Kollektif; margin-bottom: 15px;font-size: 16px;">Salvar</button>
+
+
+
+
+  </ion-content>
+</ion-view>

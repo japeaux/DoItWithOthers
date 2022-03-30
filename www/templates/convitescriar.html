@@ -1,0 +1,72 @@
+<ion-view title="GANHE UM BADGE EXCLUSIVO" id="sobre" style="background:#212121;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<!--  <ion-nav-buttons side="primary">
+      <button class="button button-clear  " ui-sref="tabsController.perfil" style="font-family:Kollektif;">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+  <ion-content padding="true" class="has-header">
+    <style type="text/css">
+      span.infosobre { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:15px; }
+
+       span.infocodigo { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:20px; }
+
+    </style>
+
+    <div class="item item-body" ng-show="!temcondigo" style= "border-radius:14px 14px 14px 14px;border-color: #ff4444;background-color: #212121;" >
+        <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 20px;margin-top:1px;margin-left: 5px;" ng-show="!temcondigo" > Meu código é <span class="infocodigo"> {{user.codigo}}</span></p>
+        <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 20px;margin-top:1px;margin-left: 5px;" ng-show="!temcondigo" ><span class="infocodigo"> {{user.numcodigo}} de 3</span> pessoas usaram meu código</p>
+        <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 20px;margin-top:1px;margin-left: 5px;" ng-show="!temcondigo" >Tens até <span class="infocodigo">{{codigodata}} </span>para validar os convites</p>
+      </div>
+
+
+       <div class = "row"  ng-show="!temcondigo" style="margin-top:12px;">
+         <button class="button button-light col" ng-click="share('w','Eaiiii','','http://diwoapp.com.br/politica-de-privacidade/')" style="background-color: #25D366;color: white;" ng-show="!temcondigo">
+             <i class="icon ion-social-whatsapp" ng-show="!temcondigo"></i>
+         </button>
+         <button class="button button-light col" style="background-color: #3b5998;color: white;" ng-show="!temcondigo"
+         ng-click="share('f','Eaiiii','','http://diwoapp.com.br/politica-de-privacidade/')">
+             <i class="icon ion-social-facebook" ng-show="!temcondigo"></i>
+         </button>
+ <!--         <button class="button button-light col col-20" ng-click="share('w2','Eaiiii','','http://diwoapp.com.br/politica-de-privacidade/')" style="background-color: #25D366;color: white;" ng-show="!temcondigo">
+             <i class="icon ion-social-whatsapp" ng-show="!temcondigo"></i>
+         </button> -->
+         <button class="button col " style="color: #1DA1F2;" ng-show="!temcondigo" ng-click="share('t','Eaiiii','','http://diwoapp.com.br/politica-de-privacidade/')">
+             <i class="icon ion-social-twitter" ng-show="!temcondigo"></i>
+         </button>  
+        
+       </div>
+         
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:12px;">Que sorte! Você tem a oportunidade de ganhar um Badge <span class="infosobre"> único e exclusivo</span>, disponível apenas para nossos primeiros usuários! Esse Badge mostra que você não só é um  <span class="infosobre">pioneiro do App</span>, como também é um  <span class="infosobre">verdadeiro Líder</span> do seu grupo de amigos!</p>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:12px;">Para obtê-lo, basta fazer o seguinte:</p>
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:1px;margin-left: 5px;">1- <span class="infosobre">Crie seu código</span> na caixa de texto abaixo (único, 6 letras no mínimo, contendo pelo menos um número);</p>
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:1px;margin-left: 5px;">2- <span class="infosobre">Envie-o</span> para quantos amigos quiser;</p>
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:1px;margin-left: 5px;">3 - Quando os <span class="infosobre">3 primeiros</span> deles criarem a conta no app usando seu código, seu Badge de #1 será revelado!</p>
+     
+      
+     <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:12px;">Mas fique atento às <span class="infosobre">regras!</span></p>
+
+     <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:1px;margin-left: 5px;"> - Você só conseguirá ter seu Badge revelado se conseguir os 3 <span class="infosobre">em 14 dias</span> à partir da criação do seu código, após esse período você <span class="infosobre">nunca mais</span> terá a chance de obtê-lo.</p>
+   
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 15px;margin-top:1px;margin-left: 5px;"> - Após os 14 dias, caso você ainda não tenha conseguido os 3 amigos, eles ainda poderão usar seu código para entrar, mas você não obterá o Badge exclusivo.</p>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 12px;margin-top:12px;font-style: italic;">*Evento válido por tempo limitado
+**Seu Badge será revelado aos poucos a medida que seus amigos criam as contas, caso você não consiga o número mínimo, ele será deletado
+***Esse Badge é vitalício enquanto o App atual existir 
+    </p>
+
+      <div class="item item-body" ng-show="temcondigo"  style= "border-radius:14px 14px 14px 14px;border-color: #ff4444;background-color: #212121;" >
+        <input type="text" id="fs-button14"  placeholder="Meu código" ng-model="user.codigo" ng-show="temcondigo" style="border-width: 1px;border-radius:64px 64px 64px 64px;border-color: #ff4444;background-color: #212121;color: white;width: 100%">
+<!--         <p style="color:#ff4444;text-align: center;font-family:Kollektif;font-size: 20px;margin-top:1px;margin-left: 5px;" ng-show="!temcondigo" > Meu código é {{user.codigo}}</p>
+        <p style="color:#ff4444;text-align: center;font-family:Kollektif;font-size: 20px;margin-top:1px;margin-left: 5px;" ng-show="!temcondigo" >{{user.numcodigo}} de 3 pessoas usaram meu código</p>
+        <p style="color:#ff4444;text-align: center;font-family:Kollektif;font-size: 20px;margin-top:1px;margin-left: 5px;" ng-show="!temcondigo" >Tens até {{user.codigodata}} para validar os convites</p> -->
+      </div>
+        <button id="editarsdrqwerPerfil-button14" ng-show="temcondigo"  style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;color:#ff4444;" class="button outline" ng-click="criarcodigo()">Criar meu código</button>
+
+
+  </ion-content>
+</ion-view>

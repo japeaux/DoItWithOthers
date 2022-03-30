@@ -1,0 +1,40 @@
+<ion-view title="CHAT" id="chathome"  style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ng-click = "volta()" >Voltar
+  
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="secondary" >
+      <button class="button button-clear button-icon icon ion-android-notifications" ng-show = "notion" ng-click="desativanoti()"></button>
+      <button class="button button-clear button-icon icon ion-android-notifications-off" ng-show = "!notion" ng-click="ativanoti()"></button>
+
+    </ion-nav-buttons>
+
+ <ion-content class="content-stable" padding="true">
+  <ion-list  style="background-color: #212121;"  >
+      <div ng-repeat="message in messages" class="messages" >
+
+        <div class="spacer" style="width: 300px; height: 5px;"></div>
+        <div class="user"  style="background-color:#212121;color:white;margin-left:10px;padding-left:10px;padding-right:10px;padding-top:5px;margin-right: 33%;font-weight: bold;"><span> {{ message.username }}</span></div>
+        <div class="message"  style="background-color:#212121;margin-left: 10px;padding-left:10px;margin-right: 33%;padding-right:10px;color: white">
+          <span> {{ message.mensagem }}</span>
+        </div>
+        <div class="time"  style="background-color:#212121;color:grey;font-size:60%;font-family:verdana;margin-left: 10px;padding-left:10px;margin-right: 33%;padding-right:10px;"> {{message.tempo}}</div>
+      
+      </div>
+  </ion-list>
+
+    </ion-content>
+
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Escreva aqui" on-return="sendMessage(); closeKeyboard()" ng-model="data.message"  />
+      </label>
+      <button class="button button-clear" ng-click="sendMessage()">
+        Send
+      </button>
+    </ion-footer-bar>
+</ion-view>

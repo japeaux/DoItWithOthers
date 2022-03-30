@@ -1,0 +1,103 @@
+<ion-view title="Nickname" id="comercioeditausername" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+            <div class="spacer" style="width: 300px; height: 55px;"></div>
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Nome de usuário</h2>
+      
+
+    <input type="text" ng-model="user.username" placeholder="Nome de usuário bacana" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+
+    <button id="perfil-button1fsd81" class="btnnovo" ng-click="verifica()"   style="font-family:Kollektif;">Verifica nome de usuário</button>
+
+
+    <p style="color:#ff4c4c;text-align: center;color: red;font-family:Kollektif;" ng-show = "userexiste">  Nome de usuário já existe.</p>
+    <p style="color:#FCFCFC;text-align: center;color: green;font-family:Kollektif;" ng-show = "usernexite">  Nome de usuário válido.</p>
+
+          <div class="spacer" style="width: 300px; height: 55px;"></div>
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Nome do comércio</h2>
+
+      <input type="text" ng-model="user.apelido" placeholder="Um apelido carinhoso" style="background:#212121;border-color: #cdcdcd;color:  #ff4444;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;">
+
+  </ion-content>
+
+   <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+           
+    <button  class="botaoproximo" ng-click="Salvar()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Salvar</button>
+</ion-view>

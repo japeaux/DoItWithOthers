@@ -1,0 +1,198 @@
+<ion-view  id="perfilComercio" style="background:#212121;color: #ff4444"  >
+       <ion-nav-bar class="bar-positive">
+            <ion-nav-title >
+        <img  height="90%"   src="img/tituloB.png" >    
+        </ion-nav-title> 
+
+</ion-nav-bar>
+<ion-nav-buttons side="secondary">
+      <button class="button button-clear button-icon icon ion-clipboard" ui-sref="ComercioStats">
+      </button>
+      <button class="button button-clear button-icon icon ion-ios-person"  ui-sref="ComercioEditaPerfil">
+      </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="primary">
+        <button  style="font-family:Kollektif;text-align: center;color:#ff4444;font-size: 30px" class="button button-clear" ui-sref="CriarEventoComercio">+</button>
+
+    </ion-nav-buttons>
+
+  <ion-content padding="true" class="has-header">
+
+
+     <style>
+      /* Style the buttons */
+      .btnperfilComercio {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actperfilComercio, .btnperfilComercio:hover {
+          background: #111;
+          color: #ff4444;
+      }
+
+      .btnnovo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          color: #e0e0e0;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+          font-family:Kollektif;
+      }
+      .btnnovo:active {
+          background: #111;
+          color: #ff4444;
+      }
+
+      </style>
+
+
+      <button  style="border-radius:64px 64px 64px 64px;text-align: center;width: 100%;background:#212121;color:#ff4444;border-color: #FCFCFC;font-size: 16px;" class="btnnovo" ng-click = "criarCampanha()" >Lançar Campanha</button>
+     <div class="spacer" style="width: 300px; height: 15px;"></div>
+
+
+      <p id="geral-heading19" style="color:#FCFCFC;text-align: center;"  ng-show="primeiro">Minhas notificações</p>
+      <p id="geral-heading19" style="color:#FCFCFC;text-align: center;"  ng-show="!primeiro">Não tens notificações</p>
+      <ion-item id="geral-list-item86" ng-show="primeiro" ng-click = "enterItem(primeiro)">
+
+        <p style="margin-top:0px;color:#fff;font-weight: bold;">De: {{primeiro.apelido_envia}} ({{primeiro.username_envia}})</p>
+        <h2 style="white-space: normal;">{{primeiro.notificacao}}</h2>
+        <p style="margin-top:0px;color:#ececec;">{{primeiro.datadeenvio}}</p>
+
+      </ion-item>
+      <ion-item id="geral-list-item87" ng-show="segundo" ng-click = "enterItem(segundo)">
+
+        <p style="margin-top:0px;color:#fff;font-weight: bold;">De: {{segundo.apelido_envia}} ({{segundo.username_envia}})</p>
+        <h2 style="white-space: normal;">{{segundo.notificacao}}</h2>
+        <p style="margin-top:0px;color:#ececec;">{{segundo.datadeenvio}}</p>
+
+      </ion-item>
+      <ion-item id="geral-list-item88" ng-show="terceiro" ng-click = "enterItem(terceiro)">
+
+        <p style="margin-top:0px;color:#fff;font-weight: bold;">De: {{terceiro.apelido_envia}} ({{terceiro.username_envia}})</p>
+        <h2 style="white-space: normal;">{{terceiro.notificacao}}</h2>
+        <p style="margin-top:0px;color:#ececec;">{{terceiro.datadeenvio}}</p>
+
+      </ion-item>
+
+      <button id="geral-button47"  style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;color: #ff4444;" class="button outline" ui-sref="tabsController.notificaEsComercio" ng-show="quarto">Ver todas</button>
+
+
+    
+    <div class="spacer" style="width: 50px; height: 20px;"></div>
+
+    <div id="barperfilComercio" class="button-bar" >
+      <button id="barperfilComercioprimeiro"  class="btnperfilComercio actperfilComercio" ng-show=false>das</button>
+      <button id="barperfilperfilComercio-button16"  class="btnperfilComercio" ng-click="loadReservas()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;">Reservas</button>
+      <button id="barperfilperfilComercio-button18" class="btnperfilComercio" ng-click="loadPendentes()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;">Pendentes</button>
+    </div>
+
+
+<!--     <div class="list" ng-repeat="item in items track by $index" ng-show="CoisasReservas" style="border-color: #ff4444;border-radius:14px 14px 14px 14px;">
+      <ion-item class="item item-thumbnail-left" id="home-list-item17" ng-click = "enterItem({{item}})"   style="border-color:#ff4444;border-radius:14px 14px 14px 14px;top: 10px;">
+        <img src="{{item.eventopic}}" width="auto" height="70px">
+        <h2 style="color: white;font-style: bold;">{{item.nomeevento}}</h2>
+        <p  style="margin-top:0px;color:#ddd;">Estado : {{item.confirmacao}}</p>
+        <p style="margin-top:0px;color:#ddd;"> {{item.datainicio}}</p>
+      </ion-item>
+
+    </div>
+ -->
+    <ion-list  class="list" ng-repeat="item in items track by $index" style="border-color:#ff4444;" ng-show="CoisasReservas" >
+      <ion-item  can-swipe="true;"  style="top: 10px;border-width: 0px;">
+          <ion-option-button class="button-assertive"
+                             ng-click="cancelar(item)"
+                             ng-show = "CoisasReservas">
+            Cancelar
+          </ion-option-button>
+        
+        <div class = "row" >
+          <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-left: 10px;margin-top: auto;margin-bottom: auto;">
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > {{item.semana}} </p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" > {{item.dia}} </p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > {{item.hora}} </p>
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+            <h2 style="color: white;font-style: bold;text-align: center;margin-top: 20px">{{item.nomeevento}}</h2>
+            <p style="margin-top:5px;color:#ddd;text-align: center;"> Detalhe do evento: {{item.descricao}}</p>
+            <!-- <p style="margin-top:0px;color:#ddd;"> {{item.datainicio}}</p> -->
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+            <img src="img/pessoasn/pmin.png" width="25px" height="auto" style=" display: block;margin-left: auto;margin-right: auto;margin-bottom: 10px"> 
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" > {{item.patual}}</p>
+            <!-- <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Nº pessoas minimo {{item.pmin}} </p> -->
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+ 
+
+   <ion-list  class="list" ng-repeat="item in items track by $index"  style="border-color:#ff4444;" ng-show="CoisasPendentes" >
+      <ion-item   can-swipe="true;"  style="top: 10px;border-width: 0px">
+          <ion-option-button class="button-assertive"
+                             ng-click="cancelar(item)"
+                             ng-show = "CoisasPendentes">
+            Cancelar
+          </ion-option-button>
+          <ion-option-button class="button-balanced"
+                             ng-click="agendar(item)"
+                             ng-show = "CoisasPendentes">
+            Reservar
+          </ion-option-button>
+        
+        <div class = "row" >
+          <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-left: 10px;margin-top: auto;margin-bottom: auto;">
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > {{item.semana}} </p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" > {{item.dia}} </p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > {{item.hora}} </p>
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+            <h2 style="color: white;font-style: bold;text-align: center;">{{item.nomeevento}}</h2>
+<!--             <p style="margin-top:10px;color:#ddd;text-align: center;"> Organizador: {{item.admusername}}</p> -->
+            <!-- <p style="margin-top:0px;color:#ddd;"> {{item.datainicio}}</p> -->
+          </div>
+          <div class = "col" style="margin-top: auto;margin-bottom: auto;">
+            <img src="img/pessoasn/pmin.png" width="25px" height="auto" style=" display: block;margin-left: auto;margin-right: auto;margin-bottom: 10px"> 
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" > {{item.patual}}</p>
+            <!-- <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" > Nº pessoas minimo {{item.pmin}} </p> -->
+          </div>
+        </div>
+
+
+      </ion-item>
+    </ion-list>
+    
+<!--     <div class="list" ng-repeat="item in items track by $index"  style="border-color:#ff4444;" ng-show="CoisasPendentes" >
+       <ion-item class="item item-thumbnail-left" id="home-list-item17"  ng-click = "enterItem({{item}})"   style="border-color:#ff4444;border-radius:14px 14px 14px 14px;top: 10px;">
+        <img src="{{item.eventopic}}" width="auto" height="70px">
+        <div class = "row" >
+          <div class = "col col-75">
+            <h2 style="color: white;font-style: bold;">{{item.nomeevento}}</h2>
+            <p style="margin-top:0px;color:#ddd;"> Criador : {{item.admusername}}</p>
+            <p style="margin-top:0px;color:#ddd;"> {{item.datainicio}}</p>
+          </div>
+          <div class = "col">
+            <img src="img/star.png" width="40%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;margin-top: 10px;" ng-show = "item.nota">
+            <p style="text-align: center;color:#ff4444;"> {{item.nota}}</p>
+           </div>
+        </div>
+      </ion-item>
+    </div> -->
+
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view title="Conquista" id="badgesexplicaPerfilOutro" style="background: #212121;font-family:Kollektif;">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+
+  
+  <style>
+    .loader{
+      background: #ff4444 !important;
+      border-radius:100px;
+      height:20px;
+      p{
+        text-align:center;
+        color:white !important;
+        text-align:center;
+        font-family:Kollektif;
+      }
+    }
+
+      </style>
+      <style type="text/css">
+      span.name { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:27px;float: right; }
+      span.numero { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:27px;float: right; }
+      span.varia { color:#FCFCFC;font-weight:bold;font-family:Kollektif;font-size:27;text-align: center; }
+      span.varous { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:27;text-align: center; }
+    </style>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+
+    <p style="color:#FCFCFC;text-align: center;font-size:28px;font-family:Kollektif;" >{{badge.titulo}}</p>
+
+    <p style="color:#FCFCFC;text-align: center;font-size: 22px;margin-top: 15px;font-family: Kollektif;" > <span class="varous">{{badge.numeroatual}}</span><span class="varia">/{{badge.numeroproximo}}</span></p>
+
+    <img src="{{badge.imgatual}}" style="width : 40vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;">
+
+
+    <div style="width:80%;margin:auto; display:block;background:#111;border-radius:100px;border-color: #ff4444;outline: #ff4444; margin-top: 15px;">
+      <div class="loader" style="width: {{badge.progressPercent}}%;">
+      </div>
+    </div>
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <p style="color:#FCFCFC;text-align: justify;font-size:18px;font-family:Kollektif;" >{{badge.texto}}</p>
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+
+
+    <div class = "row">
+      <div class = "col" >
+
+       
+        <p style="color:#FCFCFC;text-align: center;font-size: 14px;font-family: Kollektif;">  Anterior </p> 
+        <img id="Anterior" style="width : 25vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" ng-click = "" >
+       
+      </div>
+      <div class = "col" >
+        
+       
+        <p style="color:#FCFCFC;text-align: center;font-size: 14px;font-family: Kollektif;">  Atual </p> 
+        <img id="Atual" style="width : 25vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" ng-click = "" >
+        
+      </div>
+      <div class = "col" >
+       
+       
+        <p style="color:#FCFCFC;text-align: center;font-size: 14px;font-family: Kollektif;"> Próximo </p> 
+        <img id="Proximonivel" style="width : 25vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" ng-click = "" >
+      </div>
+    </div>
+  
+
+
+  </ion-content>
+</ion-view>

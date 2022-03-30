@@ -1,0 +1,29 @@
+<ion-view title="Cabe?" id="editaeeap4" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+     <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+    <h2 id="criandoEventoPart4-heading11" style="color:#FCFCFC;text-align: center;">Falta pouco, juro!</h2>
+    <div id="criandoEventoPart4-markdown16" class="show-list-numbers-and-dots">
+      <p style="color:#FCFCFC;text-align: center;">Qntas pessoas preciso pra fazer isso acontecer?</p>
+    </div>
+      <label class="item item-input" id="criandoEventoPart4-input23"style="border-top-right-radius: 14px;border-top-left-radius: 14px;color: #FCFCFC;">
+        <span class="input-label" style="color: #FCFCFC;">max</span>
+        <input type="text" placeholder="20" ng-model="evento.pmax" style="color: #FCFCFC;">
+      </label>
+      <label class="item item-input" id="criandoEventoPart4-input24" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;color: #FCFCFC;">
+        <span class="input-label" style="color: #FCFCFC;">min</span>
+        <input type="text" placeholder="2" ng-model="evento.pmin" style="color: #FCFCFC;">
+      </label>
+<div class="spacer" style="width: 300px; height: 20px;"></div>
+
+    <label class="item item-input" id="input5" ng-show="mudanome">
+          <span class="input-label" style="color: #FCFCFC;">Mudar nome do evento?</span>
+          <input type="text" placeholder=""  style="color: #FCFCFC;" ng-model="evento.nomeevento">
+        </label>
+    <div id="criandoEventoPart4-button-bar8" class="button-bar">
+      <button id="criandoEventoPart4-button39" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-assertive button-outline" ui-sref='tabsController.repeteEventoPart1'>Cancelar</button>
+      <button id="criandoEventoPart4-button40" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-balanced button-outline" ng-click="getCriar(evento)">Criar</button>
+    </div>
+  </ion-content>
+</ion-view>

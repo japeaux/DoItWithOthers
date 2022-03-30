@@ -1,0 +1,104 @@
+<ion-view title="Fototoro" id="criarduracao" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #666;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #666;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+
+      
+              <h2 id="criandoEventoPart3-heading10" style="text-align: center;font-family:Kollektif;font-size:22px;color: white;">Mais um coisa, se quiser coloque uma foto para este evento!</h2>
+        <img id ="imageCriarFoto" style="height: 90vw; 
+               width: 100%; 
+    border: 3px solid #ff4444;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;object-fit: cover;">
+
+        <div class="spacer" style="width: 300px; height: 15px;"></div>
+    <button class="button" style="border-radius:14px 14px 14px 14px;text-align: center;width: 80%;margin:auto; display:block;background:#212121;color:#ff4444;border-color: #ff4444;" ng-click="getPicture()">Escolha uma foto de capa</button>
+    <div class="spacer" style="width: 300px; height: 30px;"></div>
+      
+     
+  </ion-content>
+     <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+        <!-- <div class = "col" style="margin: auto;">
+              <a id="Confirmar-button12" style="border-color: #ff4444;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:#ff4444 ;align-items: center;
+  justify-content: center; float:right;"  class="button button-balanced button-outline" ng-click="Proximo(evento)">Próximo</a>
+ -->
+
+     <button  class="botaoproximo" ng-click="Proximo()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Próximo</button>
+</ion-view>

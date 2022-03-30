@@ -1,0 +1,36 @@
+<ion-view title="Cabe?" id="page23" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+     <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+    <h2 id="criandoEventoPart4-heading11" style="color:#FCFCFC;text-align: center;">Falta pouco, juro!</h2>
+    <div id="criandoEventoPart4-markdown16" class="show-list-numbers-and-dots">
+
+      
+
+     
+        <img id ="imageidEvento" style="height: 225px; 
+     width: 337px; 
+    border: 3px solid #ff4444;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;object-fit: cover;">
+ <div class="spacer" style="width: 300px; height: 20px;"></div>
+      <button class="button" style="border-radius:64px 64px 64px 64px;text-align: center;width: 50%;margin:auto; display:block;background:#212121;color:#ff4444;border-color: #FCFCFC;"ng-click="getPicture()">Escolha uma foto de capa</button>
+    <div class="spacer" style="width: 300px; height: 30px;"></div>
+      <p style="color:#FCFCFC;text-align: center;">Qntas pessoas preciso pra fazer isso acontecer?</p>
+    </div>
+      <label class="item item-input" id="criandoEventoPart4-input23" style="border-top-right-radius: 14px;border-top-left-radius: 14px;color: #FCFCFC;">
+        <span class="input-label" style="color: #FCFCFC;">max</span>
+        <input type="number" placeholder="" ng-model="evento.pmax" style="color: #FCFCFC;">
+      </label>
+      <label class="item item-input" id="criandoEventoPart4-input24" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;color: #FCFCFC;">
+        <span class="input-label" style="color: #FCFCFC;">min</span>
+        <input type="number" placeholder="" ng-model="evento.pmin" style="color: #FCFCFC;">
+      </label>
+    <div id="criandoEventoPart4-button-bar8" class="button-bar">
+      <button id="criandoEventoPart4-button39" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-assertive button-outline" ui-sref='tabsController.criandoEventoPart1'>Cancelar</button>
+      <button id="criandoEventoPart4-button40" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-balanced button-outline" ng-click="getCriar(evento)">Criar</button>
+    </div>
+  </ion-content>
+</ion-view>

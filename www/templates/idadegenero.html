@@ -1,0 +1,52 @@
+<ion-view title="Complete seu perfil" id="idadegenero" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="tabsController.home">Voltar
+  
+      </button>
+    </ion-nav-buttons>
+    
+  <ion-content padding="true" class="has-header">
+      <style>
+          /* Style the buttons */
+          .btnsexy1 {
+            background:#212121;
+         
+              cursor: pointer;
+              font-size: 30px;
+              width: 100%;
+              height: 50px;
+              color: #474747;
+          }
+          .actsex1, .btnsexy1:hover {
+              background: black;
+              color: #e27c00;
+          }
+          </style>
+
+
+      <p id="geral-heading19" style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 22px;margin-top: 12px;"  >Precisamos que você complete seu perfil para que possamos dar mais segurança a você e aos outros usuários</p>
+        <div class="spacer" style="height: 20px;"></div>
+        
+        <h2 id="criandoEventoPart3-heading10" style="text-align: center;font-family:Kollektif;font-size:22px;color: white;">Quando você nasceu?</h2>
+
+        <input type="date" ng-model="user.birthday" style="color:#ff4444;background-color: #212121;align-items: center;text-align: center;font-size:22px; margin-left: auto;margin-right: auto;">
+     
+
+        <div class="spacer" style="height: 20px;"></div>
+        <h2 id="criandoEventoPart3-heading10" style="text-align: center;font-family:Kollektif;font-size:22px;color: white;">E seu gênero?</h2>
+        <div class="spacer" style="height: 17px;"></div>
+      <div id="barsexoidade1" class="button-bar" >
+        <button   class="btnsexy1 actsex1" ng-show=false>das</button>
+        <button  class="btnsexy1 icon icon-center ion-male" style="color: #ff4444;border-bottom-left-radius: 34px;border-top-left-radius: 34px;" ng-click = "macho()" ></button>
+      
+        <button  class="btnsexy1 icon icon-center ion-female"  style="color: #ff4444;border-bottom-right-radius: 34px;border-top-right-radius: 34px;" ng-click = "femea()" ></button>
+      </div>
+      <div class="spacer" style="width: 300px; height: 55px;"></div>
+
+    <button id="geral-button41"  style="border-radius:64px 64px 64px 64px;color:#ff4444;text-align: center;margin-top:10px;width: 100%;background:#212121;border-color: #ff4444;color: #ff4444;" class="button outline" ng-click = "salvar()">Salvar</button>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,181 @@
+<ion-view title="O que tem" id="comercioeditaoqtem" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+        border: solid 1 ;
+        outline: red;
+        cursor: pointer;
+        width: 100%;
+        height: 50px;
+        /*color: #e0e0e0;*/
+        font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+      <style>
+      /* Style the buttons */
+
+
+      .botaointerreses {
+
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+        padding: 5px;
+        font-size: 22px;
+        border-width: 1px;
+        background:#666;
+        border-color: #ff4444;
+        color:  #ff4444;
+        font-family:Kollektif;
+        margin-left: 5px;
+      }
+       .botaointerreses:active {
+          background: #111;
+          color: #ff4444;
+      }
+
+      .botaointerrese {
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+        padding: 5px;
+        font-size: 22px;
+        border-width: 1px;
+        background:#111;
+        border-color: #ff4444;
+        color:  #ff4444;
+        font-family:Kollektif;
+        margin-left: 5px;
+      }
+      .botaointerrese:active {
+          background: #666;
+          color: #ff4444;
+      }
+
+      </style>
+      
+      <div class="spacer" style="width: 300px; height: 55px;"></div>
+      
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" >O que tem</p>
+       <div class = "row" >
+            <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado0.png"  ng-show = "auxsemanabutton1" ng-click="tirasemana1()">
+
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado1.png" ng-show = "auxsemanabutton1aux" ng-click="tirasemana1()">
+            </div>
+             <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante0.png" ng-show = "auxsemanabutton2"ng-click="tirasemana2()">
+               <img style="width : 14vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante1.png"  ng-show = "auxsemanabutton2aux" ng-click="tirasemana2()">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento0.png" ng-show = "auxsemanabutton3"ng-click="tirasemana3()">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento1.png" ng-show = "auxsemanabutton3aux" ng-click="tirasemana3()">
+            </div>
+            
+        </div>
+
+        <div class = "row" style="margin-top: 5px;">
+           <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly0.png" ng-show = "auxsemanabutton4" ng-click="tirasemana4()">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly1.png" ng-show = "auxsemanabutton4aux"ng-click="tirasemana4()">
+            </div>
+           
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE0.png"  ng-show = "auxsemanabutton5"ng-click="tirasemana5()">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE1.png"ng-show = "auxsemanabutton5aux" ng-click="tirasemana5()">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi0.png" ng-show = "auxsemanabutton6" ng-click="tirasemana6()">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi1.png"  ng-show = "auxsemanabutton6aux" ng-click="tirasemana6()">
+            </div>
+        </div>
+
+
+
+     
+  </ion-content>
+     <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+<!-- 
+           <a id="Confirmar-button12" style="border-color: red;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:red ;align-items: center;
+  justify-content: center; float:left;"  class="button button-balanced button-outline" ng-click="Cancela()">Cancela</a> -->
+
+    <button  class="botaoproximo" ng-click="Salvar()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Salvar</button>
+
+</ion-view>

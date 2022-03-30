@@ -1,0 +1,101 @@
+<ion-view  id="cartela" title="ONde?"  style="background:#212121;color:#ff4444;" >
+  
+  <ion-nav-bar class = "bar-positive">
+    <ion-nav-title >
+        <img  height="90%"   src="img/titulo.png" >    
+    </ion-nav-title> 
+
+
+
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header">
+<!-- 
+
+  <ion-refresher  refreshing-text="Refreshing..." on-refresh="doRefresh(items)"></ion-refresher> -->
+
+   <div class=row ng-repeat="item in items track by $index" ng-if="$index%2==0">
+
+       <div style="background-color: #212121;color: white;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);border-radius:8px 8px 8px 8px;margin-right: auto;margin-bottom: 25px;margin-top: auto;margin-left: auto;height: 60vw;"  ng-repeat="i in [$index,$index+1]" 
+      ng-if="items[i]!=null" ng-click = "enterItem(i)">
+
+       <img src={{items[i].fotocomercio}} style="height: 40vw; 
+               width: 40vw; 
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              object-fit: cover;background-color: white" > 
+
+      <!--   <img src={{item.eventopic}} style="height: auto; 
+               width: 100%; 
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              object-fit: cover;" ng-show='item.mostratudo' ng-click = "MenosInfo($index)"> 
+        <img src={{item.picpromo}} ng-show={{item.patrocinado}}  style="height: 16vw; 
+               width: 100%; 
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              object-fit: cover;" ng-show='item.mostratudo'>  -->
+       
+     
+<!-- 
+
+        <img src={{items[i].fotocomercio}} style="height: 42vw; 
+               width: 42vw; 
+              display: block;
+              object-fit: cover;"> -->
+
+              <div class = "row" style=" position: relative;
+                                   left: 0;
+                                   right: 0;
+                                   top: -40vw;
+                                   bottom: 0;
+                                   background-color: #212121;
+                                   opacity below
+                                   -moz-opacity:.70;
+                                   filter:alpha(opacity=70);
+                                   opacity:.70;
+                                   z-index: 10000000;" >
+            
+            <div class = "col" ng-show="{{items[i].existecarimbo1}}">
+              <img src={{items[i].carimbo1}}   style="{{items[i].Stylecarimbo3}}" ng-click = "" >
+            
+            </div>
+            <div class = "col"  ng-show="{{items[i].existecarimbo2}}">
+              <img src={{items[i].carimbo2}}  style="{{items[i].Stylecarimbo3}}" ng-click = "" >
+             
+            </div>
+            <div class = "col"  ng-show="{{items[i].existecarimbo3}}">
+                <img src={{items[i].carimbo3}}  style="{{items[i].Stylecarimbo3}}" ng-click = "" >
+            </div>
+            <div class = "col"  ng-show="{{items[i].existecarimbo4}}">
+              <img src={{items[i].carimbo4}}  style="{{items[i].Stylecarimbo4}}" ng-click = "" >
+             
+            </div>
+            <div class = "col"  ng-show="{{items[i].existecarimbo5}}">
+                <img src={{items[i].carimbo5}}  style="{{items[i].Stylecarimbo5}}" ng-click = "" >
+            </div>
+        </div>
+
+
+          <div class = "row" style="{{items[i].NaoCarimboStyle}}">
+              <div class = "col">
+                  <p style="font-family:Kollektif;font-size:15px;color: #ddd;overflow: hidden;
+white-space: wrap;width: 26vw" >{{items[i].nomecomercio}} </p> 
+              </div>
+                <div class = "col-30" >
+                  <p style="color:#bbb;font-family:Kollektif;font-size:12px;float: right;">a {{items[i].dist}}</p>
+              </div>
+            </div>
+         
+         </div>
+      <!-- <div>Letter {{i+1}} is: <b> {{items[i].idcomercio}}</b></div> -->
+
+  </div>
+
+<!-- 
+    <ion-infinite-scroll immediate-check="false" on-infinite="loadMore()" distance="5%" ng-if="!noMoreItemsAvailable"></ion-infinite-scroll> -->
+  </ion-content>
+</ion-view>

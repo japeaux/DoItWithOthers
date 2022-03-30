@@ -1,0 +1,127 @@
+<ion-view title="Custo" id="comercioeditapreco" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+     <style>
+      /* Style the buttons */
+      .btncomercioperfil {
+        background:#212121;
+        
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        color: #e0e0e0;
+        font-family:Kollektif;
+        border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;border-width: 1px;
+      }
+      .actcomercioperfil, .btncomercioperfil:hover {
+          background: #111;
+          color: #ff4444;
+      }
+
+      </style>
+
+    <div class="spacer" style="width: 300px; height: 55px;"></div>
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Quanto que vai custar esse evento? Coloque um valor estimado, pois depois vocês podem negociar. </h2>
+
+      
+
+      <label class="item item-input" id="criandoEventoPart1-input22" style="border-top-right-radius: 14px;border-top-left-radius: 14px;" >
+          <span class="input-label" style="color:#ff4444;font-family:Kollektif;font-size:22px; "> Custo estimado (R$)</span>
+          <input type="text" placeholder="Se grátis, pule" ng-model="comercio.preco" style="color: white;font-family:Kollektif;font-size:22px;">
+          
+
+      </label>
+       <div id="barcomercioperfil" class="button-bar" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;" >
+         <button id="pessoacomercio" ng-click = "pessoa()" style="font-family:Kollektif;font-size:22px;">por pessoa</button>
+         <button id="horacomercio" ng-click = "hora()" style="font-family:Kollektif;font-size:22px;">por hora</button>
+      </div>
+      <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Em alguns casos como quadras é cobrado por hora e em outros é cobrado por pessoa, então é melhor deixar avisado certinho né. </h2>
+
+
+     
+  </ion-content>
+     <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+
+    <button  class="botaoproximo" ng-click="Salvar()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Salvar</button>
+
+</ion-view>

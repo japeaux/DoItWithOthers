@@ -1,0 +1,135 @@
+<ion-view title="Comentários" id="comentariosperfilaceitar"  style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+      .btncome {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          color: #e0e0e0;
+      }
+      .act, .btncome:hover {
+          background: #222;
+          color: #45c18e;
+      }
+      </style>
+
+    <div class = "row">
+       <div class = "col col-30">
+        <h4 id="comentRiosEvento-heading17" style="color:#dbcb39;">Extrovertido</h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#26bfb7;">Introvertido</h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#e29416;">Realista</h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#1d61ba;">Curioso</h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#ba1cb7;">Solidário </h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#076d1c;">Racional</h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#ef370e;">Organizado</h4>
+        <h4 id="comentRiosEvento-heading17" style="color:#8610b5;">Criativo</h4>
+       </div>
+       <div class = "col">
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colors="colores"></canvas> 
+       </div>
+    </div>
+
+
+    <div id="comentRiosEvento-markdown9" class="show-list-numbers-and-dots">
+      <p style="color:#FCFCFC;text-align: center;font-size: 20px">O que falaram de mim</p>
+    </div>
+
+
+    <div id="barcome" class="button-bar" >
+      <button id="qvo" class="btncome" ng-click="bom()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;">Falem bem ({{ncomen[2]}})</button>
+      <button id="perfil-button16"  class="btncome" ng-click="ruim()">Falem mal ({{ncomen[1]}})</button>
+      
+      <button id="perfil-button18" class="btncome act" ng-click="todos()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;">Falem de mim ({{ncomen[0]}})</button>
+    </div>
+  <div class="spacer" style="width: 100%; height: 10px;"></div>
+
+
+    <div class="list" ng-repeat="item in items track by $index-1" ng-show = "mostratodos">
+      <ion-item class="item-avatar" id="home-list-item17" style="border-color:#ff4444;border-radius:14px 14px 14px 14px;">
+         <img src={{item.profilepic}} style="height: 20vw; 
+       width: 20vw; 
+      border: 2px solid #ff4444;;
+      border-radius: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;">
+        <h2 >{{item.apelidoavaliador}} disse:</h2>
+        <h2 style="margin-top:0px;color:#ededed;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;">{{item.comentario}}</h2>
+        <p style="color:#ededed;text-align: right;">{{item.datacoment}}</p>
+      </ion-item>
+    </div>
+
+    <div class="list" ng-repeat="mandeibem in mandeibem track by $index-1"  ng-show = "mostrabom">
+      <ion-item class="item-avatar" id="hom-item17" style="border-color:#ff4444;border-radius:14px 14px 14px 14px;">
+         <img src={{mandeibem.profilepic}} style="height: 20vw; 
+       width: 20vw; 
+      border: 2px solid #ff4444;;
+      border-radius: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;">
+        <h2 >{{mandeibem.apelidoavaliador}} te achou {{mandeibem.achou}}</h2>
+        <h2 style="margin-top:0px;color:#ededed;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;">{{mandeibem.comentario}}</h2>
+        <p style="color:#ededed;text-align: right;">{{mandeibem.datacoment}}</p>
+      </ion-item>
+    </div>
+
+    <div class="list" ng-repeat="mandeimal in mandeimal track by $index-1"  ng-show = "mostraruim">
+      <ion-item class="item" id="home-lisem17" style="border-color:#ff4444;border-radius:14px 14px 14px 14px;">
+<!--          <img src={{mandeimal.profilepic}} style="height: 20vw; 
+       width: 20vw; 
+      border: 2px solid #ff4444;;
+      border-radius: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;"> -->
+        <h2 >{{mandeimal.apelidoavaliador}}</h2>
+        <h2 style="margin-top:0px;color:#ededed;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;">{{mandeimal.comentario}}</h2>
+        <p style="color:#ededed;text-align: right;">{{mandeimal.datacoment}}</p>
+      </ion-item>
+    </div>
+    <!-- <div class="list" ng-repeat="item in items track by $index-1" >
+      <ion-item class="item-avatar" id="home-list-item17" style="border-color:#ff4444;border-radius:14px 14px 14px 14px;">
+        <h2 >{{item.apelidoavaliador}} te achou {{item.achou}}</h2>
+        <h2 style="margin-top:0px;color:#ededed;overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important;">{{item.comentario}}</h2>
+        <p style="color:#ededed;text-align: right;">{{item.datacoment}}</p>
+      </ion-item>
+    </div> -->
+    <!-- <a  id="login-button2" class="button button-positive button-block button-clear" ng-click="test()">amdsaomsdat</a> -->
+    
+
+     <script src="lib/chart.js"></script>
+  <script src="lib/chart.js/dist/Chart.min.js"></script>
+
+
+
+   <!--  
+    <h1 id="comentRiosEvento-heading17" style="color:#FCFCFC;text-align: center;">Nota {{items[0].notatotal}}/5</h1>
+    <div id="comentRiosEvento-markdown9" class="show-list-numbers-and-dots">
+      <p style="color:#FCFCFC;">Meus comentários ({{items[0].ncoments}})</p>
+    </div>
+    <div class="list card" ng-repeat="item in items track by $index" >
+      <ion-item class="item-avatar" id="home-list-item17" >
+        <h2>{{item.nomeavaliador}} nota {{item.nota}}</h2>
+        <h2 style="margin-top:0px;color:#ededed;">{{item.comentario}}</h2>
+      </ion-item>
+    </div> -->
+    <!-- <a  id="login-button2" class="button button-positive button-block button-clear" ng-click="test()">amdsaomsdat</a> -->
+  </ion-content>
+</ion-view>

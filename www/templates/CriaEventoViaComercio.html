@@ -1,0 +1,145 @@
+<ion-view title="Criando Evento" id="CriaEventoViaComercio" style="background:#212121;color:#ff4444;">
+ <ion-nav-bar class="bar-positive">
+     <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header" >
+       <style>
+  
+      .tatage {
+        margin-left:10px;
+        margin-left:4px;
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+/*        width: 20%;*/
+        height:25px;
+        border-width: 1px;
+        background:#212121;
+        border-color: #ff4444;
+        color:  #e0e0e0;
+
+        
+
+        font-family:Kollektif;
+      }
+      </style>
+
+
+
+    <style type="text/css">
+    span.high { color:#fff;font-weight:bold;}
+    </style>
+
+     <!-- <button style="text-align: center;overflow: hidden;text-overflow: none !important; white-space: initial !important;">{{evento.nomeevento}}</button>  -->
+<!-- <h2 style="text-align: center;overflow: hidden;text-overflow: none !important; white-space: initial !important;" ng-click="titulo()">{{evento.nomeevento}}</h2> -->
+  <h2 id="criandoEventoPart3-heading10" style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" ng-show="!LimiteFuncionamentoDiwo">Bora criar um evento rapidamente neste local?</h2>
+
+  <img src={{evento.eventopic}} style="width: 100%; height: 50vw;object-fit: cover;" ng-click = "mudafotoevento()">
+
+   <h2 style="text-align: center;font-family:Kollektif;font-size:16px;color: white;" >Qual título do evento?</h2>
+  <input type="text" placeholder="Digite aqui um título bacana" ng-model="evento.nomeevento" style="background:#212121;border-color: #cdcdcd;color:  #fff;text-align: center;width: 100%;font-size: 22px;font-weight: 500 bold;font-family:Kollektif;margin-top: 10px">
+  <h2 style="text-align: center;font-family:Kollektif;font-size:16px;color: white;" >Escreva uma breve descrição do evento</h2>
+  <textarea  name="comment" id="comment-textarea" ng-model="evento.descricao" placeholder=" DIGITE AQUI O que sera feito? Precisa levar algo? O que é importante saber sobre?" style="
+    width: 96%;
+    height:23vw;
+    color: #FCFCFC;
+    line-height: 100%;
+   /* border: solid 1px #444;*/
+    background:#212121;
+    font-family:Kollektif;">
+  </textarea>
+
+  <label class="item item-input" id="criandoEventoPart4-input23" style="color: #FCFCFC;font-family:Kollektif;">
+        <span class="input-label" style="color: #ff4444;font-family:Kollektif;">Quantidade máxima de pessoas?</span>
+        <input type="number" placeholder="" ng-model="evento.pmax" style="color: #FCFCFC;float: right;">
+      </label>
+
+    <label class="item item-select" id="editarPerfil-select3" style="">
+        <span class="input-label" style="color:#ff4444;font-size: 16px; ">Qual público?</span>
+        <select ng-model="evento.genero"  style="background-color: #212121;color: white;font-size: 16px;">
+          <option value="todos">Todos</option>
+          <option value="fem" ng-show="femin">Exclusivo gênero feminino</option>
+          <option value="masc" ng-show="!femin">Exclusivo gênero masculino</option>
+        </select>
+      </label>
+
+
+      <div class="spacer" style="width: 300px; height: 10px;" ></div>
+    <!--   <p style="color:#ff4444;text-align: center;margin-top:10px;font-size: 16px;border-color: #FCFCFC; border-width: 1px " >{{evento.dificuldade}}</p>
+
+      <ion-item class="range range-positive" id="filtro-range1" style="margin-bottom: 20px">
+        <input ng-model="evento.dificuldaden" type="range"  min="1" max="4" step="1" ng-change = "ch()">
+      </ion-item>
+
+ -->
+
+   <!--   <div class="item-input-inset">
+      <label class="item item-input" id="filtrrch1" style="width: 100%;border-radius:64px 64px 64px 64px;text-align: center;height:50px;background:#212121;;color:  #fff;" ng-submit="adicionatag()">
+        <i class="icon ">#</i>
+        <input type="text" placeholder=" Adicione pelo menos uma tag" ng-model="evento.addtag" ng-submit="adicionatag()" style="color: #FCFCFC;">
+      </label>
+      <button class="button button-small button-outline" ng-click = "adicionatag()" style="margin-left:10px;border-radius:64px 64px 64px 64px;text-align: center;width: 20%;height:50px;background:#212121;border-color: #ff4444;color:  #fff;">Add</button>
+    </div> -->
+<!-- 
+      <button style="border-radius: 80%;float:right; background:#212121;font-family:Kollektif;color: #ff4444;font-weight: bold;margin-top: 1px;"  ng-click="duvida4()">?</button> -->
+  <!--   <div id="barrr" class="button-bar">
+      <a class="tatage" ng-click="tiratag1()" ng-show = "evento.auxtagbutton1">{{evento.auxtag1}} </a>
+      <a class="tatage" ng-click="tiratag2()" ng-show = "evento.auxtagbutton2">{{evento.auxtag2}} </a>
+      <a class="tatage" ng-click="tiratag3()" ng-show = "evento.auxtagbutton3">{{evento.auxtag3}} </a>
+      
+    </div>
+      <div id="barrr2" class="button-bar" style="margin-top: 5px;">
+        <a class="tatage" ng-click="tiratag4()" ng-show = "evento.auxtagbutton4">{{evento.auxtag4}} </a>
+      <a class="tatage" ng-click="tiratag5()" ng-show = "evento.auxtagbutton5">{{evento.auxtag5}} </a>
+      <a class="tatage" ng-click="tiratag6()" ng-show = "evento.auxtagbutton6">{{evento.auxtag6}} </a>
+
+    </div>
+
+
+  </div>
+      <div id="barrr3" class="button-bar" style="margin-top: 5px;">
+        <a class="tatage" ng-click="tiratag7()" ng-show = "evento.auxtagbutton7">{{evento.auxtag7}} </a>
+      <a class="tatage" ng-click="tiratag8()" ng-show = "evento.auxtagbutton8">{{evento.auxtag8}} </a>
+      <a class="tatage" ng-click="tiratag9()" ng-show = "evento.auxtagbutton9">{{evento.auxtag9}} </a>
+
+    </div>
+     -->
+<!-- 
+     <div class = "row" >
+      <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-right: 10px" ion-datetime-picker ng-model="evento.dateconfirma" ng-change="mudaconfirma()">
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >Confirmar até</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" >{{limiteconfirmacao.dia}}</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 18px;" >{{limiteconfirmacao.hora}}</p>
+      </div>
+       <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-right: 10px" ion-datetime-picker ng-model="evento.dateinicio" ng-change="mudainicio()">
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >Data de Início</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" >{{inicio.dia}}</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 18px;" >{{inicio.hora}}</p>
+      </div>
+      <div class = "col" style="background:#212121;border-radius:14px 14px 14px 14px;border: 2px solid white;margin-right: 10px" ion-datetime-picker ng-model="evento.datefim" ng-change="mudafim()">
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;" >Data de termino</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 20px;" >{{fim.dia}}</p>
+            <p style="margin-top:0px;color:#ececec;width: 100%;text-align: center;font-size: 18px;" >{{fim.hora}}</p>
+      </div>
+    </div> 
+ -->
+
+
+
+
+
+    <!--   <p id="eventoAberto-heading4" style="color:#989898;text-align: center;margin-top:10px;">Mudar local do evento</p> -->
+
+    <!-- <div class="item item-avatar" id="home-list-item-container5" style= "border-radius:14px 14px 14px 14px;" ng-click = "mudaloc()">
+      <img src="img/markericon.png" width="100%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;">
+      <p style="color:#fff; overflow: hidden;
+ text-overflow: none !important; 
+ white-space: initial !important; ">{{evento.endereco}}</p>
+    </div> -->
+
+
+    
+    <a id="EditaEvento-butto123" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:30px;width: 50%;margin:auto; display:block;background:#212121;color: #ff4444;border-color: #ff4444;" class="button button-royal button-outline" ng-click="salvar(evento)" >Criar</a>
+
+    
+  </ion-content>
+</ion-view>

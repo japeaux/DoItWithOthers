@@ -1,0 +1,141 @@
+<ion-view title="Detalhes" id="page222"style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+     <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+   <style>
+      /* Style the buttons */
+      .btnpor {
+        background:#212121;
+        
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        color: #e0e0e0;
+        font-family:Kollektif;
+        border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;border-width: 1px;
+      }
+      .actr, .btnpor:hover {
+          background: #222;
+          color: #ff4444;
+      }
+      </style>
+
+      <style type="text/css">
+        span.high { color:#1eb9aa;font-weight:bold;}
+      </style>
+
+    <h2 id="criandoEventoPart3-heading10" style="color:white;text-align: center;font-family:Kollektif;">Mude as coisas que quer</h2>
+
+
+<!-- 
+    <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Quantas pessoas?</h5>
+    <label class="item item-input" id="criandoEventoPart4-input23" style="border-top-right-radius: 14px;border-top-left-radius: 14px;color: #FCFCFC;">
+        <span class="input-label" style="color: #ff4444;">max</span>
+        <input type="text" placeholder="" ng-model="evento.auxpmax" ng-change="mudamax()" style="color: #FCFCFC;">
+      </label>
+      <label class="item item-input" id="criandoEventoPart4-input24" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;color: #FCFCFC;">
+        <span class="input-label" style="color: #ff4444;">min</span>
+        <input type="text" placeholder="" ng-model="evento.auxpmin" ng-change="mudamin()" style="color: #FCFCFC;">
+      </label>
+ -->
+
+
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color:#ff4444;" >Qual o número mínimo de pessoas para esse evento acontecer?</h2>
+
+      <div class = "row">
+            
+      <div class = "col" style="border-radius:14px 14px 14px 14px;">
+        <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "menos()">-</button>
+      </div>
+         <div class = "col">
+              <p style="margin-top:20px;color:#ff4444;font-family:Kollektif;font-size:22px;text-align: center;">{{evento.pmin}}</p>
+            </div>
+            <div class = "col" >
+               <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "mais()">+</button>
+            </div>
+          </div>
+
+
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color:#ff4444;" >E o número máximo de pessoas para esse evento?</h2>
+
+       <div class = "row">
+            
+      <div class = "col" style="border-radius:14px 14px 14px 14px;">
+        <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "menosmax()">-</button>
+      </div>
+         <div class = "col">
+              <p style="margin-top:20px;color:#ff4444;font-family:Kollektif;font-size:22px;text-align: center;">{{evento.pmax}}</p>
+            </div>
+            <div class = "col" >
+               <button style="font-family:Kollektif;margin-left: 14vw;text-align: center;color:#ddd;font-size: 22px" class="button button-clear" ng-click = "maismax()">+</button>
+            </div>
+          </div>
+
+    <form id="criandoEventoPart3-form21" class="list">
+      <div id="criandoEventoPart3-container4">
+        <form id="criandoEventoPart3-form23" class="list">
+           <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color:#ff4444;" >Pode nos contar com detalhes sobre esse evento?</h5>
+         <!--  <label class="item item-input" id="criandoEventoPart3-input11" style="width: 100%; height:200px;">
+            <input type="text" placeholder="" ng-model="evento.descricao">
+          </label> -->
+            <textarea name="comment" id="comment-textarea" ng-model="evento.descricao" placeholder=" O que sera feito? Precisa levar algo? O que é importante saber sobre? " style=";
+      width: 96%;
+      height:23vw;
+      color: #FCFCFC;
+     /* border: solid 1px #444;*/
+      background:#212121;
+      
+      line-height: 100%;
+      font-family:Kollektif;
+              margin: auto;
+              margin-top: 20px;
+              font-family:Kollektif;">
+
+                </textarea>
+        </form>
+      </div>
+    </form>
+
+      
+
+      <div class="spacer" style="width: 300px; height: 30px;"></div>
+
+      <label class="item item-input" id="criandoEventoPart1-input22" style="border-top-right-radius: 14px;border-top-left-radius: 14px;">
+          <span class="input-label" style="color:#ff4444; "> Custo estimado (R$)</span>
+          <input type="text" placeholder="Se grátis, pule" ng-model="evento.preco" style="color: white;">
+      </label>
+       
+      <div id="barpor" class="button-bar" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;">
+         <button id="buastn18" class="btnpor actr " ng-click = "pessoa()" >por pessoa</button>
+         <button id="tonas16"  class="btnpor "  ng-click = "hora()" >por hora</button>
+      </div>
+
+         <div class="spacer" style="width: 300px; height: 30px;"></div>
+
+      <label class="item item-select" id="editarPerfil-select3" style="border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;font-size: 16px; ">Qual público?</span>
+        <select ng-model="evento.genero"  style="background-color: #212121;color: white;font-size: 16px;">
+          <option value="todos">Todos</option>
+          <option value="fem" ng-show="femin">Exclusivo gênero feminino</option>
+          <option value="masc" ng-show="!femin">Exclusivo gênero masculino</option>
+        </select>
+      </label>
+
+     <!--  <div class="spacer" style="width: 300px; height: 30px;"></div>
+      <p style="color:#ff4444;text-align: center;margin-top:10px;font-size: 16px;">{{evento.dificuldade}}</p>
+
+      <ion-item class="range range-positive" id="filtro-range1" style="border-radius:14px 14px 14px 14px;">
+        <input ng-model="evento.dificuldaden" type="range"  min="1" max="4" step="1" ng-change = "ch()">
+      </ion-item>
+ -->
+
+    <div id="criandoEventoPart3-button-bar7" class="button-bar">
+      <button id="criandoEventoPart3-button37" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-assertive button-outline" ui-sref='tabsController.EditEv'>Cancelar</button>
+      <button id="criandoEventoPart3-button38" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;"  class="button button-balanced button-outline" ng-click="getCriar(evento)">Mudar</button>
+    </div>
+  </ion-content>
+</ion-view>

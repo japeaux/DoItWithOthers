@@ -1,0 +1,174 @@
+<ion-view title={{viewtitle}} id="page8" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+   <!--  <ion-nav-back-button></ion-nav-back-button> -->
+</ion-nav-bar>
+
+    <ion-nav-buttons side="primary">
+      <button class="button button-clear  " ui-sref="tabsController.home">Voltar
+  
+      </button>
+    </ion-nav-buttons>
+    
+  <ion-content padding="true" class="has-header">
+
+      <style>
+      /* Style the buttons */
+        .btnfiltro {
+          background:#222;
+          border-color: #ff4444;
+            border: solid 0 ;
+            outline: #ff4444;
+            cursor: pointer;
+            font-size: 25px;
+            width: 100%;
+            height: 50px;
+            color: white;
+        }
+        .actfil, .btnfiltro:hover {
+            background: #111;
+            color: #ff4444;
+        }
+
+        .btnsearch {
+          background:#222;
+          border-color: #ff4444;
+            border: solid 0 ;
+            outline: #ff4444;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            height: 50px;
+            
+        }
+        .actitro, .btnsearch:hover {
+            background: #111;
+        }
+
+      </style>
+
+
+     <div id="barfiltro" class="button-bar" >
+       <button  class="btnfiltro actfil icon icon-center ion-search " style="color: #ff4444;" ng-click = "buscaaa()" id="botaobusca"></button>
+      
+       <button  class="btnfiltro icon icon-center ion-android-options " style="color: #ff4444;" ng-click = "filtraaa()" ></button>
+    </div>
+
+
+
+
+
+    <form id="filtro-form3" class="list">
+
+    <div class="item-input-inset" ng-show="TipoDoFiltro">
+      <label class="item item-input" id="filtro-search1" style="width: 300px;margin-left:10px;border-radius:64px 64px 64px 64px;text-align: center;height:50px;background:#212121;border-color: #ff4444;color:  #fff;">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Procurar" ng-change = "procurar()" ng-model="filtro.search" style="color: #FCFCFC;">
+<!--         <button ng-click = "cancelar()" class="button ion-android-close input-button button-small" ng-show="search.length"></button> -->
+      </label>
+      <button class="button button-small button-outline" ng-click = "cancelar()" style="margin-left:10px;border-radius:64px 64px 64px 64px;text-align: center;width: 25%;height:50px;background:#212121;border-color: #ff4444;color:  #fff;">Cancel</button>
+    </div>
+    </form>
+
+    <div id="rqrq" class="button-bar" ng-show="TipoDoFiltro">
+      <button id="hash" class="btnsearch actitro" ng-click="mudafiltro1()" style="border-bottom-left-radius: 34px;border-top-left-radius: 34px;color: #00a7d1;">#Categoria</button>
+      <button id="perfil-button16"  class="btnsearch" ng-click="mudafiltro2()" style="color: #d20090;">@Persona</button>
+      
+      <button id="perfil-button18" class="btnsearch" ng-click="mudafiltro3()" style="border-bottom-right-radius: 34px;border-top-right-radius: 34px;color: #88d100;">Lugar</button>
+    </div>
+
+    <button  class="button button-assertive button-outline" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" ng-click = "limpar()" ng-show="!CoisasDoFiltro && !TipoDoFiltro">
+          Limpar
+    </button>
+
+    <div class="spacer" style="width: 100%; height: 10px;" ng-show="CoisasDoFiltro"></div>
+
+    <ion-checkbox ng-model="buscafiltro.checked"
+                      ng-change="raiodabusca()" ng-show="Raiobusca" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;">Filtrar por raio</ion-checkbox>
+
+     <h4 id="filtro-heading2" style="color:#FCFCFC;text-align:center;" ng-show="CoisasDoFiltroRaio" >Distancia {{filtro.raiokm}}Km</h4>
+
+    <form id="filtro-form5" class="list" ng-show="CoisasDoFiltroRaio" >
+      <ion-item class="range range-positive" id="filtro-range1" style="border-radius:14px 14px 14px 14px;background:#212121;color:#FCFCFC;">
+        <input ng-model="filtro.raio" type="range"  min="5" max="120" step="5" ng-change = "onde()">
+      </ion-item>
+    </form>
+
+
+    <div class="spacer" style="width: 300px; height: 10px;" ng-show="CoisasDoFiltro"></div>
+
+    <ion-checkbox ng-model="buscafiltropreco.checked"
+                      ng-change="precodabusca()" ng-show="CoisasPreco" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;border-radius:14px 14px 14px 14px;">Filtrar por preço</ion-checkbox>
+
+     <h4 id="filtro-heading2" style="color:#FCFCFC;text-align:center;" ng-show="precoevento" >Preço por pessoa (até): {{filtro.precovalorescrito}}</h4>
+
+    <form id="filtro-form5" class="list" ng-show="precoevento" >
+      <ion-item class="range range-positive" id="filtro-range1" style="border-radius:14px 14px 14px 14px;background:#212121;color:#FCFCFC;">
+
+        <input ng-model="filtro.precovalor" type="range"  min="0" max="200" step="5" ng-change = "mudapreco(filtro.precovalor)">
+      </ion-item>
+    </form>
+
+<!--     <label class="item item-select" id="editarPerfil-select3" ng-show="CoisasDoFiltro" style="background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;">
+        <span class="input-label" style="background:#212121;color:#FCFCFC;">Pago ou gratuito?</span>
+        <select ng-model="filtro.precof" ng-change = "valor()" style="background:#212121;color:#FCFCFC;">
+          <option value="ambos">Não importa</option>
+          <option value="gratis">Gratis</option>
+          <option value="pago">Pago</option>
+        </select>
+      </label> -->
+
+      <div class="spacer" style="width: 300px; height: 10px;" ng-show="CoisasDoFiltro"></div>
+
+      <ion-checkbox ng-model="pushNotification.checked"
+                      ng-change="sexo()" ng-show="CoisasDoFiltro" style="border-radius:14px 14px 14px 14px;background:#212121;color:#FCFCFC;width: 90%;margin:auto; display:block;">
+          Exclusivo pelo meu gênero</ion-checkbox>
+
+
+      
+    <div class="spacer" style="width: 300px; height: 20px;" ng-show="CoisasDoFiltro"></div>
+
+
+    <p style="color:#FCFCFC;text-align: center;" ng-show="CoisasDoFiltro" >{{filtro.dificuldade}}</p>
+
+
+    <form id="filtro-form5" class="list">
+      <ion-item class="range range-positive" id="filtro-range1" ng-show="CoisasDoFiltro" style="border-radius:14px 14px 14px 14px;background:#212121;color:#FCFCFC;">
+        <input ng-model="filtro.dificuldaden" type="range"  min="1" max="4" step="1" ng-change = "ch()" >
+      </ion-item>
+    </form>
+
+    <a ng-click = "filtra()" id="filtro-button11" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-positive button-outline" ng-show="BotaoDoFiltro">Filtrar</a>
+
+    
+    <div class="list" ng-repeat="eventos in eventos track by $index" ng-show="CoisasFiltradas">
+      <ion-item class="item" id="home-lifdm119" ng-click = "enterItem({{$index}})" style="{{eventos.styleItem}}" >
+        <h2 style="color: #fff;font-style: bold;">{{eventos.nomeevento}}</h2>
+        <p style="margin-top:0px;color:#eee;">Organizador: {{eventos.admusername}}</p>
+        <label style="background-color: #00FFFF;font-family:Kollektif;color: black;margin-left:10px;border-radius: 10px;padding-left: 5px;padding-right: 5px;position: absolute;right: 10px;
+              bottom: 8px;" ng-show="{{eventos.patrocinado}}">   Campanha   </label>
+      </ion-item>
+    </div>
+
+
+     <ion-list ng-show="CoisasDoSearch">
+      <ion-item  type="item-text-wrap" ng-repeat="item in items  | filter:filtro.search | limitTo:15" ng-click="abrir(item)" style="color:#fff;">
+        {{item.tag}}
+      </ion-item>
+    </ion-list>
+
+    <ion-list ng-show="CoisasDoSearchPessoa">
+      <ion-item  type="item-text-wrap" ng-repeat="pessoa in pessoas  | filter:filtro.search | limitTo:listlength" ng-click="abrir(pessoa)">
+        <p style="color:#fff;font-size: 16px;">{{pessoa.apelido}}</p>
+        <p style="color:#ededed;font-size: 12px;">{{pessoa.username}}</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list ng-show="CoisasDoSearchLugar">
+      <ion-item  type="item-text-wrap" ng-repeat="place in places  | filter:filtro.search | limitTo:listlength2" ng-click="abrir(place)" style="color:#fff;"> <img src="img/markericon.png" width="5%" >
+        {{place.cidade}}
+      </ion-item>
+    </ion-list>
+ 
+   
+  </ion-content>
+</ion-view>

@@ -1,0 +1,242 @@
+<ion-view title="Horário de atendimento" id="comercioedtaatendimento" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+<!--   <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="perfilComercio">Voltar
+  
+      </button>
+    </ion-nav-buttons> -->
+    
+  <ion-content padding="true" class="has-header">
+     <style>
+      /* Style the buttons */
+       .botaocancela {
+        background:#212121;
+        border-color: red;
+          border: solid 1 ;
+          outline: red;
+          cursor: pointer;
+          width: 100%;
+          height: 50px;
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+        display: flex;
+        height:  auto;
+        width: auto;
+        color:red ;
+        align-items: center;
+        justify-content: center;
+        float:left;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaocancela:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      .botaoproximo {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+          font-family:Kollektif;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 64px 64px 64px 64px ;
+    
+        height:  auto;
+        width: auto;
+        color:#ff4444 ;
+        align-items: center;
+        justify-content: center;
+        float:right;
+         margin-bottom: 15px;
+          margin-top: 15px;
+      }
+       .botaoproximo:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+      }
+
+      </style>
+      <style>
+      /* Style the buttons */
+
+
+      .botaointerreses {
+
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+        padding: 5px;
+        font-size: 22px;
+        border-width: 1px;
+        background:#666;
+        border-color: #ff4444;
+        color:  #ff4444;
+        font-family:Kollektif;
+        margin-left: 5px;
+      }
+       .botaointerreses:active {
+          background: #111;
+          color: #ff4444;
+      }
+
+      .botaointerrese {
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+        padding: 5px;
+        font-size: 22px;
+        border-width: 1px;
+        background:#111;
+        border-color: #ff4444;
+        color:  #ff4444;
+        font-family:Kollektif;
+        margin-left: 5px;
+      }
+      .botaointerrese:active {
+          background: #666;
+          color: #ff4444;
+      }
+
+      </style>
+            <div class="spacer" style="width: 300px; height: 55px;"></div>
+       <h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Quais são os dias da semana que você esta funcionando?</h2>
+
+
+      <div class = "row">
+            <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana1()" ng-show = "auxsemanabutton1">Dom </a>
+              <a class="botaointerreses" ng-click="tirasemana1()" ng-show = "auxsemanabutton1aux">Dom </a>
+            </div>
+             <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana2()" ng-show = "auxsemanabutton2">Seg </a>
+              <a class="botaointerreses" ng-click="tirasemana2()" ng-show = "auxsemanabutton2aux">Seg </a>
+            </div>
+             <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana3()" ng-show = "auxsemanabutton3">Ter </a>
+              <a class="botaointerreses" ng-click="tirasemana3()" ng-show = "auxsemanabutton3aux">Ter </a>
+            </div>
+             <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana4()" ng-show = "auxsemanabutton4">Qua </a>
+              <a class="botaointerreses" ng-click="tirasemana4()" ng-show = "auxsemanabutton4aux">Qua </a>
+            </div>
+        </div>
+
+        <div class = "row" style="margin-top: 10px">
+           
+             <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana5()" ng-show = "auxsemanabutton5">Qui </a>
+              <a class="botaointerreses" ng-click="tirasemana5()" ng-show = "auxsemanabutton5aux">Qui </a>
+            </div>
+             <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana6()" ng-show = "auxsemanabutton6">Sex </a>
+              <a class="botaointerreses" ng-click="tirasemana6()" ng-show = "auxsemanabutton6aux">Sex </a>
+            </div>
+             <div class = "col" >
+              <a class="botaointerrese" ng-click="tirasemana7()" ng-show = "auxsemanabutton7">Sab </a>
+              <a class="botaointerreses" ng-click="tirasemana7()" ng-show = "auxsemanabutton7aux">Sab </a>
+            </div>
+        </div>
+
+<h2 style="text-align: center;font-family:Kollektif;font-size:22px;color: white;" >Quais são os horários de funcionamento?</h2>
+
+
+    <div id="barrr" class="button-bar">
+      <a class="botaointerrese" ng-click="tiratag1()" ng-show = "auxtagbutton1">00:00 </a>
+      <a class="botaointerreses" ng-click="tiratag1()" ng-show = "auxtagbutton1aux">00:00 </a>
+      <a class="botaointerrese" ng-click="tiratag2()" ng-show = "auxtagbutton2">01:00 </a>
+      <a class="botaointerreses" ng-click="tiratag2()" ng-show = "auxtagbutton2aux">01:00 </a>
+      <a class="botaointerrese" ng-click="tiratag3()" ng-show = "auxtagbutton3">02:00</a>
+      <a class="botaointerreses" ng-click="tiratag3()" ng-show = "auxtagbutton3aux">02:00</a>
+        <a class="botaointerrese" ng-click="tiratag4()" ng-show = "auxtagbutton4">03:00 </a>
+      <a class="botaointerreses" ng-click="tiratag4()" ng-show = "auxtagbutton4aux">03:00 </a>
+      <a class="botaointerrese" ng-click="tiratag5()" ng-show = "auxtagbutton5">04:00 </a>
+      <a class="botaointerreses" ng-click="tiratag5()" ng-show = "auxtagbutton5aux">04:00 </a>
+
+    </div>
+
+
+      <div id="barrr3" class="button-bar" style="margin-top: 15px;" >
+
+      <a class="botaointerrese" ng-click="tiratag6()" ng-show = "auxtagbutton6">05:00 </a>
+       <a class="botaointerreses" ng-click="tiratag6()" ng-show = "auxtagbutton6aux">05:00 </a>
+        <a class="botaointerrese" ng-click="tiratag7()" ng-show = "auxtagbutton7">06:00 </a>
+        <a class="botaointerreses" ng-click="tiratag7()" ng-show = "auxtagbutton7aux">06:00 </a>
+      <a class="botaointerrese" ng-click="tiratag8()" ng-show = "auxtagbutton8">07:00 </a>
+      <a class="botaointerreses" ng-click="tiratag8()" ng-show = "auxtagbutton8aux">07:00 </a>
+      <a class="botaointerrese" ng-click="tiratag9()" ng-show = "auxtagbutton9">08:00 </a>
+       <a class="botaointerreses" ng-click="tiratag9()" ng-show = "auxtagbutton9aux">08:00 </a>
+      <a class="botaointerrese" ng-click="tiratag10()" ng-show = "auxtagbutton10">09:00 </a>
+      <a class="botaointerreses" ng-click="tiratag10()" ng-show = "auxtagbutton10aux">09:00 </a>
+      
+    </div>
+      <div id="botaointerrese" class="button-bar" style="margin-top: 15px;" >
+
+      <a class="botaointerrese" ng-click="tiratag11()" ng-show = "auxtagbutton11">10:00 </a>
+      <a class="botaointerreses" ng-click="tiratag11()" ng-show = "auxtagbutton11aux">10:00 </a>
+      <a class="botaointerrese" ng-click="tiratag12()" ng-show = "auxtagbutton12">11:00 </a>
+      <a class="botaointerreses" ng-click="tiratag12()" ng-show = "auxtagbutton12aux">11:00 </a>
+      <a class="botaointerrese" ng-click="tiratag13()" ng-show = "auxtagbutton13">12:00 </a>
+      <a class="botaointerreses" ng-click="tiratag13()" ng-show = "auxtagbutton13aux">12:00 </a>
+      <a class="botaointerrese" ng-click="tiratag14()" ng-show = "auxtagbutton14">13:00 </a>
+      <a class="botaointerreses" ng-click="tiratag14()" ng-show = "auxtagbutton14aux">13:00 </a>
+      <a class="botaointerrese" ng-click="tiratag15()" ng-show = "auxtagbutton15">14:00</a>
+      <a class="botaointerreses" ng-click="tiratag15()" ng-show = "auxtagbutton15aux">14:00</a>
+    </div>
+
+    <div id="barrr3" class="button-bar" style="margin-top: 15px;" >
+
+        <a class="botaointerrese" ng-click="tiratag16()" ng-show = "auxtagbutton16"> 15:00</a>
+        <a class="botaointerreses" ng-click="tiratag16()" ng-show = "auxtagbutton16aux"> 15:00</a>
+        <a class="botaointerrese" ng-click="tiratag17()" ng-show = "auxtagbutton17"> 16:00</a>
+        <a class="botaointerreses" ng-click="tiratag17()" ng-show = "auxtagbutton17aux"> 16:00</a>
+        <a class="botaointerrese" ng-click="tiratag18()" ng-show = "auxtagbutton18"> 17:00</a>
+        <a class="botaointerreses" ng-click="tiratag18()" ng-show = "auxtagbutton18aux"> 17:00</a>
+        <a class="botaointerrese" ng-click="tiratag19()" ng-show = "auxtagbutton19"> 18:00</a>
+        <a class="botaointerreses" ng-click="tiratag19()" ng-show = "auxtagbutton19aux"> 18:00</a>
+        <a class="botaointerrese" ng-click="tiratag20()" ng-show = "auxtagbutton20"> 19:00</a>
+        <a class="botaointerreses" ng-click="tiratag20()" ng-show = "auxtagbutton20aux"> 19:00</a>
+    </div>
+
+    <div id="barrr3" class="button-bar" style="margin-top: 15px;" >
+
+        <a class="botaointerrese" ng-click="tiratag21()" ng-show = "auxtagbutton21"> 20:00</a>
+        <a class="botaointerreses" ng-click="tiratag21()" ng-show = "auxtagbutton21aux"> 20:00</a>
+        <a class="botaointerrese" ng-click="tiratag22()" ng-show = "auxtagbutton22"> 21:00</a>
+        <a class="botaointerreses" ng-click="tiratag22()" ng-show = "auxtagbutton22aux"> 21:00</a>
+        <a class="botaointerrese" ng-click="tiratag23()" ng-show = "auxtagbutton23"> 22:00</a>
+        <a class="botaointerreses" ng-click="tiratag23()" ng-show = "auxtagbutton23aux"> 22:00</a>
+        <a class="botaointerrese" ng-click="tiratag24()" ng-show = "auxtagbutton24"> 23:00</a>
+        <a class="botaointerreses" ng-click="tiratag24()" ng-show = "auxtagbutton24aux"> 23:00</a>
+    </div>
+
+
+     
+  </ion-content>
+     <div class="bar bar-footer"  style="background-color: transparent;border-width: 0px; height: 20vw;border: 0px;
+border-color: transparent;
+border-top: transparent;
+border-bottom: transparent;
+background-image: none !important;
+ background-image: none; ">
+<!-- 
+           <a id="Confirmar-button12" style="border-color: red;font-family:Kollektif;background:#212121;font-size:18px;border-radius: 50%;display: flex;margin-bottom: auto;margin-top: auto;height:  70px;width: 70px;color:red ;align-items: center;
+  justify-content: center; float:left;"  class="button button-balanced button-outline" ng-click="Cancela()">Cancela</a> -->
+
+    <button  class="botaoproximo" ng-click="Salvar()" style="font-family:Kollektif;font-size: 22px;display: flex;margin-left: auto;">Salvar</button>
+
+</ion-view>

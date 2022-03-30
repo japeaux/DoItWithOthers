@@ -1,0 +1,40 @@
+<ion-view title="Comentários evento" id="comentariosEFE"  style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+
+
+     <div class="list card" ng-repeat="item in items track by $index" style="border-color: #ff4444;border: solid 1px #ff4444;border-radius:14px 14px 14px 14px;background-color: #212121;">
+      <ion-item class="item-avatar" id="home-list-item17"style="border-color:#ff4444;border: solid 1px #ff4444;border-radius:14px 14px 14px 14px;background-color: #212121;" >
+        
+        <img src={{item.profilepic}} style="height: 20vw; 
+               width: 20vw; 
+              border: 2px solid #ff4444;;
+              border-radius: 50%;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+              object-fit: cover;">
+        <div class = "row" >
+          <div class = "col col-80">
+            
+            <h2>{{item.apelidoavaliador}} </h2>
+            <h2 style="margin-top:0px;color:#ededed; overflow: hidden;
+         text-overflow: none !important; 
+         white-space: initial !important;">{{item.comentario}}</h2>
+            <p style="color:#ededed;text-align: right;">{{item.datacoment}}</p>
+          </div>
+          <div class = "col">
+            <img src="img/star.png" width="35%" height="auto" style="align-items: center;display: block; margin-left: auto; margin-right: auto;" ng-show = "item.nota">
+            <p style="margin-left: 20px;color:#ff4444;"> {{item.nota}}</p>
+           </div>
+        </div>
+
+      </ion-item>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>

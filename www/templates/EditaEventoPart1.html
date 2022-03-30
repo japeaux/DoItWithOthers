@@ -1,0 +1,141 @@
+<ion-view title="Infos" id="page339" style="background:#212121;color:#ff4444;">
+ <ion-nav-bar class="bar-positive">
+     <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content padding="true" class="has-header">
+    <style>
+      /* Style the buttons */
+      .btnpor {
+        background:#212121;
+        
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        height: 50px;
+        margin: auto;
+        color: #e0e0e0;
+        font-family:Kollektif;
+        border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;border-width: 1px;
+      }
+      .actr, .btnpor:hover {
+          background: #222;
+          color: #ff4444;
+      }
+      </style>
+
+      <style type="text/css">
+        span.high { color:#1eb9aa;font-weight:bold;}
+      </style>
+    <h2 id="criandoEventoPart1-heading8" style="color:#FCFCFC;font-family:Kollektif;text-align: center">Oies de novooo!!</h2>
+   <p style="color:#FCFCFC;text-align: center;font-size: 20px">Informações Básicas</p>
+<div class="spacer" style="width: 300px; height: 20px;"></div>
+
+    <!-- <h2 id="criandoEventoPart1-heading8" style="color:#FCFCFC;font-family:Kollektif;text-align: center"> Olááá!! Bora criar um evento supimpa!!</h2> -->
+    <div id="criandoEventoPart1-markdown8" class="show-list-numbers-and-dots" style="
+    border-radius:14px 14px 14px 14px;
+    border: solid 1px #666;">
+      <p style="color:#ff4444;text-align: left;font-size: 16px;">Quais hashtags se encaixam no meu evento?</p>
+    
+       <textarea name="comment" id="comment-textarea" ng-model="evento.tags" placeholder=" #esporte #voluntariado #arte #praia #futebol #natureza #servicocomunitario #cachoeiras #fotografia #foodtruck #yoga #cachorro " style="
+     width: 100%;
+    height: 100px;
+    background-color: #212121;
+    color: #FCFCFC;
+    line-height: 100%;
+    margin: auto;
+    margin-top: 20px;">
+
+      </textarea>
+    </div>
+      <button style="border-radius: 80%;float:right; background:#212121;font-family:Kollektif;color: #ff4444;font-weight: bold;margin-top: 4px;"  ng-click="duvida4()">?</button>
+
+          <div class="spacer" style="width: 300px; height: 50px;"></div>
+  <!--     <p style="color:#A9A9A9;text-align: left;margin-left:10px; margin-top: 10px;">Fica mais fácil para outras pessoas acharem seu evento pelas tags.</p> -->
+      
+
+    
+
+      <!-- <div   style="border-top-right-radius: 14px;border-top-left-radius: 14px;color:#ff4444;">
+                Qndo será?
+        <input type="datetime-local" ng-model="evento.date" ng-change="muda()" style="color:#ff4444;background-color: #212121;">
+      </div> -->
+       <div class="item" ion-datetime-picker ng-model="evento.date" ng-change="muda()" style="border-top-right-radius: 14px;border-top-left-radius: 14px;color:#ff4444;">
+                Qndo será?
+                <strong>{{evento.date| date: "yyyy-MM-dd HH:mm"}}</strong>
+      </div>
+
+      <div class="item" style="color:#ff4444;font-size: 16px;">
+        <p style="color:#ff4444;font-size: 16px;"> Vai até que horas mais ou menos?</p>
+        <input type="time" ng-model="evento.duracao" style="color:#ff4444;background-color: #212121;float:right;">
+          
+      </div>
+
+<!-- 
+     
+      <div class="item" ion-datetime-picker time ng-model="evento.duracao "style="color:#ff4444; ">
+          Qnto tempo durara?
+          <strong>{{evento.duracao| date: " H:mm" }}</strong>
+
+      </div> -->
+<!-- 
+   <input type="date" data-date="" data-date-format="DD MMMM, YY" value="YOUR_SELECTED_DATE" ng-model="YOUR_DATE_MODAL">
+   <input type="time" ng-model="evento.duracao"> -->
+
+
+       <label class="item item-select" id="editarPerfil-select3" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;">
+
+        <span class="input-label" style="color:#ff4444;" >Confirmar em até?</span>
+        <select ng-model="evento.redzone" ng-change="red()" style="background-color: #212121;color: white;">
+          <option value="1">1 hora antes</option>
+          <option value="3">3 horas antes</option>
+          <option value="6">6 horas antes</option>
+          <option value="12">12 horas antes</option>
+          <option value="24">24 horas antes</option>
+        </select>
+      </label>
+
+      <button style="border-radius: 80%;float:right; background:#212121;font-family:Kollektif;color: #ff4444;font-weight: bold;margin-top: 4px;"  ng-click="duvida()">?</button>
+    
+          <div class="spacer" style="width: 300px; height: 50px;"></div>
+<!-- 
+      <p style="color:#A9A9A9;text-align: left;margin-left:10px; margin-top: 10px;">Uma vez que chega na data limite de confirmação, caso o evento não atinja o número mínimo de pessoas, o evento será cancelado automaticamente.</p> -->
+
+      <label class="item item-input" id="criandoEventoPart1-input22" style="border-top-right-radius: 14px;border-top-left-radius: 14px;">
+          <span class="input-label" style="color:#ff4444; "> Custo estimado (R$)</span>
+          <input type="text" placeholder="Se grátis deixar em branco" ng-model="evento.preco" style="color: white;">
+          
+
+      </label>
+       
+      <div id="barpor" class="button-bar" style="border-bottom-right-radius: 14px;border-bottom-left-radius: 14px;">
+         <button id="buastn18" class="btnpor actr " ng-click = "pessoa()" >por pessoa</button>
+         <button id="tonas16"  class="btnpor "  ng-click = "hora()" >por hora</button>
+      </div>
+         <button style="border-radius: 80%;float:right; background:#212121;font-family:Kollektif;color: #ff4444;font-weight: bold;margin-top: 4px;"  ng-click="duvida2()">?</button>
+         <div class="spacer" style="width: 300px; height: 50px;"></div>
+<!--       <p style="color:#A9A9A9;text-align: left;margin-left:10px; margin-top: 10px;">Em alguns casos como quadras é cobrado por hora e em outros é cobrado por pessoa, então é melhor deixar avisado certinho né.</p> -->
+
+
+      <label class="item item-select" id="editarPerfil-select3" style="border-radius:14px 14px 14px 14px;">
+        <span class="input-label" style="color:#ff4444;font-size: 16px; ">Qual público?</span>
+        <select ng-model="evento.genero"  style="background-color: #212121;color: white;font-size: 16px;">
+          <option value="todos">Todos</option>
+          <option value="fem" ng-show="femin">Exclusivo gênero feminino</option>
+          <option value="masc" ng-show="!femin">Exclusivo gênero masculino</option>
+        </select>
+      </label>
+       <button style="border-radius: 80%;float:right; background:#212121;font-family:Kollektif;color: #ff4444;font-weight: bold;margin-top: 4px;"  ng-click="duvida3()">?</button>
+<!--       <p style="color:#A9A9A9;text-align: left;margin-left:10px; margin-top: 10px;">O evento não aparecerá para pessoas que não forem do gênero selecionado</p> -->
+
+  
+      <div class="spacer" style="width: 300px; height: 50px;"></div>
+      <p style="color:#ff4444;text-align: center;margin-top:10px;font-size: 16px;">{{evento.dificuldade}}</p>
+
+      <ion-item class="range range-positive" id="filtro-range1" style="border-radius:14px 14px 14px 14px;">
+        <input ng-model="evento.dificuldaden" type="range"  min="1" max="4" step="1" ng-change = "ch()">
+      </ion-item>
+<!--       <button id="criandoEventoPart1-button32" class="button button-assertive button-block" ng-click="Apagar()">Apagar</button> -->
+      <button id="criandoEventoPart1-button33" style="border-radius:64px 64px 64px 64px;text-align: center;margin-top:10px;width: 100%;background:#212121;" class="button button-balanced button-outline" ng-click="getCriar(evento)">Proximo</button>
+    </div>
+  </ion-content>
+</ion-view>

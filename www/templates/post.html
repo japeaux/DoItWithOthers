@@ -1,0 +1,149 @@
+<ion-view title="Post" id="post" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-buttons side="primary">
+      <button class="button button-clear  "  style="font-family:Kollektif;" ui-sref="tabsController.notificaEs" ng-show="vimdanoti">Notificações
+  
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="secondary" >
+
+     
+        <button class="button button-clear button-icon icon ion-android-notifications" ng-click="silencia()" ng-show = "som">
+      </button>
+        <button class="button button-clear button-icon icon ion-android-notifications-off" ng-show = "silencio" ng-click="naosilencia()">
+      </button>
+
+       <button class="button button-clear button-icon icon ion-trash-a" ng-show = "meupost" ng-click="deletapost()">
+      </button>
+    </ion-nav-buttons>
+    
+  <ion-content padding="true" class="has-header">
+        <div class="row" justify-content-center style=";background-color: #212121;" ng-click="enterPerfil()">
+          <div class="col-30" style="position: relative;display: inline;">
+            <img src={{post.profilepic}} style="height: 12vw; 
+                                                width: 12vw; 
+                                                border: 1px solid #ff4444;;
+                                                border-radius: 50%;
+                                                display: block;
+                                                object-fit: cover;
+                                                margin-left: 5px;">      
+          </div>
+          <div class="col" style="background: #212121;">
+            <div class="row" justify-content-center style=";background-color: #212121;">
+              <div class="col" style="background: #212121;">
+            <p style="margin-top:0px;color:#ddd;font-family:Kollektif;font-size:16px;">{{post.apelido}}</p>
+            </div>
+            <div class="col" style="background: #212121;">
+                <p style="color:#666;font-family:Kollektif;float: right;">{{post.faltatempo}}</p>
+                
+            </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row" justify-content-center style=";background-color: #212121;">
+              <div class="col col-75" style="background: #212121;">
+            <p style="margin-top:-5px;color:#ddd;font-family:Kollektif;font-size:20px; margin-left: 15px;">{{post.postTitulo}}</p>
+            </div>
+            <div class="col" style="background: #212121;">
+               <p style="color:#666;font-family:Kollektif;float: right;margin-top:-5px;">a {{post.dist}}</p>
+            </div>
+            </div>
+        
+
+        <p style="margin-top:-10px;color:#ddd;font-family:Kollektif;font-size:16px; margin-left: 15px;">{{post.postTexto}}</p>
+
+        <img ng-show ="post.temimagem" src={{post.postImagem}} style="height: auto; 
+               width: 100%; 
+              display: block;
+              margin-right: auto;
+              margin-left: auto;
+              object-fit: cover;">   
+
+        <div class="row" justify-content-center style=";background-color: #212121;">
+              <div class="col" style="background: #212121;">
+             <button class="button icon icon-center ion-alert-circled"  style=";color:#DC143C;background:#212121;" ng-click="reportar()"></button>
+            </div>
+            <div class="col" style="background: #212121;">
+              <button class="button icon icon-center ion-arrow-down-a"  style=";color:#ff4444;background:#212121;" ng-show = "!podedownvotar"  ng-click="tiradownupvote()"></button>
+              <button class="button icon icon-center ion-arrow-down-a"  style=";color:#ececec;background:#212121;" ng-show = "podedownvotar"  ng-click="downvote()"></button>
+            </div>
+
+
+            <div class="col" style="background: #212121;">
+              <button class="button icon icon-center ion-arrow-up-a"  style=";color:#ff4444;background:#212121;" ng-show = "!podevotar"  ng-click="tiraupvote()"></button>
+              <button class="button icon icon-center ion-arrow-up-a"  style=";color:#ececec;background:#212121;" ng-show = "podevotar" ng-click="upvote()"></button>
+            </div>
+        </div>
+
+
+        <textarea  type="text" ng-model="data.comentario" placeholder=" Comentário" style=";
+    width: 96%;
+    height:10vw;
+    color: #FCFCFC;
+    border: solid 1px #444;
+    line-height: 100%;
+    background:#212121;
+    font-family:Kollektif;">
+
+      </textarea>
+
+      <button class="button button-clear"  style="font-family:Kollektif;color:#ff4444;;" ng-click="comentar(data.comentario)">Comentar</button>
+
+    <img  src="img/3.png" width="20%" height="auto" ng-show="vazio" style="display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;" > 
+    <p style="text-align: center;font-family:Kollektif;font-size:16px;color: white;" ng-show="vazio">Não há comentários nesse post ainda.</p>
+
+
+      <div class="list" ng-repeat="item in items track by $index-1" >
+
+         <div class="row" justify-content-center style=";background-color: #212121;">
+          <div class="col-30" style="position: relative;display: inline;" ng-click="enterPerfilComentario(item)">
+            <img src={{item.profilepic}} style="height: 6vw; 
+                                                width: 6vw; 
+                                                border: 1px solid #ff4444;;
+                                                border-radius: 50%;
+                                                display: block;
+                                                object-fit: cover;
+                                                margin-left: 5px;">      
+          </div>
+          <div class="col" style="background: #212121;">
+            <div class="row" justify-content-center style=";background-color: #212121;margin-top: -5px">
+              <div class="col" style="background: #212121;" ng-click="enterPerfilComentario(item)">
+            <p style="margin-top:0px;color:#ddd;font-family:Kollektif;font-size:16px;">{{item.apelido}}</p>
+            </div>
+            <div class="col" style="background: #212121;">
+                <img  src="img/alert.png" width="8%" height="auto"ng-click="reportarcomentario(item)" ng-show="!item.meucomentario"  style="display: block;
+            margin-left: auto;
+            margin-right: 10px;
+            object-fit: cover;float: right;" >
+
+                <img  src="img/trash.png" width="8%" height="auto" ng-show="item.meucomentario" ng-click="deletarcomentario(item)"  style="display: block;
+            margin-left: auto;
+            margin-right: 10px;
+            object-fit: cover;float: right;" >
+       <!--          <label class="item item-select"  style="border-width: 0px;margin-top: -10px" >
+                <select ng-model="acao" ng-change="fazer()" style="background-color: #212121;color: white;">
+                  <option value="1">Deletar</option>
+                  <option value="3">Reportar</option>
+                </select>
+              </label> -->
+                <p style="color:#666;font-family:Kollektif;float: right;margin-right: 30px;">{{item.faltatempo}}</p>
+                
+            </div>
+            </div>
+             <p style="margin-top:0px;color:#ededed;overflow: hidden;
+             text-overflow: none !important; 
+             white-space: initial !important;margin-top: -15px;margin-right: 15px;">{{item.postscomentario}}</p>
+          </div>
+
+        </div>
+    </div>
+
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-view  id="bairrosemgente" style="background:#212121;color:#ff4444;">
+  <ion-nav-bar class = "bar-positive">
+    <ion-nav-title >
+        <img  height="90%"   src="img/titulo.png" >    
+        </ion-nav-title> 
+
+  </ion-nav-bar>
+  
+  <ion-content padding="true" class="has-header">
+    <style type="text/css">
+     span.infos { color:#ff4444;font-weight:bold;font-family:Kollektif;font-size:16px; }
+    </style>
+
+        <style>
+      /* Style the buttons */
+      .btnnovahomelogin {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 22px;
+          width: 100%;
+          height: auto;
+          
+          color: #e0e0e0;
+          font-family:Kollektif;
+          border-radius:64px 64px 64px 64px;
+          padding: 10px;
+      }
+      .btnnovahomelogin:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+
+       <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 22px;margin-top: 12px;">Bairro não foi liberado!</p>
+       <div class="spacer" style="width: 300px; height: 17px;"></div>
+
+        <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 16px;margin-top: 12px;">Faltam  <span class="infos">{{pessoasnobairro}}</span> pessoas cadastradas no bairro <span class="infos">{{user.bairro}}</span> para desbloqueio</p>
+
+      
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 16px;margin-top: 12px;"> Seu bairro ainda não foi liberado, para isso ainda precisamos de mais pessoas cadastradas nele</p>
+
+      <p style="color:#FCFCFC;text-align: center;font-family:Kollektif;font-size: 16px;margin-top: 12px;"> Quer ajudar a gente a liberar seu bairro?</p>
+
+       <div class="spacer" style="width: 300px; height: 65px;"></div>
+
+        <button class="btnnovahomelogin" ng-click="compartilhawhats()" style="font-family:Kollektif; margin-bottom: 35px;
+          margin-top: 15px;font-size: 16px;">Compartilhar nosso WhatsApp</button>
+
+
+     
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,231 @@
+<ion-view title="Tela Comércio" id="telacomerciohome" style="background:#212121;color:#ff4444;" class="hide-tabs"  >
+    
+<ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+
+
+
+  <ion-content padding="true" class="has-header">
+
+      <style>
+      /* width */
+      ::-webkit-scrollbar {
+        width: 1px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #212121; 
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #212121; 
+      }
+
+      /* Handle on hover */
+      /*::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }*/
+      </style>
+
+          <style>
+      /* Style the buttons */
+      .btncomerciotab {
+        background:#212121;
+        border-color: #222;
+          border: solid 1 ;
+          outline: #ff4444;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: 50px;
+          color: #e0e0e0;
+      }
+      .actcomerciotab, .btncomerciotab:hover {
+          background: #111;
+          color: #ff4444;
+      }
+
+      .horariobtn {
+        margin-left:10px;
+        margin-left:4px;
+        border-radius:64px 64px 64px 64px;
+        text-align: center;
+        width: 20%;
+        height:25px;
+        border-width: 1px;
+        background:#212121;
+        border-color: #ff4444;
+        color:  #e0e0e0;
+
+        font-family:Kollektif;
+      }
+      .botaocalendario {
+        background:#212121;
+        
+        cursor: pointer;
+         
+          /*color: #e0e0e0;*/
+        font-family:Kollektif;
+        background:#212121;
+        border-radius:14px 14px 14px 14px;
+        border: 3px solid #ff4444;
+        box-shadow: 0 4px 8px 0 rgba(55,201,255, 0.3);
+        margin-right: 10px;
+        margin-left: auto;
+        font-size: 20px;
+        color:#ececec;
+        text-align: center;
+        width: 14vh;
+        
+      }
+       .botaocalendario:active {
+          background: #333;
+          color: #ff4444;
+          border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+          box-shadow: 0 4px 8px 0 rgba(55,201,255, 0.3);
+      }
+       .btndiv {
+        background:#212121;
+        border-color: #ff4444;
+          border: solid 1 ;
+          outline: #ff4444;
+
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          height: auto;
+          color: #e0e0e0;
+          border-radius:64px 64px 64px 64px;
+       
+          font-family:Kollektif;
+      }
+      .btndiv:active {
+          background: #111;
+          color: #ff4444;
+      }
+      </style>
+      <style type="text/css">
+    span.high { color:#ddd;font-weight:bold;}
+    </style>
+
+  <img src={{comercio.fotocomercio}} style="width: 100vw; height: 70vw;object-fit: cover;margin:-10px;" >
+
+ <p style="color:white;text-align: center;font-family:Kollektif;font-size: 25px;margin-top: 15px">{{comercio.nomecomercio}}</p>
+
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" >Quem somos</p>
+      <pre style="margin-top:7px;color:#fff;font-family:Kollektif;font-size: 15px" >{{comercio.qmehcomercio}}</pre>
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" >O que faremos</p>
+      <p style="margin-top:7px;color:#fff;font-family:Kollektif;white-space: pre-line;font-size: 15px" >{{comercio.infocomercio}}</p>
+
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px">O que esta incluso</p>
+      <p style="margin-top:7px;color:#fff;font-family:Kollektif;font-size: 15px;white-space: pre-line;">{{comercio.incluso}}</p>
+
+
+       <div class = "row" style="margin-top: 5px;margin-right: auto;margin-left: auto;" >
+           <div class = "col"   style="margin:auto;height: 30vw;">
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/Duracao.png"  >
+      <!-- <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">Duração</p> -->
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;text-align: center;" >{{comercio.duracao}}</p>
+            </div>
+           
+             <div class = "col" style="margin:auto;height: 30vw;">
+              
+      <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/ValorMedio.png" >
+      <!-- <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px" ng-show="infos">Quanto custa</p> -->
+      <p style="margin-top:0px;color:#eee;width: 100%;font-family:Kollektif;font-size: 15px;text-align: center;"  > <span class="high" ng-show="porpessoa || porlocal"> R$</span>  {{comercio.preco}} <span class="high" ng-show="porpessoa"> por pessoa!</span> <span class="high" ng-show="porlocal">o local!</span> </p>
+    <p style="margin-top:0px;color:#eee;width: 100%;font-family:Kollektif;font-size: 15px;text-align: center;"  ><span class="high" ng-show="porpessoa || porlocal"> Pagar no local.</span></p>
+            </div>
+             <div class = "col"   style="margin:auto;height: 30vw;">
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/Contato.png"  >
+      <p style="margin-top:0px;color:#ededed;font-family:Kollektif;font-size: 15px;text-align: center;">{{comercio.telefone}}</p>
+            </div>
+        </div>
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px"  ng-show="infos">Ofertas</p>
+      <p style="margin-top:7px;color:#ededed;font-family:Kollektif;font-size: 15px;white-space: pre-line;"  >{{comercio.descontopacote}}</p>
+
+     
+
+      
+
+      <p style="margin-top:7px;color:#aaa;font-family:Kollektif;font-size: 22px">O que tem</p>
+       <div class = "row" >
+            <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado0.png"  ng-show = "auxsemanabutton1">
+
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/ArCondicionado1.png" ng-show = "auxsemanabutton1aux">
+            </div>
+             <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante0.png" ng-show = "auxsemanabutton2">
+               <img style="width : 14vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Areafumante1.png"  ng-show = "auxsemanabutton2aux">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento0.png" ng-show = "auxsemanabutton3">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Estacionamento1.png" ng-show = "auxsemanabutton3aux">
+            </div>
+            
+        </div>
+
+        <div class = "row" style="margin-top: 5px;" >
+           <div class = "col" >
+              <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly0.png" ng-show = "auxsemanabutton4">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PetFriendly1.png" ng-show = "auxsemanabutton4aux">
+            </div>
+           
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE0.png"  ng-show = "auxsemanabutton5">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/PNE1.png"ng-show = "auxsemanabutton5aux">
+            </div>
+             <div class = "col" >
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi0.png" ng-show = "auxsemanabutton6">
+               <img style="width : 10vw ; height : auto;margin-left: auto;margin-right: auto;margin-bottom: auto;margin-top: auto;align-items: center;
+                  justify-content: center;display: flex;" src="img/oqtem/Wifi1.png"  ng-show = "auxsemanabutton6aux">
+            </div>
+        </div>
+
+
+
+     
+
+
+
+     <button class="btndiv"   ng-click = "Vermapa()">
+ 
+      <img src="img/markericon.png" width="8%" height="auto" style="align-items: center;display: block;margin: auto;float: left;">
+        <p style="color:white; overflow: hidden;
+              text-overflow: none !important; 
+            white-space: initial !important;font-family:Kollektif; font-size: 15px;padding-top: 5px;padding-bottom: 5px">{{comercio.endereco}}</p>
+         
+    </button>
+
+
+   
+
+  
+  </ion-content>
+</ion-view>
